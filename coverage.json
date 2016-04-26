@@ -1,0 +1,88 @@
+{
+  "coverage": "97.62%",
+  "expectCount": 464,
+  "actualCount": 453,
+  "files": {
+    "src/tangojs/core/tango/generated.js": {
+      "expectCount": 381,
+      "actualCount": 381,
+      "undocumentLines": []
+    },
+    "src/tangojs/core/api/AttributeInfo.js": {
+      "expectCount": 2,
+      "actualCount": 1,
+      "undocumentLines": [
+        4
+      ]
+    },
+    "src/tangojs/core/api/AttributeProxy.js": {
+      "expectCount": 5,
+      "actualCount": 4,
+      "undocumentLines": [
+        4
+      ]
+    },
+    "src/tangojs/core/api/CommandInfo.js": {
+      "expectCount": 2,
+      "actualCount": 1,
+      "undocumentLines": [
+        4
+      ]
+    },
+    "src/tangojs/core/api/CommandProxy.js": {
+      "expectCount": 4,
+      "actualCount": 3,
+      "undocumentLines": [
+        4
+      ]
+    },
+    "src/tangojs/core/Connector.js": {
+      "expectCount": 21,
+      "actualCount": 21,
+      "undocumentLines": []
+    },
+    "src/tangojs/core/api/Database.js": {
+      "expectCount": 6,
+      "actualCount": 4,
+      "undocumentLines": [
+        4,
+        6
+      ]
+    },
+    "src/tangojs/core/api/DbDatum.js": {
+      "expectCount": 5,
+      "actualCount": 4,
+      "undocumentLines": [
+        2
+      ]
+    },
+    "src/tangojs/core/api/DeviceAttribute.js": {
+      "expectCount": 2,
+      "actualCount": 1,
+      "undocumentLines": [
+        4
+      ]
+    },
+    "src/tangojs/core/api/DeviceData.js": {
+      "expectCount": 4,
+      "actualCount": 3,
+      "undocumentLines": [
+        2
+      ]
+    },
+    "src/tangojs/core/api/DeviceInfo.js": {
+      "expectCount": 14,
+      "actualCount": 13,
+      "undocumentLines": [
+        2
+      ]
+    },
+    "src/tangojs/core/api/DeviceProxy.js": {
+      "expectCount": 18,
+      "actualCount": 17,
+      "undocumentLines": [
+        4
+      ]
+    }
+  }
+}

@@ -1,0 +1,3749 @@
+{
+  "type": "Program",
+  "body": [
+    {
+      "type": "ExportNamedDeclaration",
+      "declaration": {
+        "type": "VariableDeclaration",
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "id": {
+              "type": "Identifier",
+              "name": "connector",
+              "range": [
+                115,
+                124
+              ],
+              "loc": {
+                "start": {
+                  "line": 8,
+                  "column": 11
+                },
+                "end": {
+                  "line": 8,
+                  "column": 20
+                }
+              }
+            },
+            "init": {
+              "type": "Literal",
+              "value": null,
+              "raw": "null",
+              "range": [
+                127,
+                131
+              ],
+              "loc": {
+                "start": {
+                  "line": 8,
+                  "column": 23
+                },
+                "end": {
+                  "line": 8,
+                  "column": 27
+                }
+              }
+            },
+            "range": [
+              115,
+              131
+            ],
+            "loc": {
+              "start": {
+                "line": 8,
+                "column": 11
+              },
+              "end": {
+                "line": 8,
+                "column": 27
+              }
+            },
+            "trailingComments": [
+              {
+                "type": "Block",
+                "value": "*\n * Sets connector interface implementation.\n * @param {Connector} conn connector implementation\n ",
+                "range": [
+                  133,
+                  236
+                ],
+                "loc": {
+                  "start": {
+                    "line": 10,
+                    "column": 0
+                  },
+                  "end": {
+                    "line": 13,
+                    "column": 3
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "kind": "let",
+        "range": [
+          111,
+          237
+        ],
+        "loc": {
+          "start": {
+            "line": 8,
+            "column": 7
+          },
+          "end": {
+            "line": 14,
+            "column": 0
+          }
+        },
+        "leadingComments": [
+          {
+            "type": "Block",
+            "value": " eslint-disable no-unused-vars ",
+            "range": [
+              1,
+              36
+            ],
+            "loc": {
+              "start": {
+                "line": 2,
+                "column": 0
+              },
+              "end": {
+                "line": 2,
+                "column": 35
+              }
+            }
+          },
+          {
+            "type": "Block",
+            "value": "*\n * Backend-specific connector implementation.\n * @private\n ",
+            "range": [
+              38,
+              103
+            ],
+            "loc": {
+              "start": {
+                "line": 4,
+                "column": 0
+              },
+              "end": {
+                "line": 7,
+                "column": 3
+              }
+            }
+          }
+        ],
+        "trailingComments": []
+      },
+      "specifiers": [],
+      "source": null,
+      "range": [
+        104,
+        237
+      ],
+      "loc": {
+        "start": {
+          "line": 8,
+          "column": 0
+        },
+        "end": {
+          "line": 14,
+          "column": 0
+        }
+      },
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": " eslint-disable no-unused-vars ",
+          "range": [
+            1,
+            36
+          ],
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 0
+            },
+            "end": {
+              "line": 2,
+              "column": 35
+            }
+          }
+        },
+        {
+          "type": "Block",
+          "value": "*\n * Backend-specific connector implementation.\n * @private\n ",
+          "range": [
+            38,
+            103
+          ],
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 0
+            },
+            "end": {
+              "line": 7,
+              "column": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "ExportNamedDeclaration",
+      "declaration": {
+        "type": "FunctionDeclaration",
+        "id": {
+          "type": "Identifier",
+          "name": "setConnector",
+          "range": [
+            253,
+            265
+          ],
+          "loc": {
+            "start": {
+              "line": 14,
+              "column": 16
+            },
+            "end": {
+              "line": 14,
+              "column": 28
+            }
+          }
+        },
+        "params": [
+          {
+            "type": "Identifier",
+            "name": "conn",
+            "range": [
+              266,
+              270
+            ],
+            "loc": {
+              "start": {
+                "line": 14,
+                "column": 29
+              },
+              "end": {
+                "line": 14,
+                "column": 33
+              }
+            }
+          }
+        ],
+        "body": {
+          "type": "BlockStatement",
+          "body": [
+            {
+              "type": "ExpressionStatement",
+              "expression": {
+                "type": "AssignmentExpression",
+                "operator": "=",
+                "left": {
+                  "type": "Identifier",
+                  "name": "connector",
+                  "range": [
+                    276,
+                    285
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 15,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 15,
+                      "column": 11
+                    }
+                  }
+                },
+                "right": {
+                  "type": "Identifier",
+                  "name": "conn",
+                  "range": [
+                    288,
+                    292
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 15,
+                      "column": 14
+                    },
+                    "end": {
+                      "line": 15,
+                      "column": 18
+                    }
+                  }
+                },
+                "range": [
+                  276,
+                  292
+                ],
+                "loc": {
+                  "start": {
+                    "line": 15,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 15,
+                    "column": 18
+                  }
+                }
+              },
+              "range": [
+                276,
+                293
+              ],
+              "loc": {
+                "start": {
+                  "line": 15,
+                  "column": 2
+                },
+                "end": {
+                  "line": 16,
+                  "column": 0
+                }
+              }
+            }
+          ],
+          "range": [
+            272,
+            294
+          ],
+          "loc": {
+            "start": {
+              "line": 14,
+              "column": 35
+            },
+            "end": {
+              "line": 16,
+              "column": 1
+            }
+          }
+        },
+        "generator": false,
+        "expression": false,
+        "range": [
+          244,
+          294
+        ],
+        "loc": {
+          "start": {
+            "line": 14,
+            "column": 7
+          },
+          "end": {
+            "line": 16,
+            "column": 1
+          }
+        },
+        "leadingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * Sets connector interface implementation.\n * @param {Connector} conn connector implementation\n ",
+            "range": [
+              133,
+              236
+            ],
+            "loc": {
+              "start": {
+                "line": 10,
+                "column": 0
+              },
+              "end": {
+                "line": 13,
+                "column": 3
+              }
+            }
+          }
+        ],
+        "trailingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * Tangojs connector interface. This class contains backend-specific\n * logic. Each connector plugin have to provide implementation\n * of this interface.\n * @interface\n ",
+            "range": [
+              296,
+              471
+            ],
+            "loc": {
+              "start": {
+                "line": 18,
+                "column": 0
+              },
+              "end": {
+                "line": 23,
+                "column": 3
+              }
+            }
+          }
+        ]
+      },
+      "specifiers": [],
+      "source": null,
+      "range": [
+        237,
+        294
+      ],
+      "loc": {
+        "start": {
+          "line": 14,
+          "column": 0
+        },
+        "end": {
+          "line": 16,
+          "column": 1
+        }
+      },
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * Sets connector interface implementation.\n * @param {Connector} conn connector implementation\n ",
+          "range": [
+            133,
+            236
+          ],
+          "loc": {
+            "start": {
+              "line": 10,
+              "column": 0
+            },
+            "end": {
+              "line": 13,
+              "column": 3
+            }
+          }
+        }
+      ],
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * Tangojs connector interface. This class contains backend-specific\n * logic. Each connector plugin have to provide implementation\n * of this interface.\n * @interface\n ",
+          "range": [
+            296,
+            471
+          ],
+          "loc": {
+            "start": {
+              "line": 18,
+              "column": 0
+            },
+            "end": {
+              "line": 23,
+              "column": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "ExportNamedDeclaration",
+      "declaration": {
+        "type": "ClassDeclaration",
+        "id": {
+          "type": "Identifier",
+          "name": "Connector",
+          "range": [
+            485,
+            494
+          ],
+          "loc": {
+            "start": {
+              "line": 24,
+              "column": 13
+            },
+            "end": {
+              "line": 24,
+              "column": 22
+            }
+          }
+        },
+        "superClass": null,
+        "body": {
+          "type": "ClassBody",
+          "body": [
+            {
+              "type": "MethodDefinition",
+              "key": {
+                "type": "Identifier",
+                "name": "get_device_status",
+                "range": [
+                  572,
+                  589
+                ],
+                "loc": {
+                  "start": {
+                    "line": 30,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 30,
+                    "column": 19
+                  }
+                }
+              },
+              "value": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [
+                  {
+                    "type": "Identifier",
+                    "name": "devname",
+                    "range": [
+                      590,
+                      597
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 30,
+                        "column": 20
+                      },
+                      "end": {
+                        "line": 30,
+                        "column": 27
+                      }
+                    }
+                  }
+                ],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [],
+                  "range": [
+                    599,
+                    602
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 30,
+                      "column": 29
+                    },
+                    "end": {
+                      "line": 30,
+                      "column": 32
+                    }
+                  }
+                },
+                "generator": false,
+                "expression": false,
+                "range": [
+                  589,
+                  602
+                ],
+                "loc": {
+                  "start": {
+                    "line": 30,
+                    "column": 19
+                  },
+                  "end": {
+                    "line": 30,
+                    "column": 32
+                  }
+                }
+              },
+              "kind": "method",
+              "computed": false,
+              "range": [
+                572,
+                602
+              ],
+              "loc": {
+                "start": {
+                  "line": 30,
+                  "column": 2
+                },
+                "end": {
+                  "line": 30,
+                  "column": 32
+                }
+              },
+              "leadingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n   * @return {Promise<string>}\n   * @param {string} devname\n   ",
+                  "range": [
+                    500,
+                    569
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 26,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 29,
+                      "column": 5
+                    }
+                  }
+                }
+              ],
+              "trailingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n   * @return {Promise<DevState>}\n   * @param {string} devname\n   ",
+                  "range": [
+                    606,
+                    677
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 32,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 35,
+                      "column": 5
+                    }
+                  }
+                }
+              ],
+              "static": false
+            },
+            {
+              "type": "MethodDefinition",
+              "key": {
+                "type": "Identifier",
+                "name": "get_device_state",
+                "range": [
+                  680,
+                  696
+                ],
+                "loc": {
+                  "start": {
+                    "line": 36,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 36,
+                    "column": 18
+                  }
+                }
+              },
+              "value": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [
+                  {
+                    "type": "Identifier",
+                    "name": "devname",
+                    "range": [
+                      697,
+                      704
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 36,
+                        "column": 19
+                      },
+                      "end": {
+                        "line": 36,
+                        "column": 26
+                      }
+                    }
+                  }
+                ],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [],
+                  "range": [
+                    706,
+                    709
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 36,
+                      "column": 28
+                    },
+                    "end": {
+                      "line": 36,
+                      "column": 31
+                    }
+                  }
+                },
+                "generator": false,
+                "expression": false,
+                "range": [
+                  696,
+                  709
+                ],
+                "loc": {
+                  "start": {
+                    "line": 36,
+                    "column": 18
+                  },
+                  "end": {
+                    "line": 36,
+                    "column": 31
+                  }
+                }
+              },
+              "kind": "method",
+              "computed": false,
+              "range": [
+                680,
+                709
+              ],
+              "loc": {
+                "start": {
+                  "line": 36,
+                  "column": 2
+                },
+                "end": {
+                  "line": 36,
+                  "column": 31
+                }
+              },
+              "leadingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n   * @return {Promise<DevState>}\n   * @param {string} devname\n   ",
+                  "range": [
+                    606,
+                    677
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 32,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 35,
+                      "column": 5
+                    }
+                  }
+                }
+              ],
+              "trailingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n   * @return {Promise<DeviceInfo>}\n   * @param {string} devname\n   ",
+                  "range": [
+                    713,
+                    786
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 38,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 41,
+                      "column": 5
+                    }
+                  }
+                }
+              ],
+              "static": false
+            },
+            {
+              "type": "MethodDefinition",
+              "key": {
+                "type": "Identifier",
+                "name": "get_device_info",
+                "range": [
+                  789,
+                  804
+                ],
+                "loc": {
+                  "start": {
+                    "line": 42,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 42,
+                    "column": 17
+                  }
+                }
+              },
+              "value": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [
+                  {
+                    "type": "Identifier",
+                    "name": "devname",
+                    "range": [
+                      805,
+                      812
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 42,
+                        "column": 18
+                      },
+                      "end": {
+                        "line": 42,
+                        "column": 25
+                      }
+                    }
+                  }
+                ],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [],
+                  "range": [
+                    814,
+                    817
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 42,
+                      "column": 27
+                    },
+                    "end": {
+                      "line": 42,
+                      "column": 30
+                    }
+                  }
+                },
+                "generator": false,
+                "expression": false,
+                "range": [
+                  804,
+                  817
+                ],
+                "loc": {
+                  "start": {
+                    "line": 42,
+                    "column": 17
+                  },
+                  "end": {
+                    "line": 42,
+                    "column": 30
+                  }
+                }
+              },
+              "kind": "method",
+              "computed": false,
+              "range": [
+                789,
+                817
+              ],
+              "loc": {
+                "start": {
+                  "line": 42,
+                  "column": 2
+                },
+                "end": {
+                  "line": 42,
+                  "column": 30
+                }
+              },
+              "leadingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n   * @return {Promise<DeviceInfo>}\n   * @param {string} devname\n   ",
+                  "range": [
+                    713,
+                    786
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 38,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 41,
+                      "column": 5
+                    }
+                  }
+                }
+              ],
+              "trailingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   ",
+                  "range": [
+                    821,
+                    892
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 44,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 47,
+                      "column": 5
+                    }
+                  }
+                }
+              ],
+              "static": false
+            },
+            {
+              "type": "MethodDefinition",
+              "key": {
+                "type": "Identifier",
+                "name": "get_device_list",
+                "range": [
+                  895,
+                  910
+                ],
+                "loc": {
+                  "start": {
+                    "line": 48,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 48,
+                    "column": 17
+                  }
+                }
+              },
+              "value": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [
+                  {
+                    "type": "Identifier",
+                    "name": "pattern",
+                    "range": [
+                      911,
+                      918
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 48,
+                        "column": 18
+                      },
+                      "end": {
+                        "line": 48,
+                        "column": 25
+                      }
+                    }
+                  }
+                ],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [],
+                  "range": [
+                    920,
+                    923
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 48,
+                      "column": 27
+                    },
+                    "end": {
+                      "line": 48,
+                      "column": 30
+                    }
+                  }
+                },
+                "generator": false,
+                "expression": false,
+                "range": [
+                  910,
+                  923
+                ],
+                "loc": {
+                  "start": {
+                    "line": 48,
+                    "column": 17
+                  },
+                  "end": {
+                    "line": 48,
+                    "column": 30
+                  }
+                }
+              },
+              "kind": "method",
+              "computed": false,
+              "range": [
+                895,
+                923
+              ],
+              "loc": {
+                "start": {
+                  "line": 48,
+                  "column": 2
+                },
+                "end": {
+                  "line": 48,
+                  "column": 30
+                }
+              },
+              "leadingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   ",
+                  "range": [
+                    821,
+                    892
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 44,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 47,
+                      "column": 5
+                    }
+                  }
+                }
+              ],
+              "trailingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   ",
+                  "range": [
+                    927,
+                    998
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 50,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 53,
+                      "column": 5
+                    }
+                  }
+                }
+              ],
+              "static": false
+            },
+            {
+              "type": "MethodDefinition",
+              "key": {
+                "type": "Identifier",
+                "name": "get_device_domain",
+                "range": [
+                  1001,
+                  1018
+                ],
+                "loc": {
+                  "start": {
+                    "line": 54,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 54,
+                    "column": 19
+                  }
+                }
+              },
+              "value": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [
+                  {
+                    "type": "Identifier",
+                    "name": "pattern",
+                    "range": [
+                      1019,
+                      1026
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 54,
+                        "column": 20
+                      },
+                      "end": {
+                        "line": 54,
+                        "column": 27
+                      }
+                    }
+                  }
+                ],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [],
+                  "range": [
+                    1028,
+                    1031
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 54,
+                      "column": 29
+                    },
+                    "end": {
+                      "line": 54,
+                      "column": 32
+                    }
+                  }
+                },
+                "generator": false,
+                "expression": false,
+                "range": [
+                  1018,
+                  1031
+                ],
+                "loc": {
+                  "start": {
+                    "line": 54,
+                    "column": 19
+                  },
+                  "end": {
+                    "line": 54,
+                    "column": 32
+                  }
+                }
+              },
+              "kind": "method",
+              "computed": false,
+              "range": [
+                1001,
+                1031
+              ],
+              "loc": {
+                "start": {
+                  "line": 54,
+                  "column": 2
+                },
+                "end": {
+                  "line": 54,
+                  "column": 32
+                }
+              },
+              "leadingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   ",
+                  "range": [
+                    927,
+                    998
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 50,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 53,
+                      "column": 5
+                    }
+                  }
+                }
+              ],
+              "trailingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   ",
+                  "range": [
+                    1035,
+                    1106
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 56,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 59,
+                      "column": 5
+                    }
+                  }
+                }
+              ],
+              "static": false
+            },
+            {
+              "type": "MethodDefinition",
+              "key": {
+                "type": "Identifier",
+                "name": "get_device_family",
+                "range": [
+                  1109,
+                  1126
+                ],
+                "loc": {
+                  "start": {
+                    "line": 60,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 60,
+                    "column": 19
+                  }
+                }
+              },
+              "value": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [
+                  {
+                    "type": "Identifier",
+                    "name": "pattern",
+                    "range": [
+                      1127,
+                      1134
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 60,
+                        "column": 20
+                      },
+                      "end": {
+                        "line": 60,
+                        "column": 27
+                      }
+                    }
+                  }
+                ],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [],
+                  "range": [
+                    1136,
+                    1139
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 60,
+                      "column": 29
+                    },
+                    "end": {
+                      "line": 60,
+                      "column": 32
+                    }
+                  }
+                },
+                "generator": false,
+                "expression": false,
+                "range": [
+                  1126,
+                  1139
+                ],
+                "loc": {
+                  "start": {
+                    "line": 60,
+                    "column": 19
+                  },
+                  "end": {
+                    "line": 60,
+                    "column": 32
+                  }
+                }
+              },
+              "kind": "method",
+              "computed": false,
+              "range": [
+                1109,
+                1139
+              ],
+              "loc": {
+                "start": {
+                  "line": 60,
+                  "column": 2
+                },
+                "end": {
+                  "line": 60,
+                  "column": 32
+                }
+              },
+              "leadingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   ",
+                  "range": [
+                    1035,
+                    1106
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 56,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 59,
+                      "column": 5
+                    }
+                  }
+                }
+              ],
+              "trailingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   ",
+                  "range": [
+                    1143,
+                    1214
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 62,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 65,
+                      "column": 5
+                    }
+                  }
+                }
+              ],
+              "static": false
+            },
+            {
+              "type": "MethodDefinition",
+              "key": {
+                "type": "Identifier",
+                "name": "get_device_member",
+                "range": [
+                  1217,
+                  1234
+                ],
+                "loc": {
+                  "start": {
+                    "line": 66,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 66,
+                    "column": 19
+                  }
+                }
+              },
+              "value": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [
+                  {
+                    "type": "Identifier",
+                    "name": "pattern",
+                    "range": [
+                      1235,
+                      1242
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 66,
+                        "column": 20
+                      },
+                      "end": {
+                        "line": 66,
+                        "column": 27
+                      }
+                    }
+                  }
+                ],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [],
+                  "range": [
+                    1244,
+                    1247
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 66,
+                      "column": 29
+                    },
+                    "end": {
+                      "line": 66,
+                      "column": 32
+                    }
+                  }
+                },
+                "generator": false,
+                "expression": false,
+                "range": [
+                  1234,
+                  1247
+                ],
+                "loc": {
+                  "start": {
+                    "line": 66,
+                    "column": 19
+                  },
+                  "end": {
+                    "line": 66,
+                    "column": 32
+                  }
+                }
+              },
+              "kind": "method",
+              "computed": false,
+              "range": [
+                1217,
+                1247
+              ],
+              "loc": {
+                "start": {
+                  "line": 66,
+                  "column": 2
+                },
+                "end": {
+                  "line": 66,
+                  "column": 32
+                }
+              },
+              "leadingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   ",
+                  "range": [
+                    1143,
+                    1214
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 62,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 65,
+                      "column": 5
+                    }
+                  }
+                }
+              ],
+              "trailingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} devname\n   * @param {string} pattern\n   ",
+                  "range": [
+                    1251,
+                    1351
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 68,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 72,
+                      "column": 5
+                    }
+                  }
+                }
+              ],
+              "static": false
+            },
+            {
+              "type": "MethodDefinition",
+              "key": {
+                "type": "Identifier",
+                "name": "get_device_property_list",
+                "range": [
+                  1354,
+                  1378
+                ],
+                "loc": {
+                  "start": {
+                    "line": 73,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 73,
+                    "column": 26
+                  }
+                }
+              },
+              "value": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [
+                  {
+                    "type": "Identifier",
+                    "name": "devname",
+                    "range": [
+                      1379,
+                      1386
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 73,
+                        "column": 27
+                      },
+                      "end": {
+                        "line": 73,
+                        "column": 34
+                      }
+                    }
+                  },
+                  {
+                    "type": "Identifier",
+                    "name": "pattern",
+                    "range": [
+                      1388,
+                      1395
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 73,
+                        "column": 36
+                      },
+                      "end": {
+                        "line": 73,
+                        "column": 43
+                      }
+                    }
+                  }
+                ],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [],
+                  "range": [
+                    1397,
+                    1400
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 73,
+                      "column": 45
+                    },
+                    "end": {
+                      "line": 73,
+                      "column": 48
+                    }
+                  }
+                },
+                "generator": false,
+                "expression": false,
+                "range": [
+                  1378,
+                  1400
+                ],
+                "loc": {
+                  "start": {
+                    "line": 73,
+                    "column": 26
+                  },
+                  "end": {
+                    "line": 73,
+                    "column": 48
+                  }
+                }
+              },
+              "kind": "method",
+              "computed": false,
+              "range": [
+                1354,
+                1400
+              ],
+              "loc": {
+                "start": {
+                  "line": 73,
+                  "column": 2
+                },
+                "end": {
+                  "line": 73,
+                  "column": 48
+                }
+              },
+              "leadingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} devname\n   * @param {string} pattern\n   ",
+                  "range": [
+                    1251,
+                    1351
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 68,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 72,
+                      "column": 5
+                    }
+                  }
+                }
+              ],
+              "trailingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n   * @return {Promise<DbDatum>|Promise<DbDatum[]>}\n   * @param {string} devname\n   * @param {string|string[]|DbDatum[]} propnames\n   ",
+                  "range": [
+                    1404,
+                    1543
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 75,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 79,
+                      "column": 5
+                    }
+                  }
+                }
+              ],
+              "static": false
+            },
+            {
+              "type": "MethodDefinition",
+              "key": {
+                "type": "Identifier",
+                "name": "get_device_property",
+                "range": [
+                  1546,
+                  1565
+                ],
+                "loc": {
+                  "start": {
+                    "line": 80,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 80,
+                    "column": 21
+                  }
+                }
+              },
+              "value": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [
+                  {
+                    "type": "Identifier",
+                    "name": "devname",
+                    "range": [
+                      1566,
+                      1573
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 80,
+                        "column": 22
+                      },
+                      "end": {
+                        "line": 80,
+                        "column": 29
+                      }
+                    }
+                  },
+                  {
+                    "type": "Identifier",
+                    "name": "propnames",
+                    "range": [
+                      1575,
+                      1584
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 80,
+                        "column": 31
+                      },
+                      "end": {
+                        "line": 80,
+                        "column": 40
+                      }
+                    }
+                  }
+                ],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [],
+                  "range": [
+                    1586,
+                    1589
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 80,
+                      "column": 42
+                    },
+                    "end": {
+                      "line": 80,
+                      "column": 45
+                    }
+                  }
+                },
+                "generator": false,
+                "expression": false,
+                "range": [
+                  1565,
+                  1589
+                ],
+                "loc": {
+                  "start": {
+                    "line": 80,
+                    "column": 21
+                  },
+                  "end": {
+                    "line": 80,
+                    "column": 45
+                  }
+                }
+              },
+              "kind": "method",
+              "computed": false,
+              "range": [
+                1546,
+                1589
+              ],
+              "loc": {
+                "start": {
+                  "line": 80,
+                  "column": 2
+                },
+                "end": {
+                  "line": 80,
+                  "column": 45
+                }
+              },
+              "leadingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n   * @return {Promise<DbDatum>|Promise<DbDatum[]>}\n   * @param {string} devname\n   * @param {string|string[]|DbDatum[]} propnames\n   ",
+                  "range": [
+                    1404,
+                    1543
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 75,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 79,
+                      "column": 5
+                    }
+                  }
+                }
+              ],
+              "trailingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n   * @return {Promise<undefined>}\n   * @param {string} devname\n   * @param {DbDatum[]} properties\n   ",
+                  "range": [
+                    1593,
+                    1700
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 82,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 86,
+                      "column": 5
+                    }
+                  }
+                }
+              ],
+              "static": false
+            },
+            {
+              "type": "MethodDefinition",
+              "key": {
+                "type": "Identifier",
+                "name": "put_device_property",
+                "range": [
+                  1703,
+                  1722
+                ],
+                "loc": {
+                  "start": {
+                    "line": 87,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 87,
+                    "column": 21
+                  }
+                }
+              },
+              "value": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [
+                  {
+                    "type": "Identifier",
+                    "name": "devname",
+                    "range": [
+                      1723,
+                      1730
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 87,
+                        "column": 22
+                      },
+                      "end": {
+                        "line": 87,
+                        "column": 29
+                      }
+                    }
+                  },
+                  {
+                    "type": "Identifier",
+                    "name": "properties",
+                    "range": [
+                      1732,
+                      1742
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 87,
+                        "column": 31
+                      },
+                      "end": {
+                        "line": 87,
+                        "column": 41
+                      }
+                    }
+                  }
+                ],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [],
+                  "range": [
+                    1744,
+                    1747
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 87,
+                      "column": 43
+                    },
+                    "end": {
+                      "line": 87,
+                      "column": 46
+                    }
+                  }
+                },
+                "generator": false,
+                "expression": false,
+                "range": [
+                  1722,
+                  1747
+                ],
+                "loc": {
+                  "start": {
+                    "line": 87,
+                    "column": 21
+                  },
+                  "end": {
+                    "line": 87,
+                    "column": 46
+                  }
+                }
+              },
+              "kind": "method",
+              "computed": false,
+              "range": [
+                1703,
+                1747
+              ],
+              "loc": {
+                "start": {
+                  "line": 87,
+                  "column": 2
+                },
+                "end": {
+                  "line": 87,
+                  "column": 46
+                }
+              },
+              "leadingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n   * @return {Promise<undefined>}\n   * @param {string} devname\n   * @param {DbDatum[]} properties\n   ",
+                  "range": [
+                    1593,
+                    1700
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 82,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 86,
+                      "column": 5
+                    }
+                  }
+                }
+              ],
+              "trailingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n   * @return {Promise<undefined>}\n   * @param {string} devname\n   * @param {string|string[]|DbDatum[]} propnames property names\n   ",
+                  "range": [
+                    1751,
+                    1888
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 89,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 93,
+                      "column": 5
+                    }
+                  }
+                }
+              ],
+              "static": false
+            },
+            {
+              "type": "MethodDefinition",
+              "key": {
+                "type": "Identifier",
+                "name": "delete_device_property",
+                "range": [
+                  1891,
+                  1913
+                ],
+                "loc": {
+                  "start": {
+                    "line": 94,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 94,
+                    "column": 24
+                  }
+                }
+              },
+              "value": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [
+                  {
+                    "type": "Identifier",
+                    "name": "devname",
+                    "range": [
+                      1914,
+                      1921
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 94,
+                        "column": 25
+                      },
+                      "end": {
+                        "line": 94,
+                        "column": 32
+                      }
+                    }
+                  },
+                  {
+                    "type": "Identifier",
+                    "name": "propnames",
+                    "range": [
+                      1923,
+                      1932
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 94,
+                        "column": 34
+                      },
+                      "end": {
+                        "line": 94,
+                        "column": 43
+                      }
+                    }
+                  }
+                ],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [],
+                  "range": [
+                    1934,
+                    1937
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 94,
+                      "column": 45
+                    },
+                    "end": {
+                      "line": 94,
+                      "column": 48
+                    }
+                  }
+                },
+                "generator": false,
+                "expression": false,
+                "range": [
+                  1913,
+                  1937
+                ],
+                "loc": {
+                  "start": {
+                    "line": 94,
+                    "column": 24
+                  },
+                  "end": {
+                    "line": 94,
+                    "column": 48
+                  }
+                }
+              },
+              "kind": "method",
+              "computed": false,
+              "range": [
+                1891,
+                1937
+              ],
+              "loc": {
+                "start": {
+                  "line": 94,
+                  "column": 2
+                },
+                "end": {
+                  "line": 94,
+                  "column": 48
+                }
+              },
+              "leadingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n   * @return {Promise<undefined>}\n   * @param {string} devname\n   * @param {string|string[]|DbDatum[]} propnames property names\n   ",
+                  "range": [
+                    1751,
+                    1888
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 89,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 93,
+                      "column": 5
+                    }
+                  }
+                }
+              ],
+              "trailingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} devname\n   ",
+                  "range": [
+                    1941,
+                    2012
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 96,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 99,
+                      "column": 5
+                    }
+                  }
+                }
+              ],
+              "static": false
+            },
+            {
+              "type": "MethodDefinition",
+              "key": {
+                "type": "Identifier",
+                "name": "get_device_attribute_list",
+                "range": [
+                  2015,
+                  2040
+                ],
+                "loc": {
+                  "start": {
+                    "line": 100,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 100,
+                    "column": 27
+                  }
+                }
+              },
+              "value": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [
+                  {
+                    "type": "Identifier",
+                    "name": "devname",
+                    "range": [
+                      2041,
+                      2048
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 100,
+                        "column": 28
+                      },
+                      "end": {
+                        "line": 100,
+                        "column": 35
+                      }
+                    }
+                  }
+                ],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [],
+                  "range": [
+                    2050,
+                    2053
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 100,
+                      "column": 37
+                    },
+                    "end": {
+                      "line": 100,
+                      "column": 40
+                    }
+                  }
+                },
+                "generator": false,
+                "expression": false,
+                "range": [
+                  2040,
+                  2053
+                ],
+                "loc": {
+                  "start": {
+                    "line": 100,
+                    "column": 27
+                  },
+                  "end": {
+                    "line": 100,
+                    "column": 40
+                  }
+                }
+              },
+              "kind": "method",
+              "computed": false,
+              "range": [
+                2015,
+                2053
+              ],
+              "loc": {
+                "start": {
+                  "line": 100,
+                  "column": 2
+                },
+                "end": {
+                  "line": 100,
+                  "column": 40
+                }
+              },
+              "leadingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} devname\n   ",
+                  "range": [
+                    1941,
+                    2012
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 96,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 99,
+                      "column": 5
+                    }
+                  }
+                }
+              ],
+              "trailingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n   * @return {Promise<AttributeInfo>|Promise<AttributeInfo[]>}\n   * @param {string} devname\n   * @param {undefined|string|string[]} attnames\n   ",
+                  "range": [
+                    2057,
+                    2207
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 102,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 106,
+                      "column": 5
+                    }
+                  }
+                }
+              ],
+              "static": false
+            },
+            {
+              "type": "MethodDefinition",
+              "key": {
+                "type": "Identifier",
+                "name": "get_device_attribute_info",
+                "range": [
+                  2210,
+                  2235
+                ],
+                "loc": {
+                  "start": {
+                    "line": 107,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 107,
+                    "column": 27
+                  }
+                }
+              },
+              "value": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [
+                  {
+                    "type": "Identifier",
+                    "name": "devname",
+                    "range": [
+                      2236,
+                      2243
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 107,
+                        "column": 28
+                      },
+                      "end": {
+                        "line": 107,
+                        "column": 35
+                      }
+                    }
+                  },
+                  {
+                    "type": "Identifier",
+                    "name": "attnames",
+                    "range": [
+                      2245,
+                      2253
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 107,
+                        "column": 37
+                      },
+                      "end": {
+                        "line": 107,
+                        "column": 45
+                      }
+                    }
+                  }
+                ],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [],
+                  "range": [
+                    2255,
+                    2258
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 107,
+                      "column": 47
+                    },
+                    "end": {
+                      "line": 107,
+                      "column": 50
+                    }
+                  }
+                },
+                "generator": false,
+                "expression": false,
+                "range": [
+                  2235,
+                  2258
+                ],
+                "loc": {
+                  "start": {
+                    "line": 107,
+                    "column": 27
+                  },
+                  "end": {
+                    "line": 107,
+                    "column": 50
+                  }
+                }
+              },
+              "kind": "method",
+              "computed": false,
+              "range": [
+                2210,
+                2258
+              ],
+              "loc": {
+                "start": {
+                  "line": 107,
+                  "column": 2
+                },
+                "end": {
+                  "line": 107,
+                  "column": 50
+                }
+              },
+              "leadingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n   * @return {Promise<AttributeInfo>|Promise<AttributeInfo[]>}\n   * @param {string} devname\n   * @param {undefined|string|string[]} attnames\n   ",
+                  "range": [
+                    2057,
+                    2207
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 102,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 106,
+                      "column": 5
+                    }
+                  }
+                }
+              ],
+              "trailingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n   * @return {Promise<DeviceAttribute>|Promise<DeviceAttribute[]>}\n   * @param {string} devname\n   * @param {string|string[]} attname\n   ",
+                  "range": [
+                    2262,
+                    2405
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 109,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 113,
+                      "column": 5
+                    }
+                  }
+                }
+              ],
+              "static": false
+            },
+            {
+              "type": "MethodDefinition",
+              "key": {
+                "type": "Identifier",
+                "name": "read_device_attribute",
+                "range": [
+                  2408,
+                  2429
+                ],
+                "loc": {
+                  "start": {
+                    "line": 114,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 114,
+                    "column": 23
+                  }
+                }
+              },
+              "value": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [
+                  {
+                    "type": "Identifier",
+                    "name": "devname",
+                    "range": [
+                      2430,
+                      2437
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 114,
+                        "column": 24
+                      },
+                      "end": {
+                        "line": 114,
+                        "column": 31
+                      }
+                    }
+                  },
+                  {
+                    "type": "Identifier",
+                    "name": "attname",
+                    "range": [
+                      2439,
+                      2446
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 114,
+                        "column": 33
+                      },
+                      "end": {
+                        "line": 114,
+                        "column": 40
+                      }
+                    }
+                  }
+                ],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [],
+                  "range": [
+                    2448,
+                    2451
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 114,
+                      "column": 42
+                    },
+                    "end": {
+                      "line": 114,
+                      "column": 45
+                    }
+                  }
+                },
+                "generator": false,
+                "expression": false,
+                "range": [
+                  2429,
+                  2451
+                ],
+                "loc": {
+                  "start": {
+                    "line": 114,
+                    "column": 23
+                  },
+                  "end": {
+                    "line": 114,
+                    "column": 45
+                  }
+                }
+              },
+              "kind": "method",
+              "computed": false,
+              "range": [
+                2408,
+                2451
+              ],
+              "loc": {
+                "start": {
+                  "line": 114,
+                  "column": 2
+                },
+                "end": {
+                  "line": 114,
+                  "column": 45
+                }
+              },
+              "leadingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n   * @return {Promise<DeviceAttribute>|Promise<DeviceAttribute[]>}\n   * @param {string} devname\n   * @param {string|string[]} attname\n   ",
+                  "range": [
+                    2262,
+                    2405
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 109,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 113,
+                      "column": 5
+                    }
+                  }
+                }
+              ],
+              "trailingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n   * @return {Promise<undefined>}\n   * @param {string} devname\n   * @param {DeviceAttribute|DeviceAttribute[]} attrs\n   ",
+                  "range": [
+                    2455,
+                    2581
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 116,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 120,
+                      "column": 5
+                    }
+                  }
+                }
+              ],
+              "static": false
+            },
+            {
+              "type": "MethodDefinition",
+              "key": {
+                "type": "Identifier",
+                "name": "write_device_attribute",
+                "range": [
+                  2584,
+                  2606
+                ],
+                "loc": {
+                  "start": {
+                    "line": 121,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 121,
+                    "column": 24
+                  }
+                }
+              },
+              "value": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [
+                  {
+                    "type": "Identifier",
+                    "name": "devname",
+                    "range": [
+                      2607,
+                      2614
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 121,
+                        "column": 25
+                      },
+                      "end": {
+                        "line": 121,
+                        "column": 32
+                      }
+                    }
+                  },
+                  {
+                    "type": "Identifier",
+                    "name": "attrs",
+                    "range": [
+                      2616,
+                      2621
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 121,
+                        "column": 34
+                      },
+                      "end": {
+                        "line": 121,
+                        "column": 39
+                      }
+                    }
+                  }
+                ],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [],
+                  "range": [
+                    2623,
+                    2626
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 121,
+                      "column": 41
+                    },
+                    "end": {
+                      "line": 121,
+                      "column": 44
+                    }
+                  }
+                },
+                "generator": false,
+                "expression": false,
+                "range": [
+                  2606,
+                  2626
+                ],
+                "loc": {
+                  "start": {
+                    "line": 121,
+                    "column": 24
+                  },
+                  "end": {
+                    "line": 121,
+                    "column": 44
+                  }
+                }
+              },
+              "kind": "method",
+              "computed": false,
+              "range": [
+                2584,
+                2626
+              ],
+              "loc": {
+                "start": {
+                  "line": 121,
+                  "column": 2
+                },
+                "end": {
+                  "line": 121,
+                  "column": 44
+                }
+              },
+              "leadingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n   * @return {Promise<undefined>}\n   * @param {string} devname\n   * @param {DeviceAttribute|DeviceAttribute[]} attrs\n   ",
+                  "range": [
+                    2455,
+                    2581
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 116,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 120,
+                      "column": 5
+                    }
+                  }
+                }
+              ],
+              "trailingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n   * @return {Promise<DeviceAttribute>|Promise<DeviceAttribute[]>}\n   * @param {string} devname\n   * @param {DeviceAttribute|DeviceAttribute[]} attrs\n   ",
+                  "range": [
+                    2630,
+                    2789
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 123,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 127,
+                      "column": 5
+                    }
+                  }
+                }
+              ],
+              "static": false
+            },
+            {
+              "type": "MethodDefinition",
+              "key": {
+                "type": "Identifier",
+                "name": "write_read_device_attribute",
+                "range": [
+                  2792,
+                  2819
+                ],
+                "loc": {
+                  "start": {
+                    "line": 128,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 128,
+                    "column": 29
+                  }
+                }
+              },
+              "value": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [
+                  {
+                    "type": "Identifier",
+                    "name": "devname",
+                    "range": [
+                      2820,
+                      2827
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 128,
+                        "column": 30
+                      },
+                      "end": {
+                        "line": 128,
+                        "column": 37
+                      }
+                    }
+                  },
+                  {
+                    "type": "Identifier",
+                    "name": "attrs",
+                    "range": [
+                      2829,
+                      2834
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 128,
+                        "column": 39
+                      },
+                      "end": {
+                        "line": 128,
+                        "column": 44
+                      }
+                    }
+                  }
+                ],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [],
+                  "range": [
+                    2836,
+                    2839
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 128,
+                      "column": 46
+                    },
+                    "end": {
+                      "line": 128,
+                      "column": 49
+                    }
+                  }
+                },
+                "generator": false,
+                "expression": false,
+                "range": [
+                  2819,
+                  2839
+                ],
+                "loc": {
+                  "start": {
+                    "line": 128,
+                    "column": 29
+                  },
+                  "end": {
+                    "line": 128,
+                    "column": 49
+                  }
+                }
+              },
+              "kind": "method",
+              "computed": false,
+              "range": [
+                2792,
+                2839
+              ],
+              "loc": {
+                "start": {
+                  "line": 128,
+                  "column": 2
+                },
+                "end": {
+                  "line": 128,
+                  "column": 49
+                }
+              },
+              "leadingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n   * @return {Promise<DeviceAttribute>|Promise<DeviceAttribute[]>}\n   * @param {string} devname\n   * @param {DeviceAttribute|DeviceAttribute[]} attrs\n   ",
+                  "range": [
+                    2630,
+                    2789
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 123,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 127,
+                      "column": 5
+                    }
+                  }
+                }
+              ],
+              "trailingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n   * @return {Promise<DeviceData>}\n   * @param {string} devname\n   * @param {string} cmdname\n   * @param {undefined|DeviceData} argin\n   ",
+                  "range": [
+                    2843,
+                    2986
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 130,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 135,
+                      "column": 5
+                    }
+                  }
+                }
+              ],
+              "static": false
+            },
+            {
+              "type": "MethodDefinition",
+              "key": {
+                "type": "Identifier",
+                "name": "device_command_inout",
+                "range": [
+                  2989,
+                  3009
+                ],
+                "loc": {
+                  "start": {
+                    "line": 136,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 136,
+                    "column": 22
+                  }
+                }
+              },
+              "value": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [
+                  {
+                    "type": "Identifier",
+                    "name": "devname",
+                    "range": [
+                      3010,
+                      3017
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 136,
+                        "column": 23
+                      },
+                      "end": {
+                        "line": 136,
+                        "column": 30
+                      }
+                    }
+                  },
+                  {
+                    "type": "Identifier",
+                    "name": "cmdname",
+                    "range": [
+                      3019,
+                      3026
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 136,
+                        "column": 32
+                      },
+                      "end": {
+                        "line": 136,
+                        "column": 39
+                      }
+                    }
+                  },
+                  {
+                    "type": "Identifier",
+                    "name": "argin",
+                    "range": [
+                      3028,
+                      3033
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 136,
+                        "column": 41
+                      },
+                      "end": {
+                        "line": 136,
+                        "column": 46
+                      }
+                    }
+                  }
+                ],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [],
+                  "range": [
+                    3035,
+                    3038
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 136,
+                      "column": 48
+                    },
+                    "end": {
+                      "line": 136,
+                      "column": 51
+                    }
+                  }
+                },
+                "generator": false,
+                "expression": false,
+                "range": [
+                  3009,
+                  3038
+                ],
+                "loc": {
+                  "start": {
+                    "line": 136,
+                    "column": 22
+                  },
+                  "end": {
+                    "line": 136,
+                    "column": 51
+                  }
+                }
+              },
+              "kind": "method",
+              "computed": false,
+              "range": [
+                2989,
+                3038
+              ],
+              "loc": {
+                "start": {
+                  "line": 136,
+                  "column": 2
+                },
+                "end": {
+                  "line": 136,
+                  "column": 51
+                }
+              },
+              "leadingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n   * @return {Promise<DeviceData>}\n   * @param {string} devname\n   * @param {string} cmdname\n   * @param {undefined|DeviceData} argin\n   ",
+                  "range": [
+                    2843,
+                    2986
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 130,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 135,
+                      "column": 5
+                    }
+                  }
+                }
+              ],
+              "trailingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n   * @return {Promise<CommandInfo>}\n   * @param {string} devname\n   * @param {string} cmdname\n   ",
+                  "range": [
+                    3042,
+                    3145
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 138,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 142,
+                      "column": 5
+                    }
+                  }
+                }
+              ],
+              "static": false
+            },
+            {
+              "type": "MethodDefinition",
+              "key": {
+                "type": "Identifier",
+                "name": "device_command_query",
+                "range": [
+                  3148,
+                  3168
+                ],
+                "loc": {
+                  "start": {
+                    "line": 143,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 143,
+                    "column": 22
+                  }
+                }
+              },
+              "value": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [
+                  {
+                    "type": "Identifier",
+                    "name": "devname",
+                    "range": [
+                      3169,
+                      3176
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 143,
+                        "column": 23
+                      },
+                      "end": {
+                        "line": 143,
+                        "column": 30
+                      }
+                    }
+                  },
+                  {
+                    "type": "Identifier",
+                    "name": "cmdname",
+                    "range": [
+                      3178,
+                      3185
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 143,
+                        "column": 32
+                      },
+                      "end": {
+                        "line": 143,
+                        "column": 39
+                      }
+                    }
+                  }
+                ],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [],
+                  "range": [
+                    3187,
+                    3190
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 143,
+                      "column": 41
+                    },
+                    "end": {
+                      "line": 143,
+                      "column": 44
+                    }
+                  }
+                },
+                "generator": false,
+                "expression": false,
+                "range": [
+                  3168,
+                  3190
+                ],
+                "loc": {
+                  "start": {
+                    "line": 143,
+                    "column": 22
+                  },
+                  "end": {
+                    "line": 143,
+                    "column": 44
+                  }
+                }
+              },
+              "kind": "method",
+              "computed": false,
+              "range": [
+                3148,
+                3190
+              ],
+              "loc": {
+                "start": {
+                  "line": 143,
+                  "column": 2
+                },
+                "end": {
+                  "line": 143,
+                  "column": 44
+                }
+              },
+              "leadingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n   * @return {Promise<CommandInfo>}\n   * @param {string} devname\n   * @param {string} cmdname\n   ",
+                  "range": [
+                    3042,
+                    3145
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 138,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 142,
+                      "column": 5
+                    }
+                  }
+                }
+              ],
+              "trailingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n   * @return {Promise<CommandInfo[]>}\n   * @param {string} devname\n   ",
+                  "range": [
+                    3194,
+                    3270
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 145,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 148,
+                      "column": 5
+                    }
+                  }
+                }
+              ],
+              "static": false
+            },
+            {
+              "type": "MethodDefinition",
+              "key": {
+                "type": "Identifier",
+                "name": "device_command_list_query",
+                "range": [
+                  3273,
+                  3298
+                ],
+                "loc": {
+                  "start": {
+                    "line": 149,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 149,
+                    "column": 27
+                  }
+                }
+              },
+              "value": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [
+                  {
+                    "type": "Identifier",
+                    "name": "devname",
+                    "range": [
+                      3299,
+                      3306
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 149,
+                        "column": 28
+                      },
+                      "end": {
+                        "line": 149,
+                        "column": 35
+                      }
+                    }
+                  }
+                ],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [],
+                  "range": [
+                    3308,
+                    3311
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 149,
+                      "column": 37
+                    },
+                    "end": {
+                      "line": 149,
+                      "column": 40
+                    }
+                  }
+                },
+                "generator": false,
+                "expression": false,
+                "range": [
+                  3298,
+                  3311
+                ],
+                "loc": {
+                  "start": {
+                    "line": 149,
+                    "column": 27
+                  },
+                  "end": {
+                    "line": 149,
+                    "column": 40
+                  }
+                }
+              },
+              "kind": "method",
+              "computed": false,
+              "range": [
+                3273,
+                3311
+              ],
+              "loc": {
+                "start": {
+                  "line": 149,
+                  "column": 2
+                },
+                "end": {
+                  "line": 149,
+                  "column": 40
+                }
+              },
+              "leadingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n   * @return {Promise<CommandInfo[]>}\n   * @param {string} devname\n   ",
+                  "range": [
+                    3194,
+                    3270
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 145,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 148,
+                      "column": 5
+                    }
+                  }
+                }
+              ],
+              "static": false
+            }
+          ],
+          "range": [
+            495,
+            3313
+          ],
+          "loc": {
+            "start": {
+              "line": 24,
+              "column": 23
+            },
+            "end": {
+              "line": 150,
+              "column": 1
+            }
+          }
+        },
+        "range": [
+          479,
+          3313
+        ],
+        "loc": {
+          "start": {
+            "line": 24,
+            "column": 7
+          },
+          "end": {
+            "line": 150,
+            "column": 1
+          }
+        },
+        "leadingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * Tangojs connector interface. This class contains backend-specific\n * logic. Each connector plugin have to provide implementation\n * of this interface.\n * @interface\n ",
+            "range": [
+              296,
+              471
+            ],
+            "loc": {
+              "start": {
+                "line": 18,
+                "column": 0
+              },
+              "end": {
+                "line": 23,
+                "column": 3
+              }
+            }
+          }
+        ],
+        "trailingComments": []
+      },
+      "specifiers": [],
+      "source": null,
+      "range": [
+        472,
+        3313
+      ],
+      "loc": {
+        "start": {
+          "line": 24,
+          "column": 0
+        },
+        "end": {
+          "line": 150,
+          "column": 1
+        }
+      },
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * Tangojs connector interface. This class contains backend-specific\n * logic. Each connector plugin have to provide implementation\n * of this interface.\n * @interface\n ",
+          "range": [
+            296,
+            471
+          ],
+          "loc": {
+            "start": {
+              "line": 18,
+              "column": 0
+            },
+            "end": {
+              "line": 23,
+              "column": 3
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "sourceType": "module",
+  "range": [
+    104,
+    3313
+  ],
+  "loc": {
+    "start": {
+      "line": 8,
+      "column": 0
+    },
+    "end": {
+      "line": 150,
+      "column": 1
+    }
+  },
+  "comments": [
+    {
+      "type": "Block",
+      "value": " eslint-disable no-unused-vars ",
+      "range": [
+        1,
+        36
+      ],
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 0
+        },
+        "end": {
+          "line": 2,
+          "column": 35
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\n * Backend-specific connector implementation.\n * @private\n ",
+      "range": [
+        38,
+        103
+      ],
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 0
+        },
+        "end": {
+          "line": 7,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\n * Sets connector interface implementation.\n * @param {Connector} conn connector implementation\n ",
+      "range": [
+        133,
+        236
+      ],
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 0
+        },
+        "end": {
+          "line": 13,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\n * Tangojs connector interface. This class contains backend-specific\n * logic. Each connector plugin have to provide implementation\n * of this interface.\n * @interface\n ",
+      "range": [
+        296,
+        471
+      ],
+      "loc": {
+        "start": {
+          "line": 18,
+          "column": 0
+        },
+        "end": {
+          "line": 23,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\n   * @return {Promise<string>}\n   * @param {string} devname\n   ",
+      "range": [
+        500,
+        569
+      ],
+      "loc": {
+        "start": {
+          "line": 26,
+          "column": 2
+        },
+        "end": {
+          "line": 29,
+          "column": 5
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\n   * @return {Promise<DevState>}\n   * @param {string} devname\n   ",
+      "range": [
+        606,
+        677
+      ],
+      "loc": {
+        "start": {
+          "line": 32,
+          "column": 2
+        },
+        "end": {
+          "line": 35,
+          "column": 5
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\n   * @return {Promise<DeviceInfo>}\n   * @param {string} devname\n   ",
+      "range": [
+        713,
+        786
+      ],
+      "loc": {
+        "start": {
+          "line": 38,
+          "column": 2
+        },
+        "end": {
+          "line": 41,
+          "column": 5
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   ",
+      "range": [
+        821,
+        892
+      ],
+      "loc": {
+        "start": {
+          "line": 44,
+          "column": 2
+        },
+        "end": {
+          "line": 47,
+          "column": 5
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   ",
+      "range": [
+        927,
+        998
+      ],
+      "loc": {
+        "start": {
+          "line": 50,
+          "column": 2
+        },
+        "end": {
+          "line": 53,
+          "column": 5
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   ",
+      "range": [
+        1035,
+        1106
+      ],
+      "loc": {
+        "start": {
+          "line": 56,
+          "column": 2
+        },
+        "end": {
+          "line": 59,
+          "column": 5
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   ",
+      "range": [
+        1143,
+        1214
+      ],
+      "loc": {
+        "start": {
+          "line": 62,
+          "column": 2
+        },
+        "end": {
+          "line": 65,
+          "column": 5
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} devname\n   * @param {string} pattern\n   ",
+      "range": [
+        1251,
+        1351
+      ],
+      "loc": {
+        "start": {
+          "line": 68,
+          "column": 2
+        },
+        "end": {
+          "line": 72,
+          "column": 5
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\n   * @return {Promise<DbDatum>|Promise<DbDatum[]>}\n   * @param {string} devname\n   * @param {string|string[]|DbDatum[]} propnames\n   ",
+      "range": [
+        1404,
+        1543
+      ],
+      "loc": {
+        "start": {
+          "line": 75,
+          "column": 2
+        },
+        "end": {
+          "line": 79,
+          "column": 5
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\n   * @return {Promise<undefined>}\n   * @param {string} devname\n   * @param {DbDatum[]} properties\n   ",
+      "range": [
+        1593,
+        1700
+      ],
+      "loc": {
+        "start": {
+          "line": 82,
+          "column": 2
+        },
+        "end": {
+          "line": 86,
+          "column": 5
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\n   * @return {Promise<undefined>}\n   * @param {string} devname\n   * @param {string|string[]|DbDatum[]} propnames property names\n   ",
+      "range": [
+        1751,
+        1888
+      ],
+      "loc": {
+        "start": {
+          "line": 89,
+          "column": 2
+        },
+        "end": {
+          "line": 93,
+          "column": 5
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} devname\n   ",
+      "range": [
+        1941,
+        2012
+      ],
+      "loc": {
+        "start": {
+          "line": 96,
+          "column": 2
+        },
+        "end": {
+          "line": 99,
+          "column": 5
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\n   * @return {Promise<AttributeInfo>|Promise<AttributeInfo[]>}\n   * @param {string} devname\n   * @param {undefined|string|string[]} attnames\n   ",
+      "range": [
+        2057,
+        2207
+      ],
+      "loc": {
+        "start": {
+          "line": 102,
+          "column": 2
+        },
+        "end": {
+          "line": 106,
+          "column": 5
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\n   * @return {Promise<DeviceAttribute>|Promise<DeviceAttribute[]>}\n   * @param {string} devname\n   * @param {string|string[]} attname\n   ",
+      "range": [
+        2262,
+        2405
+      ],
+      "loc": {
+        "start": {
+          "line": 109,
+          "column": 2
+        },
+        "end": {
+          "line": 113,
+          "column": 5
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\n   * @return {Promise<undefined>}\n   * @param {string} devname\n   * @param {DeviceAttribute|DeviceAttribute[]} attrs\n   ",
+      "range": [
+        2455,
+        2581
+      ],
+      "loc": {
+        "start": {
+          "line": 116,
+          "column": 2
+        },
+        "end": {
+          "line": 120,
+          "column": 5
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\n   * @return {Promise<DeviceAttribute>|Promise<DeviceAttribute[]>}\n   * @param {string} devname\n   * @param {DeviceAttribute|DeviceAttribute[]} attrs\n   ",
+      "range": [
+        2630,
+        2789
+      ],
+      "loc": {
+        "start": {
+          "line": 123,
+          "column": 2
+        },
+        "end": {
+          "line": 127,
+          "column": 5
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\n   * @return {Promise<DeviceData>}\n   * @param {string} devname\n   * @param {string} cmdname\n   * @param {undefined|DeviceData} argin\n   ",
+      "range": [
+        2843,
+        2986
+      ],
+      "loc": {
+        "start": {
+          "line": 130,
+          "column": 2
+        },
+        "end": {
+          "line": 135,
+          "column": 5
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\n   * @return {Promise<CommandInfo>}\n   * @param {string} devname\n   * @param {string} cmdname\n   ",
+      "range": [
+        3042,
+        3145
+      ],
+      "loc": {
+        "start": {
+          "line": 138,
+          "column": 2
+        },
+        "end": {
+          "line": 142,
+          "column": 5
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\n   * @return {Promise<CommandInfo[]>}\n   * @param {string} devname\n   ",
+      "range": [
+        3194,
+        3270
+      ],
+      "loc": {
+        "start": {
+          "line": 145,
+          "column": 2
+        },
+        "end": {
+          "line": 148,
+          "column": 5
+        }
+      }
+    }
+  ]
+}
