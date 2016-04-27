@@ -158,34 +158,40 @@
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">
 import { DeviceProxy } from &apos;./DeviceProxy&apos;
 
+/** @private */
+const _proxy = Symbol.for(&apos;_proxy&apos;)
+
+/** @private */
+const _cmdname = Symbol.for(&apos;_cmdname&apos;)
+
 export class CommandProxy {
 
   /**
    * @param {string} devname device name
    * @param {string} cmdname command name
    */
-  constructor(devname, cmdname) {
+  constructor (devname, cmdname) {
 
     /** @private */
-    this._cmdname = cmdname
+    this[_cmdname] = cmdname
 
     /** @private */
-    this._proxy = new DeviceProxy(devname)
+    this[_proxy] = new DeviceProxy(devname)
   }
 
   /**
-   * @return {Promise&lt;CommandInfo&gt;}
+   * @return {Promise&lt;CommandInfo,Error&gt;}
    */
-  get_info() {
-    return this._proxy.command_query(this._cmdname)
+  get_info () {
+    return this[_proxy].command_query(this[_cmdname])
   }
 
   /**
-   * @return {Promise&lt;DeviceData&gt;}
    * @param {undefined|DeviceData} argin
+   * @return {Promise&lt;DeviceData,Error&gt;}
    */
-  inout(argin) {
-    return this._proxy.command_inout(this._cmdname, argin)
+  inout (argin) {
+    return this[_proxy].command_inout(this[_cmdname], argin)
   }
 }
 </code></pre>

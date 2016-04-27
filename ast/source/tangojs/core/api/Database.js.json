@@ -146,13 +146,13 @@
                   "type": "BlockStatement",
                   "body": [],
                   "range": [
-                    84,
-                    102
+                    85,
+                    103
                   ],
                   "loc": {
                     "start": {
                       "line": 6,
-                      "column": 16
+                      "column": 17
                     },
                     "end": {
                       "line": 8,
@@ -164,8 +164,8 @@
                       "type": "Line",
                       "value": " empty",
                       "range": [
-                        90,
-                        98
+                        91,
+                        99
                       ],
                       "loc": {
                         "start": {
@@ -180,10 +180,10 @@
                     },
                     {
                       "type": "Block",
-                      "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   ",
+                      "value": "*\n   * @param {string} pattern\n   * @return {Promise<string[],Error>}\n   ",
                       "range": [
-                        106,
-                        177
+                        107,
+                        184
                       ],
                       "loc": {
                         "start": {
@@ -201,13 +201,13 @@
                 "generator": false,
                 "expression": false,
                 "range": [
-                  81,
-                  102
+                  82,
+                  103
                 ],
                 "loc": {
                   "start": {
                     "line": 6,
-                    "column": 13
+                    "column": 14
                   },
                   "end": {
                     "line": 8,
@@ -219,7 +219,7 @@
               "computed": false,
               "range": [
                 70,
-                102
+                103
               ],
               "loc": {
                 "start": {
@@ -239,8 +239,8 @@
                 "type": "Identifier",
                 "name": "get_device_list",
                 "range": [
-                  180,
-                  195
+                  187,
+                  202
                 ],
                 "loc": {
                   "start": {
@@ -261,17 +261,17 @@
                     "type": "Identifier",
                     "name": "pattern",
                     "range": [
-                      196,
-                      203
+                      204,
+                      211
                     ],
                     "loc": {
                       "start": {
                         "line": 14,
-                        "column": 18
+                        "column": 19
                       },
                       "end": {
                         "line": 14,
-                        "column": 25
+                        "column": 26
                       }
                     }
                   }
@@ -290,8 +290,8 @@
                             "type": "Identifier",
                             "name": "connector",
                             "range": [
-                              218,
-                              227
+                              226,
+                              235
                             ],
                             "loc": {
                               "start": {
@@ -308,8 +308,8 @@
                             "type": "Identifier",
                             "name": "get_device_list",
                             "range": [
-                              228,
-                              243
+                              236,
+                              251
                             ],
                             "loc": {
                               "start": {
@@ -323,8 +323,8 @@
                             }
                           },
                           "range": [
-                            218,
-                            243
+                            226,
+                            251
                           ],
                           "loc": {
                             "start": {
@@ -342,8 +342,8 @@
                             "type": "Identifier",
                             "name": "pattern",
                             "range": [
-                              244,
-                              251
+                              252,
+                              259
                             ],
                             "loc": {
                               "start": {
@@ -358,8 +358,8 @@
                           }
                         ],
                         "range": [
-                          218,
-                          252
+                          226,
+                          260
                         ],
                         "loc": {
                           "start": {
@@ -373,8 +373,8 @@
                         }
                       },
                       "range": [
-                        211,
-                        255
+                        219,
+                        263
                       ],
                       "loc": {
                         "start": {
@@ -389,13 +389,13 @@
                     }
                   ],
                   "range": [
-                    205,
-                    256
+                    213,
+                    264
                   ],
                   "loc": {
                     "start": {
                       "line": 14,
-                      "column": 27
+                      "column": 28
                     },
                     "end": {
                       "line": 16,
@@ -406,13 +406,13 @@
                 "generator": false,
                 "expression": false,
                 "range": [
-                  195,
-                  256
+                  203,
+                  264
                 ],
                 "loc": {
                   "start": {
                     "line": 14,
-                    "column": 17
+                    "column": 18
                   },
                   "end": {
                     "line": 16,
@@ -423,8 +423,8 @@
               "kind": "method",
               "computed": false,
               "range": [
-                180,
-                256
+                187,
+                264
               ],
               "loc": {
                 "start": {
@@ -441,8 +441,8 @@
                   "type": "Line",
                   "value": " empty",
                   "range": [
-                    90,
-                    98
+                    91,
+                    99
                   ],
                   "loc": {
                     "start": {
@@ -457,10 +457,10 @@
                 },
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   ",
+                  "value": "*\n   * @param {string} pattern\n   * @return {Promise<string[],Error>}\n   ",
                   "range": [
-                    106,
-                    177
+                    107,
+                    184
                   ],
                   "loc": {
                     "start": {
@@ -477,10 +477,10 @@
               "trailingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   ",
+                  "value": "*\n   * @param {string} pattern\n   * @return {Promise<string[],Error>}\n   ",
                   "range": [
-                    260,
-                    331
+                    268,
+                    345
                   ],
                   "loc": {
                     "start": {
@@ -502,8 +502,8 @@
                 "type": "Identifier",
                 "name": "get_device_domain",
                 "range": [
-                  334,
-                  351
+                  348,
+                  365
                 ],
                 "loc": {
                   "start": {
@@ -524,17 +524,17 @@
                     "type": "Identifier",
                     "name": "pattern",
                     "range": [
-                      352,
-                      359
+                      367,
+                      374
                     ],
                     "loc": {
                       "start": {
                         "line": 22,
-                        "column": 20
+                        "column": 21
                       },
                       "end": {
                         "line": 22,
-                        "column": 27
+                        "column": 28
                       }
                     }
                   }
@@ -553,8 +553,8 @@
                             "type": "Identifier",
                             "name": "connector",
                             "range": [
-                              374,
-                              383
+                              389,
+                              398
                             ],
                             "loc": {
                               "start": {
@@ -571,8 +571,8 @@
                             "type": "Identifier",
                             "name": "get_device_domain",
                             "range": [
-                              384,
-                              401
+                              399,
+                              416
                             ],
                             "loc": {
                               "start": {
@@ -586,8 +586,8 @@
                             }
                           },
                           "range": [
-                            374,
-                            401
+                            389,
+                            416
                           ],
                           "loc": {
                             "start": {
@@ -605,8 +605,8 @@
                             "type": "Identifier",
                             "name": "pattern",
                             "range": [
-                              402,
-                              409
+                              417,
+                              424
                             ],
                             "loc": {
                               "start": {
@@ -621,8 +621,8 @@
                           }
                         ],
                         "range": [
-                          374,
-                          410
+                          389,
+                          425
                         ],
                         "loc": {
                           "start": {
@@ -636,8 +636,8 @@
                         }
                       },
                       "range": [
-                        367,
-                        413
+                        382,
+                        428
                       ],
                       "loc": {
                         "start": {
@@ -652,13 +652,13 @@
                     }
                   ],
                   "range": [
-                    361,
-                    414
+                    376,
+                    429
                   ],
                   "loc": {
                     "start": {
                       "line": 22,
-                      "column": 29
+                      "column": 30
                     },
                     "end": {
                       "line": 24,
@@ -669,13 +669,13 @@
                 "generator": false,
                 "expression": false,
                 "range": [
-                  351,
-                  414
+                  366,
+                  429
                 ],
                 "loc": {
                   "start": {
                     "line": 22,
-                    "column": 19
+                    "column": 20
                   },
                   "end": {
                     "line": 24,
@@ -686,8 +686,8 @@
               "kind": "method",
               "computed": false,
               "range": [
-                334,
-                414
+                348,
+                429
               ],
               "loc": {
                 "start": {
@@ -702,10 +702,10 @@
               "leadingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   ",
+                  "value": "*\n   * @param {string} pattern\n   * @return {Promise<string[],Error>}\n   ",
                   "range": [
-                    260,
-                    331
+                    268,
+                    345
                   ],
                   "loc": {
                     "start": {
@@ -722,10 +722,10 @@
               "trailingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   ",
+                  "value": "*\n   * @param {string} pattern\n   * @return {Promise<string[],Error>}\n   ",
                   "range": [
-                    418,
-                    489
+                    433,
+                    510
                   ],
                   "loc": {
                     "start": {
@@ -747,8 +747,8 @@
                 "type": "Identifier",
                 "name": "get_device_family",
                 "range": [
-                  492,
-                  509
+                  513,
+                  530
                 ],
                 "loc": {
                   "start": {
@@ -769,17 +769,17 @@
                     "type": "Identifier",
                     "name": "pattern",
                     "range": [
-                      510,
-                      517
+                      532,
+                      539
                     ],
                     "loc": {
                       "start": {
                         "line": 30,
-                        "column": 20
+                        "column": 21
                       },
                       "end": {
                         "line": 30,
-                        "column": 27
+                        "column": 28
                       }
                     }
                   }
@@ -798,8 +798,8 @@
                             "type": "Identifier",
                             "name": "connector",
                             "range": [
-                              532,
-                              541
+                              554,
+                              563
                             ],
                             "loc": {
                               "start": {
@@ -816,8 +816,8 @@
                             "type": "Identifier",
                             "name": "get_device_family",
                             "range": [
-                              542,
-                              559
+                              564,
+                              581
                             ],
                             "loc": {
                               "start": {
@@ -831,8 +831,8 @@
                             }
                           },
                           "range": [
-                            532,
-                            559
+                            554,
+                            581
                           ],
                           "loc": {
                             "start": {
@@ -850,8 +850,8 @@
                             "type": "Identifier",
                             "name": "pattern",
                             "range": [
-                              560,
-                              567
+                              582,
+                              589
                             ],
                             "loc": {
                               "start": {
@@ -866,8 +866,8 @@
                           }
                         ],
                         "range": [
-                          532,
-                          568
+                          554,
+                          590
                         ],
                         "loc": {
                           "start": {
@@ -881,8 +881,8 @@
                         }
                       },
                       "range": [
-                        525,
-                        571
+                        547,
+                        593
                       ],
                       "loc": {
                         "start": {
@@ -897,13 +897,13 @@
                     }
                   ],
                   "range": [
-                    519,
-                    572
+                    541,
+                    594
                   ],
                   "loc": {
                     "start": {
                       "line": 30,
-                      "column": 29
+                      "column": 30
                     },
                     "end": {
                       "line": 32,
@@ -914,13 +914,13 @@
                 "generator": false,
                 "expression": false,
                 "range": [
-                  509,
-                  572
+                  531,
+                  594
                 ],
                 "loc": {
                   "start": {
                     "line": 30,
-                    "column": 19
+                    "column": 20
                   },
                   "end": {
                     "line": 32,
@@ -931,8 +931,8 @@
               "kind": "method",
               "computed": false,
               "range": [
-                492,
-                572
+                513,
+                594
               ],
               "loc": {
                 "start": {
@@ -947,10 +947,10 @@
               "leadingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   ",
+                  "value": "*\n   * @param {string} pattern\n   * @return {Promise<string[],Error>}\n   ",
                   "range": [
-                    418,
-                    489
+                    433,
+                    510
                   ],
                   "loc": {
                     "start": {
@@ -967,10 +967,10 @@
               "trailingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   ",
+                  "value": "*\n   * @param {string} pattern\n   * @return {Promise<string[],Error>}\n   ",
                   "range": [
-                    576,
-                    647
+                    598,
+                    675
                   ],
                   "loc": {
                     "start": {
@@ -992,8 +992,8 @@
                 "type": "Identifier",
                 "name": "get_device_member",
                 "range": [
-                  650,
-                  667
+                  678,
+                  695
                 ],
                 "loc": {
                   "start": {
@@ -1014,17 +1014,17 @@
                     "type": "Identifier",
                     "name": "pattern",
                     "range": [
-                      668,
-                      675
+                      697,
+                      704
                     ],
                     "loc": {
                       "start": {
                         "line": 38,
-                        "column": 20
+                        "column": 21
                       },
                       "end": {
                         "line": 38,
-                        "column": 27
+                        "column": 28
                       }
                     }
                   }
@@ -1043,8 +1043,8 @@
                             "type": "Identifier",
                             "name": "connector",
                             "range": [
-                              690,
-                              699
+                              719,
+                              728
                             ],
                             "loc": {
                               "start": {
@@ -1061,8 +1061,8 @@
                             "type": "Identifier",
                             "name": "get_device_member",
                             "range": [
-                              700,
-                              717
+                              729,
+                              746
                             ],
                             "loc": {
                               "start": {
@@ -1076,8 +1076,8 @@
                             }
                           },
                           "range": [
-                            690,
-                            717
+                            719,
+                            746
                           ],
                           "loc": {
                             "start": {
@@ -1095,8 +1095,8 @@
                             "type": "Identifier",
                             "name": "pattern",
                             "range": [
-                              718,
-                              725
+                              747,
+                              754
                             ],
                             "loc": {
                               "start": {
@@ -1111,8 +1111,8 @@
                           }
                         ],
                         "range": [
-                          690,
-                          726
+                          719,
+                          755
                         ],
                         "loc": {
                           "start": {
@@ -1126,8 +1126,8 @@
                         }
                       },
                       "range": [
-                        683,
-                        729
+                        712,
+                        758
                       ],
                       "loc": {
                         "start": {
@@ -1142,13 +1142,13 @@
                     }
                   ],
                   "range": [
-                    677,
-                    730
+                    706,
+                    759
                   ],
                   "loc": {
                     "start": {
                       "line": 38,
-                      "column": 29
+                      "column": 30
                     },
                     "end": {
                       "line": 40,
@@ -1159,13 +1159,13 @@
                 "generator": false,
                 "expression": false,
                 "range": [
-                  667,
-                  730
+                  696,
+                  759
                 ],
                 "loc": {
                   "start": {
                     "line": 38,
-                    "column": 19
+                    "column": 20
                   },
                   "end": {
                     "line": 40,
@@ -1176,8 +1176,8 @@
               "kind": "method",
               "computed": false,
               "range": [
-                650,
-                730
+                678,
+                759
               ],
               "loc": {
                 "start": {
@@ -1192,10 +1192,10 @@
               "leadingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   ",
+                  "value": "*\n   * @param {string} pattern\n   * @return {Promise<string[],Error>}\n   ",
                   "range": [
-                    576,
-                    647
+                    598,
+                    675
                   ],
                   "loc": {
                     "start": {
@@ -1214,7 +1214,7 @@
           ],
           "range": [
             65,
-            733
+            762
           ],
           "loc": {
             "start": {
@@ -1229,7 +1229,7 @@
         },
         "range": [
           50,
-          733
+          762
         ],
         "loc": {
           "start": {
@@ -1248,7 +1248,7 @@
       "source": null,
       "range": [
         43,
-        733
+        762
       ],
       "loc": {
         "start": {
@@ -1265,7 +1265,7 @@
   "sourceType": "module",
   "range": [
     1,
-    733
+    762
   ],
   "loc": {
     "start": {
@@ -1282,8 +1282,8 @@
       "type": "Line",
       "value": " empty",
       "range": [
-        90,
-        98
+        91,
+        99
       ],
       "loc": {
         "start": {
@@ -1298,10 +1298,10 @@
     },
     {
       "type": "Block",
-      "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   ",
+      "value": "*\n   * @param {string} pattern\n   * @return {Promise<string[],Error>}\n   ",
       "range": [
-        106,
-        177
+        107,
+        184
       ],
       "loc": {
         "start": {
@@ -1316,10 +1316,10 @@
     },
     {
       "type": "Block",
-      "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   ",
+      "value": "*\n   * @param {string} pattern\n   * @return {Promise<string[],Error>}\n   ",
       "range": [
-        260,
-        331
+        268,
+        345
       ],
       "loc": {
         "start": {
@@ -1334,10 +1334,10 @@
     },
     {
       "type": "Block",
-      "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   ",
+      "value": "*\n   * @param {string} pattern\n   * @return {Promise<string[],Error>}\n   ",
       "range": [
-        418,
-        489
+        433,
+        510
       ],
       "loc": {
         "start": {
@@ -1352,10 +1352,10 @@
     },
     {
       "type": "Block",
-      "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   ",
+      "value": "*\n   * @param {string} pattern\n   * @return {Promise<string[],Error>}\n   ",
       "range": [
-        576,
-        647
+        598,
+        675
       ],
       "loc": {
         "start": {

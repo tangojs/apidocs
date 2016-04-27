@@ -157,138 +157,203 @@
 <div class="content" data-ice="content"><h1 data-ice="title">src/tangojs/core/api/DeviceProxy.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">
 import { connector } from &apos;../Connector&apos;
+import { DbDatum } from &apos;./DbDatum&apos;
+
+/**
+ * @private
+ * @param {T|T[]} valueOrArray
+ * @param {function(t: T[]): Promise&lt;V[],E&gt;} transform
+ * @return {Promise&lt;V,E&gt;|Promise&lt;V[],E&gt;}
+ */
+function handleAsArray (valueOrArray, transform) {
+  const isArray = Array.isArray(valueOrArray)
+  return transform(isArray ? valueOrArray : [valueOrArray])
+    .then(result =&gt; isArray ? result : result[0])
+}
+
+/**
+ * @private
+ * @param {T|T[]} valueOrArray
+ * @param {function(t: T[]): Promise&lt;V,E&gt;} transform
+ * @return {Promise&lt;undefined,E&gt;}
+ */
+function handleAsArrayReturningUndefined (valueOrArray, transform) {
+  return transform(Array.isArray(valueOrArray) ? valueOrArray : [valueOrArray])
+    .then(() =&gt; undefined)
+}
+
+/**
+ * @private
+ * @param {Array&lt;string|DbDatum&gt;} nameArray
+ * @return {string[]}
+ */
+function extractNames (nameArray) {
+  return nameArray.map(entry =&gt; {
+    if (entry instanceof DbDatum) {
+      return entry.name
+    } else if (typeof entry === &apos;string&apos; || entry instanceof String) {
+      return entry
+    } else {
+      return &apos;&apos;
+    }
+  })
+  .filter(name =&gt; name !== &apos;&apos;)
+}
+
+/** @private */
+const _devname = Symbol.for(&apos;_devname&apos;)
 
 export class DeviceProxy {
 
   /**
    * @param {string} devname
    */
-  constructor(devname) {
+  constructor (devname) {
     /** @private */
-    this._devname = devname
+    this[_devname] = devname
   }
 
   /**
-   * @return {Promise&lt;string&gt;}
+   * @return {Promise&lt;string,Error&gt;}
    */
-  name() {
+  name () {
     return this.get_info().then(info =&gt; info.name)
   }
 
   /**
-   * @return {Promise&lt;string&gt;}
+   * @return {Promise&lt;string,Error&gt;}
    */
-  status() {
-    return connector.get_device_status(this._devname)
+  status () {
+    return connector.get_device_status(this[_devname])
   }
 
   /**
-   * @return {Promise&lt;DevState&gt;}
+   * @return {Promise&lt;DevState,Error&gt;}
    */
-  state() {
-    return connector.get_device_state(this._devname)
+  state () {
+    return connector.get_device_state(this[_devname])
   }
 
   /**
-   * @return {Promise&lt;CommandInfo&gt;}
-   * @param {string} cmdname command name
+   * @param {string} cmdname
+   * @return {Promise&lt;CommandInfo,Error&gt;}
    */
-  command_query(cmdname) {
-    return connector.device_command_query(this._devname, cmdname)
+  command_query (cmdname) {
+    return connector.device_command_query(this[_devname], cmdname)
   }
 
   /**
-   * @return {Promise&lt;CommandInfo[]&gt;}
+   * @return {Promise&lt;CommandInfo[],Error&gt;}
    */
-  command_list_query() {
-    return connector.device_command_list_query(this._devname)
+  command_list_query () {
+    return connector.device_command_list_query(this[_devname])
   }
 
   /**
-   * @return {Promise&lt;DeviceInfo&gt;}
+   * @return {Promise&lt;DeviceInfo,Error&gt;}
    */
-  get_info() {
-    return connector.get_device_info(this._devname)
+  get_info () {
+    return connector.get_device_info(this[_devname])
   }
 
   /**
-   * @return {Promise&lt;string[]&gt;}
-   * @param {string} pattern proprty name pattern
+   * @param {string|string[]|DbDatum[]} pattern
+   * @return {Promise&lt;string[],Error&gt;}
    */
-  get_property_list(pattern) {
-    return connector.get_device_property_list(this._devname, pattern)
+  get_property_list (pattern) {
+    return connector.get_device_property_list(this[_devname], pattern)
   }
 
   /**
-   * @return {Promise&lt;DbDatum&gt;|Promise&lt;DbDatum[]&gt;}
-   * @param {string|string[]|DbDatum[]} propnames property names
+   * @param {string|string[]|DbDatum[]} propnames
+   * @return {Promise&lt;DbDatum,Error&gt;|Promise&lt;DbDatum[],Error&gt;}
    */
-  get_property(propnames) {
-    return connector.get_device_property(this._devname, propnames)
+  get_property (propnames) {
+    return handleAsArray(propnames, nameLikeArray =&gt; {
+      return connector.get_device_property(this[_devname],
+                                           extractNames(nameLikeArray))
+    })
   }
 
   /**
-   * @return {Promise&lt;undefined&gt;}
-   * @param {DbDatum[]} properties
+   * @param {DbDatum|DbDatum[]} properties
+   * @return {Promise&lt;undefined,Error&gt;}
    */
-  put_property(properties) {
-    return connector.put_device_property(this._devname, properties)
+  put_property (properties) {
+    return handleAsArrayReturningUndefined(properties, dbDatumArray =&gt; {
+      return connector.put_device_property(this[_devname], dbDatumArray)
+    })
   }
 
   /**
-   * @return {Promise&lt;undefined&gt;}
-   * @param {string|string[]|DbDatum[]} propnames property names
+   * @param {string|string[]|DbDatum[]} propnames
+   * @return {Promise&lt;undefined,Error&gt;}
    */
-  delete_property(propnames) {
-    return connector.delete_device_property(this._devname, propnames)
+  delete_property (propnames) {
+    return handleAsArrayReturningUndefined(propnames, nameLikeArray =&gt; {
+      return connector.delete_device_property(this[_devname],
+                                              extractNames(nameLikeArray))
+    })
   }
 
   /**
-   * @return {Promise&lt;string[]&gt;}
+   * @return {Promise&lt;string[],Error&gt;}
    */
-  get_attribute_list() {
-    return connector.get_device_attribute_list(this._devname)
+  get_attribute_list () {
+    return connector.get_device_attribute_list(this[_devname])
   }
 
   /**
-   * @return {Promise&lt;AttributeInfo&gt;|Promise&lt;AttributeInfo[]&gt;}
    * @param {undefined|string|string[]} attnames
+   * @return {Promise&lt;AttributeInfo,Error&gt;|Promise&lt;AttributeInfo[],Error&gt;}
    */
-  get_attribute_info(attnames) {
-    return connector.get_device_attribute_info(this._devname, attnames)
+  get_attribute_info (attnames) {
+    return (attnames ? Promise.resolve(attnames) : this.get_attribute_list())
+      .then(resolvedAttnames =&gt; {
+        return handleAsArray(resolvedAttnames, nameArray =&gt; {
+          return connector.get_device_attribute_info(this[_devname], nameArray)
+        })
+      })
   }
 
   /**
-   * @return {Promise&lt;DeviceAttribute&gt;|Promise&lt;DeviceAttribute[]&gt;}
-   * @param {string|string[]} attname
+   * @param {string|string[]} attnames
+   * @return {Promise&lt;DeviceAttribute,Error&gt;|Promise&lt;DeviceAttribute[],Error&gt;}
    */
-  read_attribute(attname) {
-    return connector.read_device_attribute(this._devname, attname)
+  read_attribute (attnames) {
+    return handleAsArray(attnames, attNameArray =&gt; {
+      return connector.read_device_attribute(this[_devname], attNameArray)
+    })
   }
 
   /**
-   * @return {Promise&lt;undefined&gt;}
    * @param {DeviceAttribute|DeviceAttribute[]} attrs
+   * @return {Promise&lt;undefined,Error&gt;}
    */
-  write_attribute(attrs) {
-    return connector.write_device_attribute(this._devname, attrs)
+  write_attribute (attrs) {
+    return handleAsArrayReturningUndefined(attrs, devAttrArray =&gt; {
+      return connector.write_device_attribute(this[_devname], devAttrArray)
+    })
   }
 
   /**
-   * @return {Promise&lt;DeviceAttribute&gt;|Promise&lt;DeviceAttribute[]&gt;}
    * @param {DeviceAttribute|DeviceAttribute[]} attrs
+   * @return {Promise&lt;DeviceAttribute,Error&gt;|Promise&lt;DeviceAttribute[],Error&gt;}
    */
-  write_read_attribute(attrs) {
-    return connector.write_read_device_attribute(this._devname, attrs)
+  write_read_attribute (attrs) {
+    return handleAsArray(attrs, devAttrArray =&gt; {
+      return connector.write_read_device_attribute(this[_devname],
+                                                   devAttrArray)
+    })
   }
 
   /**
-   * @return {Promise&lt;DeviceData&gt;}
    * @param {string} cmdname
    * @param {undefined|DeviceData} argin
+   * @return {Promise&lt;DeviceData,Error&gt;}
    */
-  command_inout(cmdname, argin) {
-    return connector.device_command_inout(this._devname, cmdname, argin)
+  command_inout (cmdname, argin) {
+    return connector.device_command_inout(this[_devname], cmdname, argin)
   }
 }
 </code></pre>

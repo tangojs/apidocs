@@ -19,7 +19,7 @@
       "expectCount": 5,
       "actualCount": 4,
       "undocumentLines": [
-        4
+        11
       ]
     },
     "src/tangojs/core/api/CommandInfo.js": {
@@ -33,7 +33,7 @@
       "expectCount": 4,
       "actualCount": 3,
       "undocumentLines": [
-        4
+        10
       ]
     },
     "src/tangojs/core/Connector.js": {
@@ -81,7 +81,7 @@
       "expectCount": 18,
       "actualCount": 17,
       "undocumentLines": [
-        4
+        49
       ]
     }
   }

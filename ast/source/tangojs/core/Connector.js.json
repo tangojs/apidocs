@@ -218,17 +218,17 @@
             "type": "Identifier",
             "name": "conn",
             "range": [
-              266,
-              270
+              267,
+              271
             ],
             "loc": {
               "start": {
                 "line": 14,
-                "column": 29
+                "column": 30
               },
               "end": {
                 "line": 14,
-                "column": 33
+                "column": 34
               }
             }
           }
@@ -245,8 +245,8 @@
                   "type": "Identifier",
                   "name": "connector",
                   "range": [
-                    276,
-                    285
+                    277,
+                    286
                   ],
                   "loc": {
                     "start": {
@@ -263,8 +263,8 @@
                   "type": "Identifier",
                   "name": "conn",
                   "range": [
-                    288,
-                    292
+                    289,
+                    293
                   ],
                   "loc": {
                     "start": {
@@ -278,8 +278,8 @@
                   }
                 },
                 "range": [
-                  276,
-                  292
+                  277,
+                  293
                 ],
                 "loc": {
                   "start": {
@@ -293,8 +293,8 @@
                 }
               },
               "range": [
-                276,
-                293
+                277,
+                294
               ],
               "loc": {
                 "start": {
@@ -309,13 +309,13 @@
             }
           ],
           "range": [
-            272,
-            294
+            273,
+            295
           ],
           "loc": {
             "start": {
               "line": 14,
-              "column": 35
+              "column": 36
             },
             "end": {
               "line": 16,
@@ -327,7 +327,7 @@
         "expression": false,
         "range": [
           244,
-          294
+          295
         ],
         "loc": {
           "start": {
@@ -364,8 +364,8 @@
             "type": "Block",
             "value": "*\n * Tangojs connector interface. This class contains backend-specific\n * logic. Each connector plugin have to provide implementation\n * of this interface.\n * @interface\n ",
             "range": [
-              296,
-              471
+              297,
+              472
             ],
             "loc": {
               "start": {
@@ -384,7 +384,7 @@
       "source": null,
       "range": [
         237,
-        294
+        295
       ],
       "loc": {
         "start": {
@@ -421,8 +421,8 @@
           "type": "Block",
           "value": "*\n * Tangojs connector interface. This class contains backend-specific\n * logic. Each connector plugin have to provide implementation\n * of this interface.\n * @interface\n ",
           "range": [
-            296,
-            471
+            297,
+            472
           ],
           "loc": {
             "start": {
@@ -445,8 +445,8 @@
           "type": "Identifier",
           "name": "Connector",
           "range": [
-            485,
-            494
+            486,
+            495
           ],
           "loc": {
             "start": {
@@ -469,8 +469,8 @@
                 "type": "Identifier",
                 "name": "get_device_status",
                 "range": [
-                  572,
-                  589
+                  579,
+                  596
                 ],
                 "loc": {
                   "start": {
@@ -491,17 +491,17 @@
                     "type": "Identifier",
                     "name": "devname",
                     "range": [
-                      590,
-                      597
+                      598,
+                      605
                     ],
                     "loc": {
                       "start": {
                         "line": 30,
-                        "column": 20
+                        "column": 21
                       },
                       "end": {
                         "line": 30,
-                        "column": 27
+                        "column": 28
                       }
                     }
                   }
@@ -510,42 +510,42 @@
                   "type": "BlockStatement",
                   "body": [],
                   "range": [
-                    599,
-                    602
+                    607,
+                    610
                   ],
                   "loc": {
                     "start": {
                       "line": 30,
-                      "column": 29
+                      "column": 30
                     },
                     "end": {
                       "line": 30,
-                      "column": 32
+                      "column": 33
                     }
                   }
                 },
                 "generator": false,
                 "expression": false,
                 "range": [
-                  589,
-                  602
+                  597,
+                  610
                 ],
                 "loc": {
                   "start": {
                     "line": 30,
-                    "column": 19
+                    "column": 20
                   },
                   "end": {
                     "line": 30,
-                    "column": 32
+                    "column": 33
                   }
                 }
               },
               "kind": "method",
               "computed": false,
               "range": [
-                572,
-                602
+                579,
+                610
               ],
               "loc": {
                 "start": {
@@ -554,16 +554,16 @@
                 },
                 "end": {
                   "line": 30,
-                  "column": 32
+                  "column": 33
                 }
               },
               "leadingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<string>}\n   * @param {string} devname\n   ",
+                  "value": "*\n   * @param {string} devname\n   * @return {Promise<string,Error>}\n   ",
                   "range": [
-                    500,
-                    569
+                    501,
+                    576
                   ],
                   "loc": {
                     "start": {
@@ -580,10 +580,10 @@
               "trailingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<DevState>}\n   * @param {string} devname\n   ",
+                  "value": "*\n   * @param {string} devname\n   * @return {Promise<DevState,Error>}\n   ",
                   "range": [
-                    606,
-                    677
+                    614,
+                    691
                   ],
                   "loc": {
                     "start": {
@@ -605,8 +605,8 @@
                 "type": "Identifier",
                 "name": "get_device_state",
                 "range": [
-                  680,
-                  696
+                  694,
+                  710
                 ],
                 "loc": {
                   "start": {
@@ -627,17 +627,17 @@
                     "type": "Identifier",
                     "name": "devname",
                     "range": [
-                      697,
-                      704
+                      712,
+                      719
                     ],
                     "loc": {
                       "start": {
                         "line": 36,
-                        "column": 19
+                        "column": 20
                       },
                       "end": {
                         "line": 36,
-                        "column": 26
+                        "column": 27
                       }
                     }
                   }
@@ -646,42 +646,42 @@
                   "type": "BlockStatement",
                   "body": [],
                   "range": [
-                    706,
-                    709
+                    721,
+                    724
                   ],
                   "loc": {
                     "start": {
                       "line": 36,
-                      "column": 28
+                      "column": 29
                     },
                     "end": {
                       "line": 36,
-                      "column": 31
+                      "column": 32
                     }
                   }
                 },
                 "generator": false,
                 "expression": false,
                 "range": [
-                  696,
-                  709
+                  711,
+                  724
                 ],
                 "loc": {
                   "start": {
                     "line": 36,
-                    "column": 18
+                    "column": 19
                   },
                   "end": {
                     "line": 36,
-                    "column": 31
+                    "column": 32
                   }
                 }
               },
               "kind": "method",
               "computed": false,
               "range": [
-                680,
-                709
+                694,
+                724
               ],
               "loc": {
                 "start": {
@@ -690,16 +690,16 @@
                 },
                 "end": {
                   "line": 36,
-                  "column": 31
+                  "column": 32
                 }
               },
               "leadingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<DevState>}\n   * @param {string} devname\n   ",
+                  "value": "*\n   * @param {string} devname\n   * @return {Promise<DevState,Error>}\n   ",
                   "range": [
-                    606,
-                    677
+                    614,
+                    691
                   ],
                   "loc": {
                     "start": {
@@ -716,10 +716,10 @@
               "trailingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<DeviceInfo>}\n   * @param {string} devname\n   ",
+                  "value": "*\n   * @param {string} devname\n   * @return {Promise<DeviceInfo,Error>}\n   ",
                   "range": [
-                    713,
-                    786
+                    728,
+                    807
                   ],
                   "loc": {
                     "start": {
@@ -741,8 +741,8 @@
                 "type": "Identifier",
                 "name": "get_device_info",
                 "range": [
-                  789,
-                  804
+                  810,
+                  825
                 ],
                 "loc": {
                   "start": {
@@ -763,17 +763,17 @@
                     "type": "Identifier",
                     "name": "devname",
                     "range": [
-                      805,
-                      812
+                      827,
+                      834
                     ],
                     "loc": {
                       "start": {
                         "line": 42,
-                        "column": 18
+                        "column": 19
                       },
                       "end": {
                         "line": 42,
-                        "column": 25
+                        "column": 26
                       }
                     }
                   }
@@ -782,42 +782,42 @@
                   "type": "BlockStatement",
                   "body": [],
                   "range": [
-                    814,
-                    817
+                    836,
+                    839
                   ],
                   "loc": {
                     "start": {
                       "line": 42,
-                      "column": 27
+                      "column": 28
                     },
                     "end": {
                       "line": 42,
-                      "column": 30
+                      "column": 31
                     }
                   }
                 },
                 "generator": false,
                 "expression": false,
                 "range": [
-                  804,
-                  817
+                  826,
+                  839
                 ],
                 "loc": {
                   "start": {
                     "line": 42,
-                    "column": 17
+                    "column": 18
                   },
                   "end": {
                     "line": 42,
-                    "column": 30
+                    "column": 31
                   }
                 }
               },
               "kind": "method",
               "computed": false,
               "range": [
-                789,
-                817
+                810,
+                839
               ],
               "loc": {
                 "start": {
@@ -826,16 +826,16 @@
                 },
                 "end": {
                   "line": 42,
-                  "column": 30
+                  "column": 31
                 }
               },
               "leadingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<DeviceInfo>}\n   * @param {string} devname\n   ",
+                  "value": "*\n   * @param {string} devname\n   * @return {Promise<DeviceInfo,Error>}\n   ",
                   "range": [
-                    713,
-                    786
+                    728,
+                    807
                   ],
                   "loc": {
                     "start": {
@@ -852,10 +852,10 @@
               "trailingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   ",
+                  "value": "*\n   * @param {string} pattern\n   * @return {Promise<string[],Error>}\n   ",
                   "range": [
-                    821,
-                    892
+                    843,
+                    920
                   ],
                   "loc": {
                     "start": {
@@ -877,8 +877,8 @@
                 "type": "Identifier",
                 "name": "get_device_list",
                 "range": [
-                  895,
-                  910
+                  923,
+                  938
                 ],
                 "loc": {
                   "start": {
@@ -899,17 +899,17 @@
                     "type": "Identifier",
                     "name": "pattern",
                     "range": [
-                      911,
-                      918
+                      940,
+                      947
                     ],
                     "loc": {
                       "start": {
                         "line": 48,
-                        "column": 18
+                        "column": 19
                       },
                       "end": {
                         "line": 48,
-                        "column": 25
+                        "column": 26
                       }
                     }
                   }
@@ -918,42 +918,42 @@
                   "type": "BlockStatement",
                   "body": [],
                   "range": [
-                    920,
-                    923
+                    949,
+                    952
                   ],
                   "loc": {
                     "start": {
                       "line": 48,
-                      "column": 27
+                      "column": 28
                     },
                     "end": {
                       "line": 48,
-                      "column": 30
+                      "column": 31
                     }
                   }
                 },
                 "generator": false,
                 "expression": false,
                 "range": [
-                  910,
-                  923
+                  939,
+                  952
                 ],
                 "loc": {
                   "start": {
                     "line": 48,
-                    "column": 17
+                    "column": 18
                   },
                   "end": {
                     "line": 48,
-                    "column": 30
+                    "column": 31
                   }
                 }
               },
               "kind": "method",
               "computed": false,
               "range": [
-                895,
-                923
+                923,
+                952
               ],
               "loc": {
                 "start": {
@@ -962,16 +962,16 @@
                 },
                 "end": {
                   "line": 48,
-                  "column": 30
+                  "column": 31
                 }
               },
               "leadingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   ",
+                  "value": "*\n   * @param {string} pattern\n   * @return {Promise<string[],Error>}\n   ",
                   "range": [
-                    821,
-                    892
+                    843,
+                    920
                   ],
                   "loc": {
                     "start": {
@@ -988,10 +988,10 @@
               "trailingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   ",
+                  "value": "*\n   * @param {string} pattern\n   * @return {Promise<string[],Error>}\n   ",
                   "range": [
-                    927,
-                    998
+                    956,
+                    1033
                   ],
                   "loc": {
                     "start": {
@@ -1013,8 +1013,8 @@
                 "type": "Identifier",
                 "name": "get_device_domain",
                 "range": [
-                  1001,
-                  1018
+                  1036,
+                  1053
                 ],
                 "loc": {
                   "start": {
@@ -1035,17 +1035,17 @@
                     "type": "Identifier",
                     "name": "pattern",
                     "range": [
-                      1019,
-                      1026
+                      1055,
+                      1062
                     ],
                     "loc": {
                       "start": {
                         "line": 54,
-                        "column": 20
+                        "column": 21
                       },
                       "end": {
                         "line": 54,
-                        "column": 27
+                        "column": 28
                       }
                     }
                   }
@@ -1054,42 +1054,42 @@
                   "type": "BlockStatement",
                   "body": [],
                   "range": [
-                    1028,
-                    1031
+                    1064,
+                    1067
                   ],
                   "loc": {
                     "start": {
                       "line": 54,
-                      "column": 29
+                      "column": 30
                     },
                     "end": {
                       "line": 54,
-                      "column": 32
+                      "column": 33
                     }
                   }
                 },
                 "generator": false,
                 "expression": false,
                 "range": [
-                  1018,
-                  1031
+                  1054,
+                  1067
                 ],
                 "loc": {
                   "start": {
                     "line": 54,
-                    "column": 19
+                    "column": 20
                   },
                   "end": {
                     "line": 54,
-                    "column": 32
+                    "column": 33
                   }
                 }
               },
               "kind": "method",
               "computed": false,
               "range": [
-                1001,
-                1031
+                1036,
+                1067
               ],
               "loc": {
                 "start": {
@@ -1098,16 +1098,16 @@
                 },
                 "end": {
                   "line": 54,
-                  "column": 32
+                  "column": 33
                 }
               },
               "leadingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   ",
+                  "value": "*\n   * @param {string} pattern\n   * @return {Promise<string[],Error>}\n   ",
                   "range": [
-                    927,
-                    998
+                    956,
+                    1033
                   ],
                   "loc": {
                     "start": {
@@ -1124,10 +1124,10 @@
               "trailingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   ",
+                  "value": "*\n   * @param {string} pattern\n   * @return {Promise<string[],Error>}\n   ",
                   "range": [
-                    1035,
-                    1106
+                    1071,
+                    1148
                   ],
                   "loc": {
                     "start": {
@@ -1149,8 +1149,8 @@
                 "type": "Identifier",
                 "name": "get_device_family",
                 "range": [
-                  1109,
-                  1126
+                  1151,
+                  1168
                 ],
                 "loc": {
                   "start": {
@@ -1171,17 +1171,17 @@
                     "type": "Identifier",
                     "name": "pattern",
                     "range": [
-                      1127,
-                      1134
+                      1170,
+                      1177
                     ],
                     "loc": {
                       "start": {
                         "line": 60,
-                        "column": 20
+                        "column": 21
                       },
                       "end": {
                         "line": 60,
-                        "column": 27
+                        "column": 28
                       }
                     }
                   }
@@ -1190,42 +1190,42 @@
                   "type": "BlockStatement",
                   "body": [],
                   "range": [
-                    1136,
-                    1139
+                    1179,
+                    1182
                   ],
                   "loc": {
                     "start": {
                       "line": 60,
-                      "column": 29
+                      "column": 30
                     },
                     "end": {
                       "line": 60,
-                      "column": 32
+                      "column": 33
                     }
                   }
                 },
                 "generator": false,
                 "expression": false,
                 "range": [
-                  1126,
-                  1139
+                  1169,
+                  1182
                 ],
                 "loc": {
                   "start": {
                     "line": 60,
-                    "column": 19
+                    "column": 20
                   },
                   "end": {
                     "line": 60,
-                    "column": 32
+                    "column": 33
                   }
                 }
               },
               "kind": "method",
               "computed": false,
               "range": [
-                1109,
-                1139
+                1151,
+                1182
               ],
               "loc": {
                 "start": {
@@ -1234,16 +1234,16 @@
                 },
                 "end": {
                   "line": 60,
-                  "column": 32
+                  "column": 33
                 }
               },
               "leadingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   ",
+                  "value": "*\n   * @param {string} pattern\n   * @return {Promise<string[],Error>}\n   ",
                   "range": [
-                    1035,
-                    1106
+                    1071,
+                    1148
                   ],
                   "loc": {
                     "start": {
@@ -1260,10 +1260,10 @@
               "trailingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   ",
+                  "value": "*\n   * @param {string} pattern\n   * @return {Promise<string[],Error>}\n   ",
                   "range": [
-                    1143,
-                    1214
+                    1186,
+                    1263
                   ],
                   "loc": {
                     "start": {
@@ -1285,8 +1285,8 @@
                 "type": "Identifier",
                 "name": "get_device_member",
                 "range": [
-                  1217,
-                  1234
+                  1266,
+                  1283
                 ],
                 "loc": {
                   "start": {
@@ -1307,17 +1307,17 @@
                     "type": "Identifier",
                     "name": "pattern",
                     "range": [
-                      1235,
-                      1242
+                      1285,
+                      1292
                     ],
                     "loc": {
                       "start": {
                         "line": 66,
-                        "column": 20
+                        "column": 21
                       },
                       "end": {
                         "line": 66,
-                        "column": 27
+                        "column": 28
                       }
                     }
                   }
@@ -1326,42 +1326,42 @@
                   "type": "BlockStatement",
                   "body": [],
                   "range": [
-                    1244,
-                    1247
+                    1294,
+                    1297
                   ],
                   "loc": {
                     "start": {
                       "line": 66,
-                      "column": 29
+                      "column": 30
                     },
                     "end": {
                       "line": 66,
-                      "column": 32
+                      "column": 33
                     }
                   }
                 },
                 "generator": false,
                 "expression": false,
                 "range": [
-                  1234,
-                  1247
+                  1284,
+                  1297
                 ],
                 "loc": {
                   "start": {
                     "line": 66,
-                    "column": 19
+                    "column": 20
                   },
                   "end": {
                     "line": 66,
-                    "column": 32
+                    "column": 33
                   }
                 }
               },
               "kind": "method",
               "computed": false,
               "range": [
-                1217,
-                1247
+                1266,
+                1297
               ],
               "loc": {
                 "start": {
@@ -1370,16 +1370,16 @@
                 },
                 "end": {
                   "line": 66,
-                  "column": 32
+                  "column": 33
                 }
               },
               "leadingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   ",
+                  "value": "*\n   * @param {string} pattern\n   * @return {Promise<string[],Error>}\n   ",
                   "range": [
-                    1143,
-                    1214
+                    1186,
+                    1263
                   ],
                   "loc": {
                     "start": {
@@ -1396,10 +1396,10 @@
               "trailingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} devname\n   * @param {string} pattern\n   ",
+                  "value": "*\n   * @param {string} devname\n   * @param {string} pattern\n   * @return {Promise<string[],Error>}\n   ",
                   "range": [
-                    1251,
-                    1351
+                    1301,
+                    1407
                   ],
                   "loc": {
                     "start": {
@@ -1421,8 +1421,8 @@
                 "type": "Identifier",
                 "name": "get_device_property_list",
                 "range": [
-                  1354,
-                  1378
+                  1410,
+                  1434
                 ],
                 "loc": {
                   "start": {
@@ -1443,17 +1443,17 @@
                     "type": "Identifier",
                     "name": "devname",
                     "range": [
-                      1379,
-                      1386
+                      1436,
+                      1443
                     ],
                     "loc": {
                       "start": {
                         "line": 73,
-                        "column": 27
+                        "column": 28
                       },
                       "end": {
                         "line": 73,
-                        "column": 34
+                        "column": 35
                       }
                     }
                   },
@@ -1461,17 +1461,17 @@
                     "type": "Identifier",
                     "name": "pattern",
                     "range": [
-                      1388,
-                      1395
+                      1445,
+                      1452
                     ],
                     "loc": {
                       "start": {
                         "line": 73,
-                        "column": 36
+                        "column": 37
                       },
                       "end": {
                         "line": 73,
-                        "column": 43
+                        "column": 44
                       }
                     }
                   }
@@ -1480,42 +1480,42 @@
                   "type": "BlockStatement",
                   "body": [],
                   "range": [
-                    1397,
-                    1400
+                    1454,
+                    1457
                   ],
                   "loc": {
                     "start": {
                       "line": 73,
-                      "column": 45
+                      "column": 46
                     },
                     "end": {
                       "line": 73,
-                      "column": 48
+                      "column": 49
                     }
                   }
                 },
                 "generator": false,
                 "expression": false,
                 "range": [
-                  1378,
-                  1400
+                  1435,
+                  1457
                 ],
                 "loc": {
                   "start": {
                     "line": 73,
-                    "column": 26
+                    "column": 27
                   },
                   "end": {
                     "line": 73,
-                    "column": 48
+                    "column": 49
                   }
                 }
               },
               "kind": "method",
               "computed": false,
               "range": [
-                1354,
-                1400
+                1410,
+                1457
               ],
               "loc": {
                 "start": {
@@ -1524,16 +1524,16 @@
                 },
                 "end": {
                   "line": 73,
-                  "column": 48
+                  "column": 49
                 }
               },
               "leadingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} devname\n   * @param {string} pattern\n   ",
+                  "value": "*\n   * @param {string} devname\n   * @param {string} pattern\n   * @return {Promise<string[],Error>}\n   ",
                   "range": [
-                    1251,
-                    1351
+                    1301,
+                    1407
                   ],
                   "loc": {
                     "start": {
@@ -1550,10 +1550,10 @@
               "trailingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<DbDatum>|Promise<DbDatum[]>}\n   * @param {string} devname\n   * @param {string|string[]|DbDatum[]} propnames\n   ",
+                  "value": "*\n   * @param {string} devname\n   * @param {string[]} propnames\n   * @return {Promise<DbDatum[],Error>}\n   ",
                   "range": [
-                    1404,
-                    1543
+                    1461,
+                    1572
                   ],
                   "loc": {
                     "start": {
@@ -1575,8 +1575,8 @@
                 "type": "Identifier",
                 "name": "get_device_property",
                 "range": [
-                  1546,
-                  1565
+                  1575,
+                  1594
                 ],
                 "loc": {
                   "start": {
@@ -1597,17 +1597,17 @@
                     "type": "Identifier",
                     "name": "devname",
                     "range": [
-                      1566,
-                      1573
+                      1596,
+                      1603
                     ],
                     "loc": {
                       "start": {
                         "line": 80,
-                        "column": 22
+                        "column": 23
                       },
                       "end": {
                         "line": 80,
-                        "column": 29
+                        "column": 30
                       }
                     }
                   },
@@ -1615,17 +1615,17 @@
                     "type": "Identifier",
                     "name": "propnames",
                     "range": [
-                      1575,
-                      1584
+                      1605,
+                      1614
                     ],
                     "loc": {
                       "start": {
                         "line": 80,
-                        "column": 31
+                        "column": 32
                       },
                       "end": {
                         "line": 80,
-                        "column": 40
+                        "column": 41
                       }
                     }
                   }
@@ -1634,42 +1634,42 @@
                   "type": "BlockStatement",
                   "body": [],
                   "range": [
-                    1586,
-                    1589
+                    1616,
+                    1619
                   ],
                   "loc": {
                     "start": {
                       "line": 80,
-                      "column": 42
+                      "column": 43
                     },
                     "end": {
                       "line": 80,
-                      "column": 45
+                      "column": 46
                     }
                   }
                 },
                 "generator": false,
                 "expression": false,
                 "range": [
-                  1565,
-                  1589
+                  1595,
+                  1619
                 ],
                 "loc": {
                   "start": {
                     "line": 80,
-                    "column": 21
+                    "column": 22
                   },
                   "end": {
                     "line": 80,
-                    "column": 45
+                    "column": 46
                   }
                 }
               },
               "kind": "method",
               "computed": false,
               "range": [
-                1546,
-                1589
+                1575,
+                1619
               ],
               "loc": {
                 "start": {
@@ -1678,16 +1678,16 @@
                 },
                 "end": {
                   "line": 80,
-                  "column": 45
+                  "column": 46
                 }
               },
               "leadingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<DbDatum>|Promise<DbDatum[]>}\n   * @param {string} devname\n   * @param {string|string[]|DbDatum[]} propnames\n   ",
+                  "value": "*\n   * @param {string} devname\n   * @param {string[]} propnames\n   * @return {Promise<DbDatum[],Error>}\n   ",
                   "range": [
-                    1404,
-                    1543
+                    1461,
+                    1572
                   ],
                   "loc": {
                     "start": {
@@ -1704,10 +1704,10 @@
               "trailingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<undefined>}\n   * @param {string} devname\n   * @param {DbDatum[]} properties\n   ",
+                  "value": "*\n   * @param {string} devname\n   * @param {DbDatum[]} properties\n   * @return {Promise<undefined,Error>}\n   ",
                   "range": [
-                    1593,
-                    1700
+                    1623,
+                    1736
                   ],
                   "loc": {
                     "start": {
@@ -1729,8 +1729,8 @@
                 "type": "Identifier",
                 "name": "put_device_property",
                 "range": [
-                  1703,
-                  1722
+                  1739,
+                  1758
                 ],
                 "loc": {
                   "start": {
@@ -1751,17 +1751,17 @@
                     "type": "Identifier",
                     "name": "devname",
                     "range": [
-                      1723,
-                      1730
+                      1760,
+                      1767
                     ],
                     "loc": {
                       "start": {
                         "line": 87,
-                        "column": 22
+                        "column": 23
                       },
                       "end": {
                         "line": 87,
-                        "column": 29
+                        "column": 30
                       }
                     }
                   },
@@ -1769,17 +1769,17 @@
                     "type": "Identifier",
                     "name": "properties",
                     "range": [
-                      1732,
-                      1742
+                      1769,
+                      1779
                     ],
                     "loc": {
                       "start": {
                         "line": 87,
-                        "column": 31
+                        "column": 32
                       },
                       "end": {
                         "line": 87,
-                        "column": 41
+                        "column": 42
                       }
                     }
                   }
@@ -1788,42 +1788,42 @@
                   "type": "BlockStatement",
                   "body": [],
                   "range": [
-                    1744,
-                    1747
+                    1781,
+                    1784
                   ],
                   "loc": {
                     "start": {
                       "line": 87,
-                      "column": 43
+                      "column": 44
                     },
                     "end": {
                       "line": 87,
-                      "column": 46
+                      "column": 47
                     }
                   }
                 },
                 "generator": false,
                 "expression": false,
                 "range": [
-                  1722,
-                  1747
+                  1759,
+                  1784
                 ],
                 "loc": {
                   "start": {
                     "line": 87,
-                    "column": 21
+                    "column": 22
                   },
                   "end": {
                     "line": 87,
-                    "column": 46
+                    "column": 47
                   }
                 }
               },
               "kind": "method",
               "computed": false,
               "range": [
-                1703,
-                1747
+                1739,
+                1784
               ],
               "loc": {
                 "start": {
@@ -1832,16 +1832,16 @@
                 },
                 "end": {
                   "line": 87,
-                  "column": 46
+                  "column": 47
                 }
               },
               "leadingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<undefined>}\n   * @param {string} devname\n   * @param {DbDatum[]} properties\n   ",
+                  "value": "*\n   * @param {string} devname\n   * @param {DbDatum[]} properties\n   * @return {Promise<undefined,Error>}\n   ",
                   "range": [
-                    1593,
-                    1700
+                    1623,
+                    1736
                   ],
                   "loc": {
                     "start": {
@@ -1858,10 +1858,10 @@
               "trailingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<undefined>}\n   * @param {string} devname\n   * @param {string|string[]|DbDatum[]} propnames property names\n   ",
+                  "value": "*\n   * @param {string} devname\n   * @param {string[]} propnames\n   * @return {Promise<undefined,Error>}\n   ",
                   "range": [
-                    1751,
-                    1888
+                    1788,
+                    1899
                   ],
                   "loc": {
                     "start": {
@@ -1883,8 +1883,8 @@
                 "type": "Identifier",
                 "name": "delete_device_property",
                 "range": [
-                  1891,
-                  1913
+                  1902,
+                  1924
                 ],
                 "loc": {
                   "start": {
@@ -1905,17 +1905,17 @@
                     "type": "Identifier",
                     "name": "devname",
                     "range": [
-                      1914,
-                      1921
+                      1926,
+                      1933
                     ],
                     "loc": {
                       "start": {
                         "line": 94,
-                        "column": 25
+                        "column": 26
                       },
                       "end": {
                         "line": 94,
-                        "column": 32
+                        "column": 33
                       }
                     }
                   },
@@ -1923,17 +1923,17 @@
                     "type": "Identifier",
                     "name": "propnames",
                     "range": [
-                      1923,
-                      1932
+                      1935,
+                      1944
                     ],
                     "loc": {
                       "start": {
                         "line": 94,
-                        "column": 34
+                        "column": 35
                       },
                       "end": {
                         "line": 94,
-                        "column": 43
+                        "column": 44
                       }
                     }
                   }
@@ -1942,42 +1942,42 @@
                   "type": "BlockStatement",
                   "body": [],
                   "range": [
-                    1934,
-                    1937
+                    1946,
+                    1949
                   ],
                   "loc": {
                     "start": {
                       "line": 94,
-                      "column": 45
+                      "column": 46
                     },
                     "end": {
                       "line": 94,
-                      "column": 48
+                      "column": 49
                     }
                   }
                 },
                 "generator": false,
                 "expression": false,
                 "range": [
-                  1913,
-                  1937
+                  1925,
+                  1949
                 ],
                 "loc": {
                   "start": {
                     "line": 94,
-                    "column": 24
+                    "column": 25
                   },
                   "end": {
                     "line": 94,
-                    "column": 48
+                    "column": 49
                   }
                 }
               },
               "kind": "method",
               "computed": false,
               "range": [
-                1891,
-                1937
+                1902,
+                1949
               ],
               "loc": {
                 "start": {
@@ -1986,16 +1986,16 @@
                 },
                 "end": {
                   "line": 94,
-                  "column": 48
+                  "column": 49
                 }
               },
               "leadingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<undefined>}\n   * @param {string} devname\n   * @param {string|string[]|DbDatum[]} propnames property names\n   ",
+                  "value": "*\n   * @param {string} devname\n   * @param {string[]} propnames\n   * @return {Promise<undefined,Error>}\n   ",
                   "range": [
-                    1751,
-                    1888
+                    1788,
+                    1899
                   ],
                   "loc": {
                     "start": {
@@ -2012,10 +2012,10 @@
               "trailingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} devname\n   ",
+                  "value": "*\n   * @param {string} devname\n   * @return {Promise<string[],Error>}\n   ",
                   "range": [
-                    1941,
-                    2012
+                    1953,
+                    2030
                   ],
                   "loc": {
                     "start": {
@@ -2037,8 +2037,8 @@
                 "type": "Identifier",
                 "name": "get_device_attribute_list",
                 "range": [
-                  2015,
-                  2040
+                  2033,
+                  2058
                 ],
                 "loc": {
                   "start": {
@@ -2059,17 +2059,17 @@
                     "type": "Identifier",
                     "name": "devname",
                     "range": [
-                      2041,
-                      2048
+                      2060,
+                      2067
                     ],
                     "loc": {
                       "start": {
                         "line": 100,
-                        "column": 28
+                        "column": 29
                       },
                       "end": {
                         "line": 100,
-                        "column": 35
+                        "column": 36
                       }
                     }
                   }
@@ -2078,42 +2078,42 @@
                   "type": "BlockStatement",
                   "body": [],
                   "range": [
-                    2050,
-                    2053
+                    2069,
+                    2072
                   ],
                   "loc": {
                     "start": {
                       "line": 100,
-                      "column": 37
+                      "column": 38
                     },
                     "end": {
                       "line": 100,
-                      "column": 40
+                      "column": 41
                     }
                   }
                 },
                 "generator": false,
                 "expression": false,
                 "range": [
-                  2040,
-                  2053
+                  2059,
+                  2072
                 ],
                 "loc": {
                   "start": {
                     "line": 100,
-                    "column": 27
+                    "column": 28
                   },
                   "end": {
                     "line": 100,
-                    "column": 40
+                    "column": 41
                   }
                 }
               },
               "kind": "method",
               "computed": false,
               "range": [
-                2015,
-                2053
+                2033,
+                2072
               ],
               "loc": {
                 "start": {
@@ -2122,16 +2122,16 @@
                 },
                 "end": {
                   "line": 100,
-                  "column": 40
+                  "column": 41
                 }
               },
               "leadingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} devname\n   ",
+                  "value": "*\n   * @param {string} devname\n   * @return {Promise<string[],Error>}\n   ",
                   "range": [
-                    1941,
-                    2012
+                    1953,
+                    2030
                   ],
                   "loc": {
                     "start": {
@@ -2148,10 +2148,10 @@
               "trailingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<AttributeInfo>|Promise<AttributeInfo[]>}\n   * @param {string} devname\n   * @param {undefined|string|string[]} attnames\n   ",
+                  "value": "*\n   * @param {string} devname\n   * @param {string[]} attnames\n   * @return {Promise<AttributeInfo[],Error>}\n   ",
                   "range": [
-                    2057,
-                    2207
+                    2076,
+                    2192
                   ],
                   "loc": {
                     "start": {
@@ -2173,8 +2173,8 @@
                 "type": "Identifier",
                 "name": "get_device_attribute_info",
                 "range": [
-                  2210,
-                  2235
+                  2195,
+                  2220
                 ],
                 "loc": {
                   "start": {
@@ -2195,17 +2195,17 @@
                     "type": "Identifier",
                     "name": "devname",
                     "range": [
-                      2236,
-                      2243
+                      2222,
+                      2229
                     ],
                     "loc": {
                       "start": {
                         "line": 107,
-                        "column": 28
+                        "column": 29
                       },
                       "end": {
                         "line": 107,
-                        "column": 35
+                        "column": 36
                       }
                     }
                   },
@@ -2213,17 +2213,17 @@
                     "type": "Identifier",
                     "name": "attnames",
                     "range": [
-                      2245,
-                      2253
+                      2231,
+                      2239
                     ],
                     "loc": {
                       "start": {
                         "line": 107,
-                        "column": 37
+                        "column": 38
                       },
                       "end": {
                         "line": 107,
-                        "column": 45
+                        "column": 46
                       }
                     }
                   }
@@ -2232,42 +2232,42 @@
                   "type": "BlockStatement",
                   "body": [],
                   "range": [
-                    2255,
-                    2258
+                    2241,
+                    2244
                   ],
                   "loc": {
                     "start": {
                       "line": 107,
-                      "column": 47
+                      "column": 48
                     },
                     "end": {
                       "line": 107,
-                      "column": 50
+                      "column": 51
                     }
                   }
                 },
                 "generator": false,
                 "expression": false,
                 "range": [
-                  2235,
-                  2258
+                  2221,
+                  2244
                 ],
                 "loc": {
                   "start": {
                     "line": 107,
-                    "column": 27
+                    "column": 28
                   },
                   "end": {
                     "line": 107,
-                    "column": 50
+                    "column": 51
                   }
                 }
               },
               "kind": "method",
               "computed": false,
               "range": [
-                2210,
-                2258
+                2195,
+                2244
               ],
               "loc": {
                 "start": {
@@ -2276,16 +2276,16 @@
                 },
                 "end": {
                   "line": 107,
-                  "column": 50
+                  "column": 51
                 }
               },
               "leadingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<AttributeInfo>|Promise<AttributeInfo[]>}\n   * @param {string} devname\n   * @param {undefined|string|string[]} attnames\n   ",
+                  "value": "*\n   * @param {string} devname\n   * @param {string[]} attnames\n   * @return {Promise<AttributeInfo[],Error>}\n   ",
                   "range": [
-                    2057,
-                    2207
+                    2076,
+                    2192
                   ],
                   "loc": {
                     "start": {
@@ -2302,10 +2302,10 @@
               "trailingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<DeviceAttribute>|Promise<DeviceAttribute[]>}\n   * @param {string} devname\n   * @param {string|string[]} attname\n   ",
+                  "value": "*\n   * @param {string} devname\n   * @param {string[]} attname\n   * @return {Promise<DeviceAttribute[],Error>}\n   ",
                   "range": [
-                    2262,
-                    2405
+                    2248,
+                    2365
                   ],
                   "loc": {
                     "start": {
@@ -2327,8 +2327,8 @@
                 "type": "Identifier",
                 "name": "read_device_attribute",
                 "range": [
-                  2408,
-                  2429
+                  2368,
+                  2389
                 ],
                 "loc": {
                   "start": {
@@ -2349,17 +2349,17 @@
                     "type": "Identifier",
                     "name": "devname",
                     "range": [
-                      2430,
-                      2437
+                      2391,
+                      2398
                     ],
                     "loc": {
                       "start": {
                         "line": 114,
-                        "column": 24
+                        "column": 25
                       },
                       "end": {
                         "line": 114,
-                        "column": 31
+                        "column": 32
                       }
                     }
                   },
@@ -2367,17 +2367,17 @@
                     "type": "Identifier",
                     "name": "attname",
                     "range": [
-                      2439,
-                      2446
+                      2400,
+                      2407
                     ],
                     "loc": {
                       "start": {
                         "line": 114,
-                        "column": 33
+                        "column": 34
                       },
                       "end": {
                         "line": 114,
-                        "column": 40
+                        "column": 41
                       }
                     }
                   }
@@ -2386,42 +2386,42 @@
                   "type": "BlockStatement",
                   "body": [],
                   "range": [
-                    2448,
-                    2451
+                    2409,
+                    2412
                   ],
                   "loc": {
                     "start": {
                       "line": 114,
-                      "column": 42
+                      "column": 43
                     },
                     "end": {
                       "line": 114,
-                      "column": 45
+                      "column": 46
                     }
                   }
                 },
                 "generator": false,
                 "expression": false,
                 "range": [
-                  2429,
-                  2451
+                  2390,
+                  2412
                 ],
                 "loc": {
                   "start": {
                     "line": 114,
-                    "column": 23
+                    "column": 24
                   },
                   "end": {
                     "line": 114,
-                    "column": 45
+                    "column": 46
                   }
                 }
               },
               "kind": "method",
               "computed": false,
               "range": [
-                2408,
-                2451
+                2368,
+                2412
               ],
               "loc": {
                 "start": {
@@ -2430,16 +2430,16 @@
                 },
                 "end": {
                   "line": 114,
-                  "column": 45
+                  "column": 46
                 }
               },
               "leadingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<DeviceAttribute>|Promise<DeviceAttribute[]>}\n   * @param {string} devname\n   * @param {string|string[]} attname\n   ",
+                  "value": "*\n   * @param {string} devname\n   * @param {string[]} attname\n   * @return {Promise<DeviceAttribute[],Error>}\n   ",
                   "range": [
-                    2262,
-                    2405
+                    2248,
+                    2365
                   ],
                   "loc": {
                     "start": {
@@ -2456,10 +2456,10 @@
               "trailingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<undefined>}\n   * @param {string} devname\n   * @param {DeviceAttribute|DeviceAttribute[]} attrs\n   ",
+                  "value": "*\n\n   * @param {string} devname\n   * @param {DeviceAttribute[]} attrs\n   * @return {Promise<undefined,Error>}\n   ",
                   "range": [
-                    2455,
-                    2581
+                    2416,
+                    2533
                   ],
                   "loc": {
                     "start": {
@@ -2467,7 +2467,7 @@
                       "column": 2
                     },
                     "end": {
-                      "line": 120,
+                      "line": 121,
                       "column": 5
                     }
                   }
@@ -2481,16 +2481,16 @@
                 "type": "Identifier",
                 "name": "write_device_attribute",
                 "range": [
-                  2584,
-                  2606
+                  2536,
+                  2558
                 ],
                 "loc": {
                   "start": {
-                    "line": 121,
+                    "line": 122,
                     "column": 2
                   },
                   "end": {
-                    "line": 121,
+                    "line": 122,
                     "column": 24
                   }
                 }
@@ -2503,17 +2503,17 @@
                     "type": "Identifier",
                     "name": "devname",
                     "range": [
-                      2607,
-                      2614
+                      2560,
+                      2567
                     ],
                     "loc": {
                       "start": {
-                        "line": 121,
-                        "column": 25
+                        "line": 122,
+                        "column": 26
                       },
                       "end": {
-                        "line": 121,
-                        "column": 32
+                        "line": 122,
+                        "column": 33
                       }
                     }
                   },
@@ -2521,17 +2521,17 @@
                     "type": "Identifier",
                     "name": "attrs",
                     "range": [
-                      2616,
-                      2621
+                      2569,
+                      2574
                     ],
                     "loc": {
                       "start": {
-                        "line": 121,
-                        "column": 34
+                        "line": 122,
+                        "column": 35
                       },
                       "end": {
-                        "line": 121,
-                        "column": 39
+                        "line": 122,
+                        "column": 40
                       }
                     }
                   }
@@ -2540,60 +2540,60 @@
                   "type": "BlockStatement",
                   "body": [],
                   "range": [
-                    2623,
-                    2626
+                    2576,
+                    2579
                   ],
                   "loc": {
                     "start": {
-                      "line": 121,
-                      "column": 41
+                      "line": 122,
+                      "column": 42
                     },
                     "end": {
-                      "line": 121,
-                      "column": 44
+                      "line": 122,
+                      "column": 45
                     }
                   }
                 },
                 "generator": false,
                 "expression": false,
                 "range": [
-                  2606,
-                  2626
+                  2559,
+                  2579
                 ],
                 "loc": {
                   "start": {
-                    "line": 121,
-                    "column": 24
+                    "line": 122,
+                    "column": 25
                   },
                   "end": {
-                    "line": 121,
-                    "column": 44
+                    "line": 122,
+                    "column": 45
                   }
                 }
               },
               "kind": "method",
               "computed": false,
               "range": [
-                2584,
-                2626
+                2536,
+                2579
               ],
               "loc": {
                 "start": {
-                  "line": 121,
+                  "line": 122,
                   "column": 2
                 },
                 "end": {
-                  "line": 121,
-                  "column": 44
+                  "line": 122,
+                  "column": 45
                 }
               },
               "leadingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<undefined>}\n   * @param {string} devname\n   * @param {DeviceAttribute|DeviceAttribute[]} attrs\n   ",
+                  "value": "*\n\n   * @param {string} devname\n   * @param {DeviceAttribute[]} attrs\n   * @return {Promise<undefined,Error>}\n   ",
                   "range": [
-                    2455,
-                    2581
+                    2416,
+                    2533
                   ],
                   "loc": {
                     "start": {
@@ -2601,7 +2601,7 @@
                       "column": 2
                     },
                     "end": {
-                      "line": 120,
+                      "line": 121,
                       "column": 5
                     }
                   }
@@ -2610,18 +2610,18 @@
               "trailingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<DeviceAttribute>|Promise<DeviceAttribute[]>}\n   * @param {string} devname\n   * @param {DeviceAttribute|DeviceAttribute[]} attrs\n   ",
+                  "value": "*\n   * @param {string} devname\n   * @param {DeviceAttribute[]} attrs\n   * @return {Promise<DeviceAttribute[],Error>}\n   ",
                   "range": [
-                    2630,
-                    2789
+                    2583,
+                    2707
                   ],
                   "loc": {
                     "start": {
-                      "line": 123,
+                      "line": 124,
                       "column": 2
                     },
                     "end": {
-                      "line": 127,
+                      "line": 128,
                       "column": 5
                     }
                   }
@@ -2635,16 +2635,16 @@
                 "type": "Identifier",
                 "name": "write_read_device_attribute",
                 "range": [
-                  2792,
-                  2819
+                  2710,
+                  2737
                 ],
                 "loc": {
                   "start": {
-                    "line": 128,
+                    "line": 129,
                     "column": 2
                   },
                   "end": {
-                    "line": 128,
+                    "line": 129,
                     "column": 29
                   }
                 }
@@ -2657,17 +2657,17 @@
                     "type": "Identifier",
                     "name": "devname",
                     "range": [
-                      2820,
-                      2827
+                      2739,
+                      2746
                     ],
                     "loc": {
                       "start": {
-                        "line": 128,
-                        "column": 30
+                        "line": 129,
+                        "column": 31
                       },
                       "end": {
-                        "line": 128,
-                        "column": 37
+                        "line": 129,
+                        "column": 38
                       }
                     }
                   },
@@ -2675,17 +2675,17 @@
                     "type": "Identifier",
                     "name": "attrs",
                     "range": [
-                      2829,
-                      2834
+                      2748,
+                      2753
                     ],
                     "loc": {
                       "start": {
-                        "line": 128,
-                        "column": 39
+                        "line": 129,
+                        "column": 40
                       },
                       "end": {
-                        "line": 128,
-                        "column": 44
+                        "line": 129,
+                        "column": 45
                       }
                     }
                   }
@@ -2694,68 +2694,68 @@
                   "type": "BlockStatement",
                   "body": [],
                   "range": [
-                    2836,
-                    2839
+                    2755,
+                    2758
                   ],
                   "loc": {
                     "start": {
-                      "line": 128,
-                      "column": 46
+                      "line": 129,
+                      "column": 47
                     },
                     "end": {
-                      "line": 128,
-                      "column": 49
+                      "line": 129,
+                      "column": 50
                     }
                   }
                 },
                 "generator": false,
                 "expression": false,
                 "range": [
-                  2819,
-                  2839
+                  2738,
+                  2758
                 ],
                 "loc": {
                   "start": {
-                    "line": 128,
-                    "column": 29
+                    "line": 129,
+                    "column": 30
                   },
                   "end": {
-                    "line": 128,
-                    "column": 49
+                    "line": 129,
+                    "column": 50
                   }
                 }
               },
               "kind": "method",
               "computed": false,
               "range": [
-                2792,
-                2839
+                2710,
+                2758
               ],
               "loc": {
                 "start": {
-                  "line": 128,
+                  "line": 129,
                   "column": 2
                 },
                 "end": {
-                  "line": 128,
-                  "column": 49
+                  "line": 129,
+                  "column": 50
                 }
               },
               "leadingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<DeviceAttribute>|Promise<DeviceAttribute[]>}\n   * @param {string} devname\n   * @param {DeviceAttribute|DeviceAttribute[]} attrs\n   ",
+                  "value": "*\n   * @param {string} devname\n   * @param {DeviceAttribute[]} attrs\n   * @return {Promise<DeviceAttribute[],Error>}\n   ",
                   "range": [
-                    2630,
-                    2789
+                    2583,
+                    2707
                   ],
                   "loc": {
                     "start": {
-                      "line": 123,
+                      "line": 124,
                       "column": 2
                     },
                     "end": {
-                      "line": 127,
+                      "line": 128,
                       "column": 5
                     }
                   }
@@ -2764,18 +2764,18 @@
               "trailingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<DeviceData>}\n   * @param {string} devname\n   * @param {string} cmdname\n   * @param {undefined|DeviceData} argin\n   ",
+                  "value": "*\n   * @param {string} devname\n   * @param {string} cmdname\n   * @param {undefined|DeviceData} argin\n   * @return {Promise<DeviceData,Error>}\n   ",
                   "range": [
-                    2843,
-                    2986
+                    2762,
+                    2911
                   ],
                   "loc": {
                     "start": {
-                      "line": 130,
+                      "line": 131,
                       "column": 2
                     },
                     "end": {
-                      "line": 135,
+                      "line": 136,
                       "column": 5
                     }
                   }
@@ -2789,16 +2789,16 @@
                 "type": "Identifier",
                 "name": "device_command_inout",
                 "range": [
-                  2989,
-                  3009
+                  2914,
+                  2934
                 ],
                 "loc": {
                   "start": {
-                    "line": 136,
+                    "line": 137,
                     "column": 2
                   },
                   "end": {
-                    "line": 136,
+                    "line": 137,
                     "column": 22
                   }
                 }
@@ -2811,17 +2811,17 @@
                     "type": "Identifier",
                     "name": "devname",
                     "range": [
-                      3010,
-                      3017
+                      2936,
+                      2943
                     ],
                     "loc": {
                       "start": {
-                        "line": 136,
-                        "column": 23
+                        "line": 137,
+                        "column": 24
                       },
                       "end": {
-                        "line": 136,
-                        "column": 30
+                        "line": 137,
+                        "column": 31
                       }
                     }
                   },
@@ -2829,17 +2829,17 @@
                     "type": "Identifier",
                     "name": "cmdname",
                     "range": [
-                      3019,
-                      3026
+                      2945,
+                      2952
                     ],
                     "loc": {
                       "start": {
-                        "line": 136,
-                        "column": 32
+                        "line": 137,
+                        "column": 33
                       },
                       "end": {
-                        "line": 136,
-                        "column": 39
+                        "line": 137,
+                        "column": 40
                       }
                     }
                   },
@@ -2847,17 +2847,17 @@
                     "type": "Identifier",
                     "name": "argin",
                     "range": [
-                      3028,
-                      3033
+                      2954,
+                      2959
                     ],
                     "loc": {
                       "start": {
-                        "line": 136,
-                        "column": 41
+                        "line": 137,
+                        "column": 42
                       },
                       "end": {
-                        "line": 136,
-                        "column": 46
+                        "line": 137,
+                        "column": 47
                       }
                     }
                   }
@@ -2866,68 +2866,68 @@
                   "type": "BlockStatement",
                   "body": [],
                   "range": [
-                    3035,
-                    3038
+                    2961,
+                    2964
                   ],
                   "loc": {
                     "start": {
-                      "line": 136,
-                      "column": 48
+                      "line": 137,
+                      "column": 49
                     },
                     "end": {
-                      "line": 136,
-                      "column": 51
+                      "line": 137,
+                      "column": 52
                     }
                   }
                 },
                 "generator": false,
                 "expression": false,
                 "range": [
-                  3009,
-                  3038
+                  2935,
+                  2964
                 ],
                 "loc": {
                   "start": {
-                    "line": 136,
-                    "column": 22
+                    "line": 137,
+                    "column": 23
                   },
                   "end": {
-                    "line": 136,
-                    "column": 51
+                    "line": 137,
+                    "column": 52
                   }
                 }
               },
               "kind": "method",
               "computed": false,
               "range": [
-                2989,
-                3038
+                2914,
+                2964
               ],
               "loc": {
                 "start": {
-                  "line": 136,
+                  "line": 137,
                   "column": 2
                 },
                 "end": {
-                  "line": 136,
-                  "column": 51
+                  "line": 137,
+                  "column": 52
                 }
               },
               "leadingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<DeviceData>}\n   * @param {string} devname\n   * @param {string} cmdname\n   * @param {undefined|DeviceData} argin\n   ",
+                  "value": "*\n   * @param {string} devname\n   * @param {string} cmdname\n   * @param {undefined|DeviceData} argin\n   * @return {Promise<DeviceData,Error>}\n   ",
                   "range": [
-                    2843,
-                    2986
+                    2762,
+                    2911
                   ],
                   "loc": {
                     "start": {
-                      "line": 130,
+                      "line": 131,
                       "column": 2
                     },
                     "end": {
-                      "line": 135,
+                      "line": 136,
                       "column": 5
                     }
                   }
@@ -2936,18 +2936,18 @@
               "trailingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<CommandInfo>}\n   * @param {string} devname\n   * @param {string} cmdname\n   ",
+                  "value": "*\n   * @param {string} devname\n   * @param {string} cmdname\n   * @return {Promise<CommandInfo,Error>}\n   ",
                   "range": [
-                    3042,
-                    3145
+                    2968,
+                    3077
                   ],
                   "loc": {
                     "start": {
-                      "line": 138,
+                      "line": 139,
                       "column": 2
                     },
                     "end": {
-                      "line": 142,
+                      "line": 143,
                       "column": 5
                     }
                   }
@@ -2961,16 +2961,16 @@
                 "type": "Identifier",
                 "name": "device_command_query",
                 "range": [
-                  3148,
-                  3168
+                  3080,
+                  3100
                 ],
                 "loc": {
                   "start": {
-                    "line": 143,
+                    "line": 144,
                     "column": 2
                   },
                   "end": {
-                    "line": 143,
+                    "line": 144,
                     "column": 22
                   }
                 }
@@ -2983,17 +2983,17 @@
                     "type": "Identifier",
                     "name": "devname",
                     "range": [
-                      3169,
-                      3176
+                      3102,
+                      3109
                     ],
                     "loc": {
                       "start": {
-                        "line": 143,
-                        "column": 23
+                        "line": 144,
+                        "column": 24
                       },
                       "end": {
-                        "line": 143,
-                        "column": 30
+                        "line": 144,
+                        "column": 31
                       }
                     }
                   },
@@ -3001,17 +3001,17 @@
                     "type": "Identifier",
                     "name": "cmdname",
                     "range": [
-                      3178,
-                      3185
+                      3111,
+                      3118
                     ],
                     "loc": {
                       "start": {
-                        "line": 143,
-                        "column": 32
+                        "line": 144,
+                        "column": 33
                       },
                       "end": {
-                        "line": 143,
-                        "column": 39
+                        "line": 144,
+                        "column": 40
                       }
                     }
                   }
@@ -3020,68 +3020,68 @@
                   "type": "BlockStatement",
                   "body": [],
                   "range": [
-                    3187,
-                    3190
+                    3120,
+                    3123
                   ],
                   "loc": {
                     "start": {
-                      "line": 143,
-                      "column": 41
+                      "line": 144,
+                      "column": 42
                     },
                     "end": {
-                      "line": 143,
-                      "column": 44
+                      "line": 144,
+                      "column": 45
                     }
                   }
                 },
                 "generator": false,
                 "expression": false,
                 "range": [
-                  3168,
-                  3190
+                  3101,
+                  3123
                 ],
                 "loc": {
                   "start": {
-                    "line": 143,
-                    "column": 22
+                    "line": 144,
+                    "column": 23
                   },
                   "end": {
-                    "line": 143,
-                    "column": 44
+                    "line": 144,
+                    "column": 45
                   }
                 }
               },
               "kind": "method",
               "computed": false,
               "range": [
-                3148,
-                3190
+                3080,
+                3123
               ],
               "loc": {
                 "start": {
-                  "line": 143,
+                  "line": 144,
                   "column": 2
                 },
                 "end": {
-                  "line": 143,
-                  "column": 44
+                  "line": 144,
+                  "column": 45
                 }
               },
               "leadingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<CommandInfo>}\n   * @param {string} devname\n   * @param {string} cmdname\n   ",
+                  "value": "*\n   * @param {string} devname\n   * @param {string} cmdname\n   * @return {Promise<CommandInfo,Error>}\n   ",
                   "range": [
-                    3042,
-                    3145
+                    2968,
+                    3077
                   ],
                   "loc": {
                     "start": {
-                      "line": 138,
+                      "line": 139,
                       "column": 2
                     },
                     "end": {
-                      "line": 142,
+                      "line": 143,
                       "column": 5
                     }
                   }
@@ -3090,18 +3090,18 @@
               "trailingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<CommandInfo[]>}\n   * @param {string} devname\n   ",
+                  "value": "*\n   * @param {string} devname\n   * @return {Promise<CommandInfo[],Error>}\n   ",
                   "range": [
-                    3194,
-                    3270
+                    3127,
+                    3209
                   ],
                   "loc": {
                     "start": {
-                      "line": 145,
+                      "line": 146,
                       "column": 2
                     },
                     "end": {
-                      "line": 148,
+                      "line": 149,
                       "column": 5
                     }
                   }
@@ -3115,16 +3115,16 @@
                 "type": "Identifier",
                 "name": "device_command_list_query",
                 "range": [
-                  3273,
-                  3298
+                  3212,
+                  3237
                 ],
                 "loc": {
                   "start": {
-                    "line": 149,
+                    "line": 150,
                     "column": 2
                   },
                   "end": {
-                    "line": 149,
+                    "line": 150,
                     "column": 27
                   }
                 }
@@ -3137,17 +3137,17 @@
                     "type": "Identifier",
                     "name": "devname",
                     "range": [
-                      3299,
-                      3306
+                      3239,
+                      3246
                     ],
                     "loc": {
                       "start": {
-                        "line": 149,
-                        "column": 28
+                        "line": 150,
+                        "column": 29
                       },
                       "end": {
-                        "line": 149,
-                        "column": 35
+                        "line": 150,
+                        "column": 36
                       }
                     }
                   }
@@ -3156,68 +3156,68 @@
                   "type": "BlockStatement",
                   "body": [],
                   "range": [
-                    3308,
-                    3311
+                    3248,
+                    3251
                   ],
                   "loc": {
                     "start": {
-                      "line": 149,
-                      "column": 37
+                      "line": 150,
+                      "column": 38
                     },
                     "end": {
-                      "line": 149,
-                      "column": 40
+                      "line": 150,
+                      "column": 41
                     }
                   }
                 },
                 "generator": false,
                 "expression": false,
                 "range": [
-                  3298,
-                  3311
+                  3238,
+                  3251
                 ],
                 "loc": {
                   "start": {
-                    "line": 149,
-                    "column": 27
+                    "line": 150,
+                    "column": 28
                   },
                   "end": {
-                    "line": 149,
-                    "column": 40
+                    "line": 150,
+                    "column": 41
                   }
                 }
               },
               "kind": "method",
               "computed": false,
               "range": [
-                3273,
-                3311
+                3212,
+                3251
               ],
               "loc": {
                 "start": {
-                  "line": 149,
+                  "line": 150,
                   "column": 2
                 },
                 "end": {
-                  "line": 149,
-                  "column": 40
+                  "line": 150,
+                  "column": 41
                 }
               },
               "leadingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n   * @return {Promise<CommandInfo[]>}\n   * @param {string} devname\n   ",
+                  "value": "*\n   * @param {string} devname\n   * @return {Promise<CommandInfo[],Error>}\n   ",
                   "range": [
-                    3194,
-                    3270
+                    3127,
+                    3209
                   ],
                   "loc": {
                     "start": {
-                      "line": 145,
+                      "line": 146,
                       "column": 2
                     },
                     "end": {
-                      "line": 148,
+                      "line": 149,
                       "column": 5
                     }
                   }
@@ -3227,8 +3227,8 @@
             }
           ],
           "range": [
-            495,
-            3313
+            496,
+            3253
           ],
           "loc": {
             "start": {
@@ -3236,14 +3236,14 @@
               "column": 23
             },
             "end": {
-              "line": 150,
+              "line": 151,
               "column": 1
             }
           }
         },
         "range": [
-          479,
-          3313
+          480,
+          3253
         ],
         "loc": {
           "start": {
@@ -3251,7 +3251,7 @@
             "column": 7
           },
           "end": {
-            "line": 150,
+            "line": 151,
             "column": 1
           }
         },
@@ -3260,8 +3260,8 @@
             "type": "Block",
             "value": "*\n * Tangojs connector interface. This class contains backend-specific\n * logic. Each connector plugin have to provide implementation\n * of this interface.\n * @interface\n ",
             "range": [
-              296,
-              471
+              297,
+              472
             ],
             "loc": {
               "start": {
@@ -3280,8 +3280,8 @@
       "specifiers": [],
       "source": null,
       "range": [
-        472,
-        3313
+        473,
+        3253
       ],
       "loc": {
         "start": {
@@ -3289,7 +3289,7 @@
           "column": 0
         },
         "end": {
-          "line": 150,
+          "line": 151,
           "column": 1
         }
       },
@@ -3298,8 +3298,8 @@
           "type": "Block",
           "value": "*\n * Tangojs connector interface. This class contains backend-specific\n * logic. Each connector plugin have to provide implementation\n * of this interface.\n * @interface\n ",
           "range": [
-            296,
-            471
+            297,
+            472
           ],
           "loc": {
             "start": {
@@ -3318,7 +3318,7 @@
   "sourceType": "module",
   "range": [
     104,
-    3313
+    3253
   ],
   "loc": {
     "start": {
@@ -3326,7 +3326,7 @@
       "column": 0
     },
     "end": {
-      "line": 150,
+      "line": 151,
       "column": 1
     }
   },
@@ -3389,8 +3389,8 @@
       "type": "Block",
       "value": "*\n * Tangojs connector interface. This class contains backend-specific\n * logic. Each connector plugin have to provide implementation\n * of this interface.\n * @interface\n ",
       "range": [
-        296,
-        471
+        297,
+        472
       ],
       "loc": {
         "start": {
@@ -3405,10 +3405,10 @@
     },
     {
       "type": "Block",
-      "value": "*\n   * @return {Promise<string>}\n   * @param {string} devname\n   ",
+      "value": "*\n   * @param {string} devname\n   * @return {Promise<string,Error>}\n   ",
       "range": [
-        500,
-        569
+        501,
+        576
       ],
       "loc": {
         "start": {
@@ -3423,10 +3423,10 @@
     },
     {
       "type": "Block",
-      "value": "*\n   * @return {Promise<DevState>}\n   * @param {string} devname\n   ",
+      "value": "*\n   * @param {string} devname\n   * @return {Promise<DevState,Error>}\n   ",
       "range": [
-        606,
-        677
+        614,
+        691
       ],
       "loc": {
         "start": {
@@ -3441,10 +3441,10 @@
     },
     {
       "type": "Block",
-      "value": "*\n   * @return {Promise<DeviceInfo>}\n   * @param {string} devname\n   ",
+      "value": "*\n   * @param {string} devname\n   * @return {Promise<DeviceInfo,Error>}\n   ",
       "range": [
-        713,
-        786
+        728,
+        807
       ],
       "loc": {
         "start": {
@@ -3459,10 +3459,10 @@
     },
     {
       "type": "Block",
-      "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   ",
+      "value": "*\n   * @param {string} pattern\n   * @return {Promise<string[],Error>}\n   ",
       "range": [
-        821,
-        892
+        843,
+        920
       ],
       "loc": {
         "start": {
@@ -3477,10 +3477,10 @@
     },
     {
       "type": "Block",
-      "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   ",
+      "value": "*\n   * @param {string} pattern\n   * @return {Promise<string[],Error>}\n   ",
       "range": [
-        927,
-        998
+        956,
+        1033
       ],
       "loc": {
         "start": {
@@ -3495,10 +3495,10 @@
     },
     {
       "type": "Block",
-      "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   ",
+      "value": "*\n   * @param {string} pattern\n   * @return {Promise<string[],Error>}\n   ",
       "range": [
-        1035,
-        1106
+        1071,
+        1148
       ],
       "loc": {
         "start": {
@@ -3513,10 +3513,10 @@
     },
     {
       "type": "Block",
-      "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   ",
+      "value": "*\n   * @param {string} pattern\n   * @return {Promise<string[],Error>}\n   ",
       "range": [
-        1143,
-        1214
+        1186,
+        1263
       ],
       "loc": {
         "start": {
@@ -3531,10 +3531,10 @@
     },
     {
       "type": "Block",
-      "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} devname\n   * @param {string} pattern\n   ",
+      "value": "*\n   * @param {string} devname\n   * @param {string} pattern\n   * @return {Promise<string[],Error>}\n   ",
       "range": [
-        1251,
-        1351
+        1301,
+        1407
       ],
       "loc": {
         "start": {
@@ -3549,10 +3549,10 @@
     },
     {
       "type": "Block",
-      "value": "*\n   * @return {Promise<DbDatum>|Promise<DbDatum[]>}\n   * @param {string} devname\n   * @param {string|string[]|DbDatum[]} propnames\n   ",
+      "value": "*\n   * @param {string} devname\n   * @param {string[]} propnames\n   * @return {Promise<DbDatum[],Error>}\n   ",
       "range": [
-        1404,
-        1543
+        1461,
+        1572
       ],
       "loc": {
         "start": {
@@ -3567,10 +3567,10 @@
     },
     {
       "type": "Block",
-      "value": "*\n   * @return {Promise<undefined>}\n   * @param {string} devname\n   * @param {DbDatum[]} properties\n   ",
+      "value": "*\n   * @param {string} devname\n   * @param {DbDatum[]} properties\n   * @return {Promise<undefined,Error>}\n   ",
       "range": [
-        1593,
-        1700
+        1623,
+        1736
       ],
       "loc": {
         "start": {
@@ -3585,10 +3585,10 @@
     },
     {
       "type": "Block",
-      "value": "*\n   * @return {Promise<undefined>}\n   * @param {string} devname\n   * @param {string|string[]|DbDatum[]} propnames property names\n   ",
+      "value": "*\n   * @param {string} devname\n   * @param {string[]} propnames\n   * @return {Promise<undefined,Error>}\n   ",
       "range": [
-        1751,
-        1888
+        1788,
+        1899
       ],
       "loc": {
         "start": {
@@ -3603,10 +3603,10 @@
     },
     {
       "type": "Block",
-      "value": "*\n   * @return {Promise<string[]>}\n   * @param {string} devname\n   ",
+      "value": "*\n   * @param {string} devname\n   * @return {Promise<string[],Error>}\n   ",
       "range": [
-        1941,
-        2012
+        1953,
+        2030
       ],
       "loc": {
         "start": {
@@ -3621,10 +3621,10 @@
     },
     {
       "type": "Block",
-      "value": "*\n   * @return {Promise<AttributeInfo>|Promise<AttributeInfo[]>}\n   * @param {string} devname\n   * @param {undefined|string|string[]} attnames\n   ",
+      "value": "*\n   * @param {string} devname\n   * @param {string[]} attnames\n   * @return {Promise<AttributeInfo[],Error>}\n   ",
       "range": [
-        2057,
-        2207
+        2076,
+        2192
       ],
       "loc": {
         "start": {
@@ -3639,10 +3639,10 @@
     },
     {
       "type": "Block",
-      "value": "*\n   * @return {Promise<DeviceAttribute>|Promise<DeviceAttribute[]>}\n   * @param {string} devname\n   * @param {string|string[]} attname\n   ",
+      "value": "*\n   * @param {string} devname\n   * @param {string[]} attname\n   * @return {Promise<DeviceAttribute[],Error>}\n   ",
       "range": [
-        2262,
-        2405
+        2248,
+        2365
       ],
       "loc": {
         "start": {
@@ -3657,10 +3657,10 @@
     },
     {
       "type": "Block",
-      "value": "*\n   * @return {Promise<undefined>}\n   * @param {string} devname\n   * @param {DeviceAttribute|DeviceAttribute[]} attrs\n   ",
+      "value": "*\n\n   * @param {string} devname\n   * @param {DeviceAttribute[]} attrs\n   * @return {Promise<undefined,Error>}\n   ",
       "range": [
-        2455,
-        2581
+        2416,
+        2533
       ],
       "loc": {
         "start": {
@@ -3668,79 +3668,79 @@
           "column": 2
         },
         "end": {
-          "line": 120,
+          "line": 121,
           "column": 5
         }
       }
     },
     {
       "type": "Block",
-      "value": "*\n   * @return {Promise<DeviceAttribute>|Promise<DeviceAttribute[]>}\n   * @param {string} devname\n   * @param {DeviceAttribute|DeviceAttribute[]} attrs\n   ",
+      "value": "*\n   * @param {string} devname\n   * @param {DeviceAttribute[]} attrs\n   * @return {Promise<DeviceAttribute[],Error>}\n   ",
       "range": [
-        2630,
-        2789
+        2583,
+        2707
       ],
       "loc": {
         "start": {
-          "line": 123,
+          "line": 124,
           "column": 2
         },
         "end": {
-          "line": 127,
+          "line": 128,
           "column": 5
         }
       }
     },
     {
       "type": "Block",
-      "value": "*\n   * @return {Promise<DeviceData>}\n   * @param {string} devname\n   * @param {string} cmdname\n   * @param {undefined|DeviceData} argin\n   ",
+      "value": "*\n   * @param {string} devname\n   * @param {string} cmdname\n   * @param {undefined|DeviceData} argin\n   * @return {Promise<DeviceData,Error>}\n   ",
       "range": [
-        2843,
-        2986
+        2762,
+        2911
       ],
       "loc": {
         "start": {
-          "line": 130,
+          "line": 131,
           "column": 2
         },
         "end": {
-          "line": 135,
+          "line": 136,
           "column": 5
         }
       }
     },
     {
       "type": "Block",
-      "value": "*\n   * @return {Promise<CommandInfo>}\n   * @param {string} devname\n   * @param {string} cmdname\n   ",
+      "value": "*\n   * @param {string} devname\n   * @param {string} cmdname\n   * @return {Promise<CommandInfo,Error>}\n   ",
       "range": [
-        3042,
-        3145
+        2968,
+        3077
       ],
       "loc": {
         "start": {
-          "line": 138,
+          "line": 139,
           "column": 2
         },
         "end": {
-          "line": 142,
+          "line": 143,
           "column": 5
         }
       }
     },
     {
       "type": "Block",
-      "value": "*\n   * @return {Promise<CommandInfo[]>}\n   * @param {string} devname\n   ",
+      "value": "*\n   * @param {string} devname\n   * @return {Promise<CommandInfo[],Error>}\n   ",
       "range": [
-        3194,
-        3270
+        3127,
+        3209
       ],
       "loc": {
         "start": {
-          "line": 145,
+          "line": 146,
           "column": 2
         },
         "end": {
-          "line": 148,
+          "line": 149,
           "column": 5
         }
       }

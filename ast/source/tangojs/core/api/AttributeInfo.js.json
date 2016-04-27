@@ -163,17 +163,17 @@
                     "type": "Identifier",
                     "name": "data",
                     "range": [
-                      165,
-                      169
+                      166,
+                      170
                     ],
                     "loc": {
                       "start": {
                         "line": 9,
-                        "column": 14
+                        "column": 15
                       },
                       "end": {
                         "line": 9,
-                        "column": 18
+                        "column": 19
                       }
                     }
                   }
@@ -188,8 +188,8 @@
                         "callee": {
                           "type": "Super",
                           "range": [
-                            177,
-                            182
+                            178,
+                            183
                           ],
                           "loc": {
                             "start": {
@@ -207,8 +207,8 @@
                             "type": "Identifier",
                             "name": "data",
                             "range": [
-                              183,
-                              187
+                              184,
+                              188
                             ],
                             "loc": {
                               "start": {
@@ -223,8 +223,8 @@
                           }
                         ],
                         "range": [
-                          177,
-                          188
+                          178,
+                          189
                         ],
                         "loc": {
                           "start": {
@@ -238,8 +238,8 @@
                         }
                       },
                       "range": [
-                        177,
-                        191
+                        178,
+                        192
                       ],
                       "loc": {
                         "start": {
@@ -254,13 +254,13 @@
                     }
                   ],
                   "range": [
-                    171,
-                    192
+                    172,
+                    193
                   ],
                   "loc": {
                     "start": {
                       "line": 9,
-                      "column": 20
+                      "column": 21
                     },
                     "end": {
                       "line": 11,
@@ -271,13 +271,13 @@
                 "generator": false,
                 "expression": false,
                 "range": [
-                  164,
-                  192
+                  165,
+                  193
                 ],
                 "loc": {
                   "start": {
                     "line": 9,
-                    "column": 13
+                    "column": 14
                   },
                   "end": {
                     "line": 11,
@@ -289,7 +289,7 @@
               "computed": false,
               "range": [
                 153,
-                192
+                193
               ],
               "loc": {
                 "start": {
@@ -326,7 +326,7 @@
           ],
           "range": [
             110,
-            194
+            195
           ],
           "loc": {
             "start": {
@@ -341,7 +341,7 @@
         },
         "range": [
           64,
-          194
+          195
         ],
         "loc": {
           "start": {
@@ -360,7 +360,7 @@
       "source": null,
       "range": [
         57,
-        194
+        195
       ],
       "loc": {
         "start": {
@@ -377,7 +377,7 @@
   "sourceType": "module",
   "range": [
     1,
-    194
+    195
   ],
   "loc": {
     "start": {

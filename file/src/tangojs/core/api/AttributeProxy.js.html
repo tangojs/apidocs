@@ -157,42 +157,52 @@
 <div class="content" data-ice="content"><h1 data-ice="title">src/tangojs/core/api/AttributeProxy.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">
 import { DeviceProxy } from &apos;./DeviceProxy&apos;
+import { DeviceAttribute } from &apos;./DeviceAttribute&apos;
+
+/** @private */
+const _proxy = Symbol.for(&apos;_proxy&apos;)
+
+/** @private */
+const _attname = Symbol.for(&apos;_attname&apos;)
 
 export class AttributeProxy {
 
   /**
-   * @param {string} devname device name
-   * @param {string} attname attribute name
+   * @param {string} devname
+   * @param {string} attname
    */
-  constructor(devname, attname) {
+  constructor (devname, attname) {
 
     /** @private */
-    this._attname = attname
+    this[_attname] = attname
 
     /** @private */
-    this._proxy = new DeviceProxy(devname)
+    this[_proxy] = new DeviceProxy(devname)
   }
 
   /**
-   * @return {Promise&lt;AttributeInfo&gt;}
+   * @return {Promise&lt;AttributeInfo,Error&gt;}
    */
-  get_info() {
-    return this._proxy.get_attribute_info(this._attname)
+  get_info () {
+    return this[_proxy].get_attribute_info(this[_attname])
   }
 
   /**
-   * @return {Promise&lt;DeviceAttribute&gt;}
+   * @return {Promise&lt;DeviceAttribute,Error&gt;}
    */
-  read() {
-    return this._proxy.read_attribute(this._attname)
+  read () {
+    return this[_proxy].read_attribute(this[_attname])
   }
 
   /**
    * @param {DeviceAttribute} attr
+   * @return {Promise&lt;undefined,Error&gt;}
    */
-  write(attr) {
-    let a = Object.assign({}, attr._data, {name: this._attname})
-    return this._proxy.write_attribute(a)
+  write (attr) {
+    // FIXME do sth with accessing private _data
+    const data = Object.assign({}, attr._data, { name: this[_attname] })
+    const attribute = new DeviceAttribute(data)
+    return this[_proxy].write_attribute(attribute)
   }
 }
 </code></pre>

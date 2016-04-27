@@ -10,7 +10,7 @@
     "access": null,
     "description": null,
     "lineNumber": 8,
-    "content": "\n/* eslint-disable no-unused-vars */\n\n/**\n * Backend-specific connector implementation.\n * @private\n */\nexport let connector = null\n\n/**\n * Sets connector interface implementation.\n * @param {Connector} conn connector implementation\n */\nexport function setConnector(conn) {\n  connector = conn\n}\n\n/**\n * Tangojs connector interface. This class contains backend-specific\n * logic. Each connector plugin have to provide implementation\n * of this interface.\n * @interface\n */\nexport class Connector {\n\n  /**\n   * @return {Promise<string>}\n   * @param {string} devname\n   */\n  get_device_status(devname) { }\n\n  /**\n   * @return {Promise<DevState>}\n   * @param {string} devname\n   */\n  get_device_state(devname) { }\n\n  /**\n   * @return {Promise<DeviceInfo>}\n   * @param {string} devname\n   */\n  get_device_info(devname) { }\n\n  /**\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   */\n  get_device_list(pattern) { }\n\n  /**\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   */\n  get_device_domain(pattern) { }\n\n  /**\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   */\n  get_device_family(pattern) { }\n\n  /**\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   */\n  get_device_member(pattern) { }\n\n  /**\n   * @return {Promise<string[]>}\n   * @param {string} devname\n   * @param {string} pattern\n   */\n  get_device_property_list(devname, pattern) { }\n\n  /**\n   * @return {Promise<DbDatum>|Promise<DbDatum[]>}\n   * @param {string} devname\n   * @param {string|string[]|DbDatum[]} propnames\n   */\n  get_device_property(devname, propnames) { }\n\n  /**\n   * @return {Promise<undefined>}\n   * @param {string} devname\n   * @param {DbDatum[]} properties\n   */\n  put_device_property(devname, properties) { }\n\n  /**\n   * @return {Promise<undefined>}\n   * @param {string} devname\n   * @param {string|string[]|DbDatum[]} propnames property names\n   */\n  delete_device_property(devname, propnames) { }\n\n  /**\n   * @return {Promise<string[]>}\n   * @param {string} devname\n   */\n  get_device_attribute_list(devname) { }\n\n  /**\n   * @return {Promise<AttributeInfo>|Promise<AttributeInfo[]>}\n   * @param {string} devname\n   * @param {undefined|string|string[]} attnames\n   */\n  get_device_attribute_info(devname, attnames) { }\n\n  /**\n   * @return {Promise<DeviceAttribute>|Promise<DeviceAttribute[]>}\n   * @param {string} devname\n   * @param {string|string[]} attname\n   */\n  read_device_attribute(devname, attname) { }\n\n  /**\n   * @return {Promise<undefined>}\n   * @param {string} devname\n   * @param {DeviceAttribute|DeviceAttribute[]} attrs\n   */\n  write_device_attribute(devname, attrs) { }\n\n  /**\n   * @return {Promise<DeviceAttribute>|Promise<DeviceAttribute[]>}\n   * @param {string} devname\n   * @param {DeviceAttribute|DeviceAttribute[]} attrs\n   */\n  write_read_device_attribute(devname, attrs) { }\n\n  /**\n   * @return {Promise<DeviceData>}\n   * @param {string} devname\n   * @param {string} cmdname\n   * @param {undefined|DeviceData} argin\n   */\n  device_command_inout(devname, cmdname, argin) { }\n\n  /**\n   * @return {Promise<CommandInfo>}\n   * @param {string} devname\n   * @param {string} cmdname\n   */\n  device_command_query(devname, cmdname) { }\n\n  /**\n   * @return {Promise<CommandInfo[]>}\n   * @param {string} devname\n   */\n  device_command_list_query(devname) { }\n}\n"
+    "content": "\n/* eslint-disable no-unused-vars */\n\n/**\n * Backend-specific connector implementation.\n * @private\n */\nexport let connector = null\n\n/**\n * Sets connector interface implementation.\n * @param {Connector} conn connector implementation\n */\nexport function setConnector (conn) {\n  connector = conn\n}\n\n/**\n * Tangojs connector interface. This class contains backend-specific\n * logic. Each connector plugin have to provide implementation\n * of this interface.\n * @interface\n */\nexport class Connector {\n\n  /**\n   * @param {string} devname\n   * @return {Promise<string,Error>}\n   */\n  get_device_status (devname) { }\n\n  /**\n   * @param {string} devname\n   * @return {Promise<DevState,Error>}\n   */\n  get_device_state (devname) { }\n\n  /**\n   * @param {string} devname\n   * @return {Promise<DeviceInfo,Error>}\n   */\n  get_device_info (devname) { }\n\n  /**\n   * @param {string} pattern\n   * @return {Promise<string[],Error>}\n   */\n  get_device_list (pattern) { }\n\n  /**\n   * @param {string} pattern\n   * @return {Promise<string[],Error>}\n   */\n  get_device_domain (pattern) { }\n\n  /**\n   * @param {string} pattern\n   * @return {Promise<string[],Error>}\n   */\n  get_device_family (pattern) { }\n\n  /**\n   * @param {string} pattern\n   * @return {Promise<string[],Error>}\n   */\n  get_device_member (pattern) { }\n\n  /**\n   * @param {string} devname\n   * @param {string} pattern\n   * @return {Promise<string[],Error>}\n   */\n  get_device_property_list (devname, pattern) { }\n\n  /**\n   * @param {string} devname\n   * @param {string[]} propnames\n   * @return {Promise<DbDatum[],Error>}\n   */\n  get_device_property (devname, propnames) { }\n\n  /**\n   * @param {string} devname\n   * @param {DbDatum[]} properties\n   * @return {Promise<undefined,Error>}\n   */\n  put_device_property (devname, properties) { }\n\n  /**\n   * @param {string} devname\n   * @param {string[]} propnames\n   * @return {Promise<undefined,Error>}\n   */\n  delete_device_property (devname, propnames) { }\n\n  /**\n   * @param {string} devname\n   * @return {Promise<string[],Error>}\n   */\n  get_device_attribute_list (devname) { }\n\n  /**\n   * @param {string} devname\n   * @param {string[]} attnames\n   * @return {Promise<AttributeInfo[],Error>}\n   */\n  get_device_attribute_info (devname, attnames) { }\n\n  /**\n   * @param {string} devname\n   * @param {string[]} attname\n   * @return {Promise<DeviceAttribute[],Error>}\n   */\n  read_device_attribute (devname, attname) { }\n\n  /**\n\n   * @param {string} devname\n   * @param {DeviceAttribute[]} attrs\n   * @return {Promise<undefined,Error>}\n   */\n  write_device_attribute (devname, attrs) { }\n\n  /**\n   * @param {string} devname\n   * @param {DeviceAttribute[]} attrs\n   * @return {Promise<DeviceAttribute[],Error>}\n   */\n  write_read_device_attribute (devname, attrs) { }\n\n  /**\n   * @param {string} devname\n   * @param {string} cmdname\n   * @param {undefined|DeviceData} argin\n   * @return {Promise<DeviceData,Error>}\n   */\n  device_command_inout (devname, cmdname, argin) { }\n\n  /**\n   * @param {string} devname\n   * @param {string} cmdname\n   * @return {Promise<CommandInfo,Error>}\n   */\n  device_command_query (devname, cmdname) { }\n\n  /**\n   * @param {string} devname\n   * @return {Promise<CommandInfo[],Error>}\n   */\n  device_command_list_query (devname) { }\n}\n"
   },
   {
     "__docId__": 1,
@@ -102,7 +102,7 @@
     "return": {
       "nullable": null,
       "types": [
-        "Promise<string>"
+        "Promise<string,Error>"
       ],
       "spread": false,
       "description": ""
@@ -135,7 +135,7 @@
     "return": {
       "nullable": null,
       "types": [
-        "Promise<DevState>"
+        "Promise<DevState,Error>"
       ],
       "spread": false,
       "description": ""
@@ -168,7 +168,7 @@
     "return": {
       "nullable": null,
       "types": [
-        "Promise<DeviceInfo>"
+        "Promise<DeviceInfo,Error>"
       ],
       "spread": false,
       "description": ""
@@ -201,7 +201,7 @@
     "return": {
       "nullable": null,
       "types": [
-        "Promise<string[]>"
+        "Promise<string[],Error>"
       ],
       "spread": false,
       "description": ""
@@ -234,7 +234,7 @@
     "return": {
       "nullable": null,
       "types": [
-        "Promise<string[]>"
+        "Promise<string[],Error>"
       ],
       "spread": false,
       "description": ""
@@ -267,7 +267,7 @@
     "return": {
       "nullable": null,
       "types": [
-        "Promise<string[]>"
+        "Promise<string[],Error>"
       ],
       "spread": false,
       "description": ""
@@ -300,7 +300,7 @@
     "return": {
       "nullable": null,
       "types": [
-        "Promise<string[]>"
+        "Promise<string[],Error>"
       ],
       "spread": false,
       "description": ""
@@ -343,7 +343,7 @@
     "return": {
       "nullable": null,
       "types": [
-        "Promise<string[]>"
+        "Promise<string[],Error>"
       ],
       "spread": false,
       "description": ""
@@ -375,9 +375,7 @@
       {
         "nullable": null,
         "types": [
-          "string",
-          "string[]",
-          "DbDatum[]"
+          "string[]"
         ],
         "spread": false,
         "optional": false,
@@ -388,8 +386,7 @@
     "return": {
       "nullable": null,
       "types": [
-        "Promise<DbDatum>",
-        "Promise<DbDatum[]>"
+        "Promise<DbDatum[],Error>"
       ],
       "spread": false,
       "description": ""
@@ -432,7 +429,7 @@
     "return": {
       "nullable": null,
       "types": [
-        "Promise<undefined>"
+        "Promise<undefined,Error>"
       ],
       "spread": false,
       "description": ""
@@ -464,20 +461,18 @@
       {
         "nullable": null,
         "types": [
-          "string",
-          "string[]",
-          "DbDatum[]"
+          "string[]"
         ],
         "spread": false,
         "optional": false,
         "name": "propnames",
-        "description": "property names"
+        "description": ""
       }
     ],
     "return": {
       "nullable": null,
       "types": [
-        "Promise<undefined>"
+        "Promise<undefined,Error>"
       ],
       "spread": false,
       "description": ""
@@ -510,7 +505,7 @@
     "return": {
       "nullable": null,
       "types": [
-        "Promise<string[]>"
+        "Promise<string[],Error>"
       ],
       "spread": false,
       "description": ""
@@ -542,8 +537,6 @@
       {
         "nullable": null,
         "types": [
-          "undefined",
-          "string",
           "string[]"
         ],
         "spread": false,
@@ -555,8 +548,7 @@
     "return": {
       "nullable": null,
       "types": [
-        "Promise<AttributeInfo>",
-        "Promise<AttributeInfo[]>"
+        "Promise<AttributeInfo[],Error>"
       ],
       "spread": false,
       "description": ""
@@ -588,7 +580,6 @@
       {
         "nullable": null,
         "types": [
-          "string",
           "string[]"
         ],
         "spread": false,
@@ -600,8 +591,7 @@
     "return": {
       "nullable": null,
       "types": [
-        "Promise<DeviceAttribute>",
-        "Promise<DeviceAttribute[]>"
+        "Promise<DeviceAttribute[],Error>"
       ],
       "spread": false,
       "description": ""
@@ -618,7 +608,7 @@
     "longname": "src/tangojs/core/Connector.js~Connector#write_device_attribute",
     "access": null,
     "description": "",
-    "lineNumber": 121,
+    "lineNumber": 122,
     "params": [
       {
         "nullable": null,
@@ -633,7 +623,6 @@
       {
         "nullable": null,
         "types": [
-          "DeviceAttribute",
           "DeviceAttribute[]"
         ],
         "spread": false,
@@ -645,7 +634,7 @@
     "return": {
       "nullable": null,
       "types": [
-        "Promise<undefined>"
+        "Promise<undefined,Error>"
       ],
       "spread": false,
       "description": ""
@@ -662,7 +651,7 @@
     "longname": "src/tangojs/core/Connector.js~Connector#write_read_device_attribute",
     "access": null,
     "description": "",
-    "lineNumber": 128,
+    "lineNumber": 129,
     "params": [
       {
         "nullable": null,
@@ -677,7 +666,6 @@
       {
         "nullable": null,
         "types": [
-          "DeviceAttribute",
           "DeviceAttribute[]"
         ],
         "spread": false,
@@ -689,8 +677,7 @@
     "return": {
       "nullable": null,
       "types": [
-        "Promise<DeviceAttribute>",
-        "Promise<DeviceAttribute[]>"
+        "Promise<DeviceAttribute[],Error>"
       ],
       "spread": false,
       "description": ""
@@ -707,7 +694,7 @@
     "longname": "src/tangojs/core/Connector.js~Connector#device_command_inout",
     "access": null,
     "description": "",
-    "lineNumber": 136,
+    "lineNumber": 137,
     "params": [
       {
         "nullable": null,
@@ -744,7 +731,7 @@
     "return": {
       "nullable": null,
       "types": [
-        "Promise<DeviceData>"
+        "Promise<DeviceData,Error>"
       ],
       "spread": false,
       "description": ""
@@ -761,7 +748,7 @@
     "longname": "src/tangojs/core/Connector.js~Connector#device_command_query",
     "access": null,
     "description": "",
-    "lineNumber": 143,
+    "lineNumber": 144,
     "params": [
       {
         "nullable": null,
@@ -787,7 +774,7 @@
     "return": {
       "nullable": null,
       "types": [
-        "Promise<CommandInfo>"
+        "Promise<CommandInfo,Error>"
       ],
       "spread": false,
       "description": ""
@@ -804,7 +791,7 @@
     "longname": "src/tangojs/core/Connector.js~Connector#device_command_list_query",
     "access": null,
     "description": "",
-    "lineNumber": 149,
+    "lineNumber": 150,
     "params": [
       {
         "nullable": null,
@@ -820,7 +807,7 @@
     "return": {
       "nullable": null,
       "types": [
-        "Promise<CommandInfo[]>"
+        "Promise<CommandInfo[],Error>"
       ],
       "spread": false,
       "description": ""
@@ -838,7 +825,7 @@
     "access": null,
     "description": null,
     "lineNumber": 2,
-    "content": "\nimport { AttributeConfig_5 } from '../tango/generated'\n\nexport class AttributeInfo extends AttributeConfig_5 {\n\n  /**\n   * @param {Object} data\n   */\n  constructor(data) {\n    super(data)\n  }\n}\n"
+    "content": "\nimport { AttributeConfig_5 } from '../tango/generated'\n\nexport class AttributeInfo extends AttributeConfig_5 {\n\n  /**\n   * @param {Object} data\n   */\n  constructor (data) {\n    super(data)\n  }\n}\n"
   },
   {
     "__docId__": 24,
@@ -896,10 +883,50 @@
     "access": null,
     "description": null,
     "lineNumber": 2,
-    "content": "\nimport { DeviceProxy } from './DeviceProxy'\n\nexport class AttributeProxy {\n\n  /**\n   * @param {string} devname device name\n   * @param {string} attname attribute name\n   */\n  constructor(devname, attname) {\n\n    /** @private */\n    this._attname = attname\n\n    /** @private */\n    this._proxy = new DeviceProxy(devname)\n  }\n\n  /**\n   * @return {Promise<AttributeInfo>}\n   */\n  get_info() {\n    return this._proxy.get_attribute_info(this._attname)\n  }\n\n  /**\n   * @return {Promise<DeviceAttribute>}\n   */\n  read() {\n    return this._proxy.read_attribute(this._attname)\n  }\n\n  /**\n   * @param {DeviceAttribute} attr\n   */\n  write(attr) {\n    let a = Object.assign({}, attr._data, {name: this._attname})\n    return this._proxy.write_attribute(a)\n  }\n}\n"
+    "content": "\nimport { DeviceProxy } from './DeviceProxy'\nimport { DeviceAttribute } from './DeviceAttribute'\n\n/** @private */\nconst _proxy = Symbol.for('_proxy')\n\n/** @private */\nconst _attname = Symbol.for('_attname')\n\nexport class AttributeProxy {\n\n  /**\n   * @param {string} devname\n   * @param {string} attname\n   */\n  constructor (devname, attname) {\n\n    /** @private */\n    this[_attname] = attname\n\n    /** @private */\n    this[_proxy] = new DeviceProxy(devname)\n  }\n\n  /**\n   * @return {Promise<AttributeInfo,Error>}\n   */\n  get_info () {\n    return this[_proxy].get_attribute_info(this[_attname])\n  }\n\n  /**\n   * @return {Promise<DeviceAttribute,Error>}\n   */\n  read () {\n    return this[_proxy].read_attribute(this[_attname])\n  }\n\n  /**\n   * @param {DeviceAttribute} attr\n   * @return {Promise<undefined,Error>}\n   */\n  write (attr) {\n    // FIXME do sth with accessing private _data\n    const data = Object.assign({}, attr._data, { name: this[_attname] })\n    const attribute = new DeviceAttribute(data)\n    return this[_proxy].write_attribute(attribute)\n  }\n}\n"
   },
   {
     "__docId__": 27,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "_proxy",
+    "memberof": "src/tangojs/core/api/AttributeProxy.js",
+    "longname": "src/tangojs/core/api/AttributeProxy.js~_proxy",
+    "access": "private",
+    "export": false,
+    "importPath": "tangojs-core/src/tangojs/core/api/AttributeProxy.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 6,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 28,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "_attname",
+    "memberof": "src/tangojs/core/api/AttributeProxy.js",
+    "longname": "src/tangojs/core/api/AttributeProxy.js~_attname",
+    "access": "private",
+    "export": false,
+    "importPath": "tangojs-core/src/tangojs/core/api/AttributeProxy.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 9,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 29,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -911,12 +938,12 @@
     "importPath": "tangojs-core/src/tangojs/core/api/AttributeProxy.js",
     "importStyle": "{AttributeProxy}",
     "description": null,
-    "lineNumber": 4,
+    "lineNumber": 11,
     "undocument": true,
     "interface": false
   },
   {
-    "__docId__": 28,
+    "__docId__": 30,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -925,7 +952,7 @@
     "longname": "src/tangojs/core/api/AttributeProxy.js~AttributeProxy#constructor",
     "access": null,
     "description": "",
-    "lineNumber": 10,
+    "lineNumber": 17,
     "params": [
       {
         "nullable": null,
@@ -935,7 +962,7 @@
         "spread": false,
         "optional": false,
         "name": "devname",
-        "description": "device name"
+        "description": ""
       },
       {
         "nullable": null,
@@ -945,44 +972,10 @@
         "spread": false,
         "optional": false,
         "name": "attname",
-        "description": "attribute name"
+        "description": ""
       }
     ],
     "generator": false
-  },
-  {
-    "__docId__": 29,
-    "kind": "member",
-    "static": false,
-    "variation": null,
-    "name": "_attname",
-    "memberof": "src/tangojs/core/api/AttributeProxy.js~AttributeProxy",
-    "longname": "src/tangojs/core/api/AttributeProxy.js~AttributeProxy#_attname",
-    "access": "private",
-    "description": null,
-    "lineNumber": 13,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 30,
-    "kind": "member",
-    "static": false,
-    "variation": null,
-    "name": "_proxy",
-    "memberof": "src/tangojs/core/api/AttributeProxy.js~AttributeProxy",
-    "longname": "src/tangojs/core/api/AttributeProxy.js~AttributeProxy#_proxy",
-    "access": "private",
-    "description": null,
-    "lineNumber": 16,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
   },
   {
     "__docId__": 31,
@@ -994,12 +987,12 @@
     "longname": "src/tangojs/core/api/AttributeProxy.js~AttributeProxy#get_info",
     "access": null,
     "description": "",
-    "lineNumber": 22,
+    "lineNumber": 29,
     "params": [],
     "return": {
       "nullable": null,
       "types": [
-        "Promise<AttributeInfo>"
+        "Promise<AttributeInfo,Error>"
       ],
       "spread": false,
       "description": ""
@@ -1016,12 +1009,12 @@
     "longname": "src/tangojs/core/api/AttributeProxy.js~AttributeProxy#read",
     "access": null,
     "description": "",
-    "lineNumber": 29,
+    "lineNumber": 36,
     "params": [],
     "return": {
       "nullable": null,
       "types": [
-        "Promise<DeviceAttribute>"
+        "Promise<DeviceAttribute,Error>"
       ],
       "spread": false,
       "description": ""
@@ -1038,7 +1031,7 @@
     "longname": "src/tangojs/core/api/AttributeProxy.js~AttributeProxy#write",
     "access": null,
     "description": "",
-    "lineNumber": 36,
+    "lineNumber": 44,
     "params": [
       {
         "nullable": null,
@@ -1052,9 +1045,12 @@
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Promise<undefined,Error>"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
@@ -1069,7 +1065,7 @@
     "access": null,
     "description": null,
     "lineNumber": 2,
-    "content": "\nimport { DevCmdInfo_2 } from '../tango/generated'\n\nexport class CommandInfo extends DevCmdInfo_2 {\n\n  /**\n   * @param {Object} data\n   */\n  constructor(data) {\n    super(data)\n  }\n}\n"
+    "content": "\nimport { DevCmdInfo_2 } from '../tango/generated'\n\nexport class CommandInfo extends DevCmdInfo_2 {\n\n  /**\n   * @param {Object} data\n   */\n  constructor (data) {\n    super(data)\n  }\n}\n"
   },
   {
     "__docId__": 35,
@@ -1127,10 +1123,50 @@
     "access": null,
     "description": null,
     "lineNumber": 2,
-    "content": "\nimport { DeviceProxy } from './DeviceProxy'\n\nexport class CommandProxy {\n\n  /**\n   * @param {string} devname device name\n   * @param {string} cmdname command name\n   */\n  constructor(devname, cmdname) {\n\n    /** @private */\n    this._cmdname = cmdname\n\n    /** @private */\n    this._proxy = new DeviceProxy(devname)\n  }\n\n  /**\n   * @return {Promise<CommandInfo>}\n   */\n  get_info() {\n    return this._proxy.command_query(this._cmdname)\n  }\n\n  /**\n   * @return {Promise<DeviceData>}\n   * @param {undefined|DeviceData} argin\n   */\n  inout(argin) {\n    return this._proxy.command_inout(this._cmdname, argin)\n  }\n}\n"
+    "content": "\nimport { DeviceProxy } from './DeviceProxy'\n\n/** @private */\nconst _proxy = Symbol.for('_proxy')\n\n/** @private */\nconst _cmdname = Symbol.for('_cmdname')\n\nexport class CommandProxy {\n\n  /**\n   * @param {string} devname device name\n   * @param {string} cmdname command name\n   */\n  constructor (devname, cmdname) {\n\n    /** @private */\n    this[_cmdname] = cmdname\n\n    /** @private */\n    this[_proxy] = new DeviceProxy(devname)\n  }\n\n  /**\n   * @return {Promise<CommandInfo,Error>}\n   */\n  get_info () {\n    return this[_proxy].command_query(this[_cmdname])\n  }\n\n  /**\n   * @param {undefined|DeviceData} argin\n   * @return {Promise<DeviceData,Error>}\n   */\n  inout (argin) {\n    return this[_proxy].command_inout(this[_cmdname], argin)\n  }\n}\n"
   },
   {
     "__docId__": 38,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "_proxy",
+    "memberof": "src/tangojs/core/api/CommandProxy.js",
+    "longname": "src/tangojs/core/api/CommandProxy.js~_proxy",
+    "access": "private",
+    "export": false,
+    "importPath": "tangojs-core/src/tangojs/core/api/CommandProxy.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 5,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 39,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "_cmdname",
+    "memberof": "src/tangojs/core/api/CommandProxy.js",
+    "longname": "src/tangojs/core/api/CommandProxy.js~_cmdname",
+    "access": "private",
+    "export": false,
+    "importPath": "tangojs-core/src/tangojs/core/api/CommandProxy.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 8,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 40,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -1142,12 +1178,12 @@
     "importPath": "tangojs-core/src/tangojs/core/api/CommandProxy.js",
     "importStyle": "{CommandProxy}",
     "description": null,
-    "lineNumber": 4,
+    "lineNumber": 10,
     "undocument": true,
     "interface": false
   },
   {
-    "__docId__": 39,
+    "__docId__": 41,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -1156,7 +1192,7 @@
     "longname": "src/tangojs/core/api/CommandProxy.js~CommandProxy#constructor",
     "access": null,
     "description": "",
-    "lineNumber": 10,
+    "lineNumber": 16,
     "params": [
       {
         "nullable": null,
@@ -1182,40 +1218,6 @@
     "generator": false
   },
   {
-    "__docId__": 40,
-    "kind": "member",
-    "static": false,
-    "variation": null,
-    "name": "_cmdname",
-    "memberof": "src/tangojs/core/api/CommandProxy.js~CommandProxy",
-    "longname": "src/tangojs/core/api/CommandProxy.js~CommandProxy#_cmdname",
-    "access": "private",
-    "description": null,
-    "lineNumber": 13,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 41,
-    "kind": "member",
-    "static": false,
-    "variation": null,
-    "name": "_proxy",
-    "memberof": "src/tangojs/core/api/CommandProxy.js~CommandProxy",
-    "longname": "src/tangojs/core/api/CommandProxy.js~CommandProxy#_proxy",
-    "access": "private",
-    "description": null,
-    "lineNumber": 16,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
     "__docId__": 42,
     "kind": "method",
     "static": false,
@@ -1225,12 +1227,12 @@
     "longname": "src/tangojs/core/api/CommandProxy.js~CommandProxy#get_info",
     "access": null,
     "description": "",
-    "lineNumber": 22,
+    "lineNumber": 28,
     "params": [],
     "return": {
       "nullable": null,
       "types": [
-        "Promise<CommandInfo>"
+        "Promise<CommandInfo,Error>"
       ],
       "spread": false,
       "description": ""
@@ -1247,7 +1249,7 @@
     "longname": "src/tangojs/core/api/CommandProxy.js~CommandProxy#inout",
     "access": null,
     "description": "",
-    "lineNumber": 30,
+    "lineNumber": 36,
     "params": [
       {
         "nullable": null,
@@ -1264,7 +1266,7 @@
     "return": {
       "nullable": null,
       "types": [
-        "Promise<DeviceData>"
+        "Promise<DeviceData,Error>"
       ],
       "spread": false,
       "description": ""
@@ -1282,7 +1284,7 @@
     "access": null,
     "description": null,
     "lineNumber": 2,
-    "content": "\nimport { connector } from '../Connector'\n\nexport class Database {\n\n  constructor() {\n    // empty\n  }\n\n  /**\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   */\n  get_device_list(pattern) {\n    return connector.get_device_list(pattern)\n  }\n\n  /**\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   */\n  get_device_domain(pattern) {\n    return connector.get_device_domain(pattern)\n  }\n\n  /**\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   */\n  get_device_family(pattern) {\n    return connector.get_device_family(pattern)\n  }\n\n  /**\n   * @return {Promise<string[]>}\n   * @param {string} pattern\n   */\n  get_device_member(pattern) {\n    return connector.get_device_member(pattern)\n  }\n\n}\n"
+    "content": "\nimport { connector } from '../Connector'\n\nexport class Database {\n\n  constructor () {\n    // empty\n  }\n\n  /**\n   * @param {string} pattern\n   * @return {Promise<string[],Error>}\n   */\n  get_device_list (pattern) {\n    return connector.get_device_list(pattern)\n  }\n\n  /**\n   * @param {string} pattern\n   * @return {Promise<string[],Error>}\n   */\n  get_device_domain (pattern) {\n    return connector.get_device_domain(pattern)\n  }\n\n  /**\n   * @param {string} pattern\n   * @return {Promise<string[],Error>}\n   */\n  get_device_family (pattern) {\n    return connector.get_device_family(pattern)\n  }\n\n  /**\n   * @param {string} pattern\n   * @return {Promise<string[],Error>}\n   */\n  get_device_member (pattern) {\n    return connector.get_device_member(pattern)\n  }\n\n}\n"
   },
   {
     "__docId__": 45,
@@ -1342,7 +1344,7 @@
     "return": {
       "nullable": null,
       "types": [
-        "Promise<string[]>"
+        "Promise<string[],Error>"
       ],
       "spread": false,
       "description": ""
@@ -1375,7 +1377,7 @@
     "return": {
       "nullable": null,
       "types": [
-        "Promise<string[]>"
+        "Promise<string[],Error>"
       ],
       "spread": false,
       "description": ""
@@ -1408,7 +1410,7 @@
     "return": {
       "nullable": null,
       "types": [
-        "Promise<string[]>"
+        "Promise<string[],Error>"
       ],
       "spread": false,
       "description": ""
@@ -1441,7 +1443,7 @@
     "return": {
       "nullable": null,
       "types": [
-        "Promise<string[]>"
+        "Promise<string[],Error>"
       ],
       "spread": false,
       "description": ""
@@ -1459,7 +1461,7 @@
     "access": null,
     "description": null,
     "lineNumber": 2,
-    "content": "\nexport class DbDatum {\n\n  /**\n   * @param {string} name\n   * @param {Object} value\n   */\n  constructor(name, value) {\n\n    /** @private */\n    this._name = name\n\n    /** @private */\n    this._value = value\n  }\n\n  /** @type {string} */\n  get name() {\n    return this._name\n  }\n\n  /** @type {Object} */\n  get value() {\n    return this._value\n  }\n\n  /** @type {Object} */\n  set value(value) {\n    this._value = value\n  }\n}\n"
+    "content": "\nexport class DbDatum {\n\n  /**\n   * @param {string} name\n   * @param {Object} value\n   */\n  constructor (name, value) {\n\n    /** @private */\n    this._name = name\n\n    /** @private */\n    this._value = value\n  }\n\n  /** @type {string} */\n  get name () {\n    return this._name\n  }\n\n  /** @type {Object} */\n  get value () {\n    return this._value\n  }\n\n  /** @type {Object} */\n  set value (value) {\n    this._value = value\n  }\n}\n"
   },
   {
     "__docId__": 52,
@@ -1639,7 +1641,7 @@
     "access": null,
     "description": null,
     "lineNumber": 2,
-    "content": "\nimport { AttributeValue_5 } from '../tango/generated'\n\nexport class DeviceAttribute extends AttributeValue_5 {\n\n  /**\n   * @param {Object} data\n   */\n  constructor(data) {\n    super(data)\n  }\n}\n"
+    "content": "\nimport { AttributeValue_5 } from '../tango/generated'\n\nexport class DeviceAttribute extends AttributeValue_5 {\n\n  /**\n   * @param {Object} data\n   */\n  constructor (data) {\n    super(data)\n  }\n}\n"
   },
   {
     "__docId__": 61,
@@ -1697,7 +1699,7 @@
     "access": null,
     "description": null,
     "lineNumber": 2,
-    "content": "\nexport class DeviceData {\n\n  /**\n   * @param {Object} value\n   */\n  constructor(value) {\n    /** @private */\n    this._value = value\n  }\n\n  /** @type {Object} */\n  get value() {\n    return this._value\n  }\n\n  /** @type {Object} */\n  set value(value) {\n    this._value = value\n  }\n}\n"
+    "content": "\nexport class DeviceData {\n\n  /**\n   * @param {Object} value\n   */\n  constructor (value) {\n    /** @private */\n    this._value = value\n  }\n\n  /** @type {Object} */\n  get value () {\n    return this._value\n  }\n\n  /** @type {Object} */\n  set value (value) {\n    this._value = value\n  }\n}\n"
   },
   {
     "__docId__": 64,
@@ -1829,7 +1831,7 @@
     "access": null,
     "description": null,
     "lineNumber": 2,
-    "content": "\nexport class DeviceInfo {\n\n  /**\n   * @param {Object} data data\n   */\n  constructor(data) {\n    /** @private */\n    this._data = data\n  }\n\n  /** @type {string} */\n  get classname() {\n    return this._data.classname\n  }\n\n  /** @type {boolean} */\n  get exported() {\n    return this._data.exported\n  }\n\n  /** @type {string} */\n  get hostname() {\n    return this._data.hostname\n  }\n\n  /** @type {string} */\n  get ior() {\n    return this._data.ior\n  }\n\n  /** @type {boolean} */\n  get is_taco() {\n    return this._data.is_taco\n  }\n\n  /** @type {string} */\n  get last_exported() {\n    return this._data.last_exported\n  }\n\n  /** @type {string} */\n  get last_unexported() {\n    return this._data.last_unexported\n  }\n\n  /** @type {string} */\n  get name() {\n    return this._data.name\n  }\n\n  /** @type {number} */\n  get pid() {\n    return this._data.pid\n  }\n\n  /** @type {string} */\n  get server() {\n    return this._data.server\n  }\n\n  /** @type {string} */\n  get taco_data() {\n    return this._data.taco_data\n  }\n\n  /** @type {string} */\n  get version() {\n    return this._data.version\n  }\n\n}\n"
+    "content": "\nexport class DeviceInfo {\n\n  /**\n   * @param {Object} data data\n   */\n  constructor (data) {\n    /** @private */\n    this._data = data\n  }\n\n  /** @type {string} */\n  get classname () {\n    return this._data.classname\n  }\n\n  /** @type {boolean} */\n  get exported () {\n    return this._data.exported\n  }\n\n  /** @type {string} */\n  get hostname () {\n    return this._data.hostname\n  }\n\n  /** @type {string} */\n  get ior () {\n    return this._data.ior\n  }\n\n  /** @type {boolean} */\n  get is_taco () {\n    return this._data.is_taco\n  }\n\n  /** @type {string} */\n  get last_exported () {\n    return this._data.last_exported\n  }\n\n  /** @type {string} */\n  get last_unexported () {\n    return this._data.last_unexported\n  }\n\n  /** @type {string} */\n  get name () {\n    return this._data.name\n  }\n\n  /** @type {number} */\n  get pid () {\n    return this._data.pid\n  }\n\n  /** @type {string} */\n  get server () {\n    return this._data.server\n  }\n\n  /** @type {string} */\n  get taco_data () {\n    return this._data.taco_data\n  }\n\n  /** @type {string} */\n  get version () {\n    return this._data.version\n  }\n\n}\n"
   },
   {
     "__docId__": 71,
@@ -2153,10 +2155,162 @@
     "access": null,
     "description": null,
     "lineNumber": 2,
-    "content": "\nimport { connector } from '../Connector'\n\nexport class DeviceProxy {\n\n  /**\n   * @param {string} devname\n   */\n  constructor(devname) {\n    /** @private */\n    this._devname = devname\n  }\n\n  /**\n   * @return {Promise<string>}\n   */\n  name() {\n    return this.get_info().then(info => info.name)\n  }\n\n  /**\n   * @return {Promise<string>}\n   */\n  status() {\n    return connector.get_device_status(this._devname)\n  }\n\n  /**\n   * @return {Promise<DevState>}\n   */\n  state() {\n    return connector.get_device_state(this._devname)\n  }\n\n  /**\n   * @return {Promise<CommandInfo>}\n   * @param {string} cmdname command name\n   */\n  command_query(cmdname) {\n    return connector.device_command_query(this._devname, cmdname)\n  }\n\n  /**\n   * @return {Promise<CommandInfo[]>}\n   */\n  command_list_query() {\n    return connector.device_command_list_query(this._devname)\n  }\n\n  /**\n   * @return {Promise<DeviceInfo>}\n   */\n  get_info() {\n    return connector.get_device_info(this._devname)\n  }\n\n  /**\n   * @return {Promise<string[]>}\n   * @param {string} pattern proprty name pattern\n   */\n  get_property_list(pattern) {\n    return connector.get_device_property_list(this._devname, pattern)\n  }\n\n  /**\n   * @return {Promise<DbDatum>|Promise<DbDatum[]>}\n   * @param {string|string[]|DbDatum[]} propnames property names\n   */\n  get_property(propnames) {\n    return connector.get_device_property(this._devname, propnames)\n  }\n\n  /**\n   * @return {Promise<undefined>}\n   * @param {DbDatum[]} properties\n   */\n  put_property(properties) {\n    return connector.put_device_property(this._devname, properties)\n  }\n\n  /**\n   * @return {Promise<undefined>}\n   * @param {string|string[]|DbDatum[]} propnames property names\n   */\n  delete_property(propnames) {\n    return connector.delete_device_property(this._devname, propnames)\n  }\n\n  /**\n   * @return {Promise<string[]>}\n   */\n  get_attribute_list() {\n    return connector.get_device_attribute_list(this._devname)\n  }\n\n  /**\n   * @return {Promise<AttributeInfo>|Promise<AttributeInfo[]>}\n   * @param {undefined|string|string[]} attnames\n   */\n  get_attribute_info(attnames) {\n    return connector.get_device_attribute_info(this._devname, attnames)\n  }\n\n  /**\n   * @return {Promise<DeviceAttribute>|Promise<DeviceAttribute[]>}\n   * @param {string|string[]} attname\n   */\n  read_attribute(attname) {\n    return connector.read_device_attribute(this._devname, attname)\n  }\n\n  /**\n   * @return {Promise<undefined>}\n   * @param {DeviceAttribute|DeviceAttribute[]} attrs\n   */\n  write_attribute(attrs) {\n    return connector.write_device_attribute(this._devname, attrs)\n  }\n\n  /**\n   * @return {Promise<DeviceAttribute>|Promise<DeviceAttribute[]>}\n   * @param {DeviceAttribute|DeviceAttribute[]} attrs\n   */\n  write_read_attribute(attrs) {\n    return connector.write_read_device_attribute(this._devname, attrs)\n  }\n\n  /**\n   * @return {Promise<DeviceData>}\n   * @param {string} cmdname\n   * @param {undefined|DeviceData} argin\n   */\n  command_inout(cmdname, argin) {\n    return connector.device_command_inout(this._devname, cmdname, argin)\n  }\n}\n"
+    "content": "\nimport { connector } from '../Connector'\nimport { DbDatum } from './DbDatum'\n\n/**\n * @private\n * @param {T|T[]} valueOrArray\n * @param {function(t: T[]): Promise<V[],E>} transform\n * @return {Promise<V,E>|Promise<V[],E>}\n */\nfunction handleAsArray (valueOrArray, transform) {\n  const isArray = Array.isArray(valueOrArray)\n  return transform(isArray ? valueOrArray : [valueOrArray])\n    .then(result => isArray ? result : result[0])\n}\n\n/**\n * @private\n * @param {T|T[]} valueOrArray\n * @param {function(t: T[]): Promise<V,E>} transform\n * @return {Promise<undefined,E>}\n */\nfunction handleAsArrayReturningUndefined (valueOrArray, transform) {\n  return transform(Array.isArray(valueOrArray) ? valueOrArray : [valueOrArray])\n    .then(() => undefined)\n}\n\n/**\n * @private\n * @param {Array<string|DbDatum>} nameArray\n * @return {string[]}\n */\nfunction extractNames (nameArray) {\n  return nameArray.map(entry => {\n    if (entry instanceof DbDatum) {\n      return entry.name\n    } else if (typeof entry === 'string' || entry instanceof String) {\n      return entry\n    } else {\n      return ''\n    }\n  })\n  .filter(name => name !== '')\n}\n\n/** @private */\nconst _devname = Symbol.for('_devname')\n\nexport class DeviceProxy {\n\n  /**\n   * @param {string} devname\n   */\n  constructor (devname) {\n    /** @private */\n    this[_devname] = devname\n  }\n\n  /**\n   * @return {Promise<string,Error>}\n   */\n  name () {\n    return this.get_info().then(info => info.name)\n  }\n\n  /**\n   * @return {Promise<string,Error>}\n   */\n  status () {\n    return connector.get_device_status(this[_devname])\n  }\n\n  /**\n   * @return {Promise<DevState,Error>}\n   */\n  state () {\n    return connector.get_device_state(this[_devname])\n  }\n\n  /**\n   * @param {string} cmdname\n   * @return {Promise<CommandInfo,Error>}\n   */\n  command_query (cmdname) {\n    return connector.device_command_query(this[_devname], cmdname)\n  }\n\n  /**\n   * @return {Promise<CommandInfo[],Error>}\n   */\n  command_list_query () {\n    return connector.device_command_list_query(this[_devname])\n  }\n\n  /**\n   * @return {Promise<DeviceInfo,Error>}\n   */\n  get_info () {\n    return connector.get_device_info(this[_devname])\n  }\n\n  /**\n   * @param {string|string[]|DbDatum[]} pattern\n   * @return {Promise<string[],Error>}\n   */\n  get_property_list (pattern) {\n    return connector.get_device_property_list(this[_devname], pattern)\n  }\n\n  /**\n   * @param {string|string[]|DbDatum[]} propnames\n   * @return {Promise<DbDatum,Error>|Promise<DbDatum[],Error>}\n   */\n  get_property (propnames) {\n    return handleAsArray(propnames, nameLikeArray => {\n      return connector.get_device_property(this[_devname],\n                                           extractNames(nameLikeArray))\n    })\n  }\n\n  /**\n   * @param {DbDatum|DbDatum[]} properties\n   * @return {Promise<undefined,Error>}\n   */\n  put_property (properties) {\n    return handleAsArrayReturningUndefined(properties, dbDatumArray => {\n      return connector.put_device_property(this[_devname], dbDatumArray)\n    })\n  }\n\n  /**\n   * @param {string|string[]|DbDatum[]} propnames\n   * @return {Promise<undefined,Error>}\n   */\n  delete_property (propnames) {\n    return handleAsArrayReturningUndefined(propnames, nameLikeArray => {\n      return connector.delete_device_property(this[_devname],\n                                              extractNames(nameLikeArray))\n    })\n  }\n\n  /**\n   * @return {Promise<string[],Error>}\n   */\n  get_attribute_list () {\n    return connector.get_device_attribute_list(this[_devname])\n  }\n\n  /**\n   * @param {undefined|string|string[]} attnames\n   * @return {Promise<AttributeInfo,Error>|Promise<AttributeInfo[],Error>}\n   */\n  get_attribute_info (attnames) {\n    return (attnames ? Promise.resolve(attnames) : this.get_attribute_list())\n      .then(resolvedAttnames => {\n        return handleAsArray(resolvedAttnames, nameArray => {\n          return connector.get_device_attribute_info(this[_devname], nameArray)\n        })\n      })\n  }\n\n  /**\n   * @param {string|string[]} attnames\n   * @return {Promise<DeviceAttribute,Error>|Promise<DeviceAttribute[],Error>}\n   */\n  read_attribute (attnames) {\n    return handleAsArray(attnames, attNameArray => {\n      return connector.read_device_attribute(this[_devname], attNameArray)\n    })\n  }\n\n  /**\n   * @param {DeviceAttribute|DeviceAttribute[]} attrs\n   * @return {Promise<undefined,Error>}\n   */\n  write_attribute (attrs) {\n    return handleAsArrayReturningUndefined(attrs, devAttrArray => {\n      return connector.write_device_attribute(this[_devname], devAttrArray)\n    })\n  }\n\n  /**\n   * @param {DeviceAttribute|DeviceAttribute[]} attrs\n   * @return {Promise<DeviceAttribute,Error>|Promise<DeviceAttribute[],Error>}\n   */\n  write_read_attribute (attrs) {\n    return handleAsArray(attrs, devAttrArray => {\n      return connector.write_read_device_attribute(this[_devname],\n                                                   devAttrArray)\n    })\n  }\n\n  /**\n   * @param {string} cmdname\n   * @param {undefined|DeviceData} argin\n   * @return {Promise<DeviceData,Error>}\n   */\n  command_inout (cmdname, argin) {\n    return connector.device_command_inout(this[_devname], cmdname, argin)\n  }\n}\n"
   },
   {
     "__docId__": 87,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "handleAsArray",
+    "memberof": "src/tangojs/core/api/DeviceProxy.js",
+    "longname": "src/tangojs/core/api/DeviceProxy.js~handleAsArray",
+    "access": "private",
+    "export": false,
+    "importPath": "tangojs-core/src/tangojs/core/api/DeviceProxy.js",
+    "importStyle": null,
+    "description": "",
+    "lineNumber": 11,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "T",
+          "T[]"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "valueOrArray",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function(t: T[]): Promise<V[],E>"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "transform",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<V,E>",
+        "Promise<V[],E>"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 88,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "handleAsArrayReturningUndefined",
+    "memberof": "src/tangojs/core/api/DeviceProxy.js",
+    "longname": "src/tangojs/core/api/DeviceProxy.js~handleAsArrayReturningUndefined",
+    "access": "private",
+    "export": false,
+    "importPath": "tangojs-core/src/tangojs/core/api/DeviceProxy.js",
+    "importStyle": null,
+    "description": "",
+    "lineNumber": 23,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "T",
+          "T[]"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "valueOrArray",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function(t: T[]): Promise<V,E>"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "transform",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<undefined,E>"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 89,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "extractNames",
+    "memberof": "src/tangojs/core/api/DeviceProxy.js",
+    "longname": "src/tangojs/core/api/DeviceProxy.js~extractNames",
+    "access": "private",
+    "export": false,
+    "importPath": "tangojs-core/src/tangojs/core/api/DeviceProxy.js",
+    "importStyle": null,
+    "description": "",
+    "lineNumber": 33,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Array<string",
+          "DbDatum>"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "nameArray",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "string[]"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 90,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "_devname",
+    "memberof": "src/tangojs/core/api/DeviceProxy.js",
+    "longname": "src/tangojs/core/api/DeviceProxy.js~_devname",
+    "access": "private",
+    "export": false,
+    "importPath": "tangojs-core/src/tangojs/core/api/DeviceProxy.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 47,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 91,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -2168,12 +2322,12 @@
     "importPath": "tangojs-core/src/tangojs/core/api/DeviceProxy.js",
     "importStyle": "{DeviceProxy}",
     "description": null,
-    "lineNumber": 4,
+    "lineNumber": 49,
     "undocument": true,
     "interface": false
   },
   {
-    "__docId__": 88,
+    "__docId__": 92,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -2182,7 +2336,7 @@
     "longname": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy#constructor",
     "access": null,
     "description": "",
-    "lineNumber": 9,
+    "lineNumber": 54,
     "params": [
       {
         "nullable": null,
@@ -2198,24 +2352,7 @@
     "generator": false
   },
   {
-    "__docId__": 89,
-    "kind": "member",
-    "static": false,
-    "variation": null,
-    "name": "_devname",
-    "memberof": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy",
-    "longname": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy#_devname",
-    "access": "private",
-    "description": null,
-    "lineNumber": 11,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 90,
+    "__docId__": 93,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -2224,89 +2361,12 @@
     "longname": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy#name",
     "access": null,
     "description": "",
-    "lineNumber": 17,
+    "lineNumber": 62,
     "params": [],
     "return": {
       "nullable": null,
       "types": [
-        "Promise<string>"
-      ],
-      "spread": false,
-      "description": ""
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 91,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "status",
-    "memberof": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy",
-    "longname": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy#status",
-    "access": null,
-    "description": "",
-    "lineNumber": 24,
-    "params": [],
-    "return": {
-      "nullable": null,
-      "types": [
-        "Promise<string>"
-      ],
-      "spread": false,
-      "description": ""
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 92,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "state",
-    "memberof": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy",
-    "longname": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy#state",
-    "access": null,
-    "description": "",
-    "lineNumber": 31,
-    "params": [],
-    "return": {
-      "nullable": null,
-      "types": [
-        "Promise<DevState>"
-      ],
-      "spread": false,
-      "description": ""
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 93,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "command_query",
-    "memberof": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy",
-    "longname": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy#command_query",
-    "access": null,
-    "description": "",
-    "lineNumber": 39,
-    "params": [
-      {
-        "nullable": null,
-        "types": [
-          "string"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "cmdname",
-        "description": "command name"
-      }
-    ],
-    "return": {
-      "nullable": null,
-      "types": [
-        "Promise<CommandInfo>"
+        "Promise<string,Error>"
       ],
       "spread": false,
       "description": ""
@@ -2318,17 +2378,17 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "command_list_query",
+    "name": "status",
     "memberof": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy",
-    "longname": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy#command_list_query",
+    "longname": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy#status",
     "access": null,
     "description": "",
-    "lineNumber": 46,
+    "lineNumber": 69,
     "params": [],
     "return": {
       "nullable": null,
       "types": [
-        "Promise<CommandInfo[]>"
+        "Promise<string,Error>"
       ],
       "spread": false,
       "description": ""
@@ -2340,17 +2400,17 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "get_info",
+    "name": "state",
     "memberof": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy",
-    "longname": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy#get_info",
+    "longname": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy#state",
     "access": null,
     "description": "",
-    "lineNumber": 53,
+    "lineNumber": 76,
     "params": [],
     "return": {
       "nullable": null,
       "types": [
-        "Promise<DeviceInfo>"
+        "Promise<DevState,Error>"
       ],
       "spread": false,
       "description": ""
@@ -2362,12 +2422,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "get_property_list",
+    "name": "command_query",
     "memberof": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy",
-    "longname": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy#get_property_list",
+    "longname": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy#command_query",
     "access": null,
     "description": "",
-    "lineNumber": 61,
+    "lineNumber": 84,
     "params": [
       {
         "nullable": null,
@@ -2376,14 +2436,14 @@
         ],
         "spread": false,
         "optional": false,
-        "name": "pattern",
-        "description": "proprty name pattern"
+        "name": "cmdname",
+        "description": ""
       }
     ],
     "return": {
       "nullable": null,
       "types": [
-        "Promise<string[]>"
+        "Promise<CommandInfo,Error>"
       ],
       "spread": false,
       "description": ""
@@ -2395,31 +2455,17 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "get_property",
+    "name": "command_list_query",
     "memberof": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy",
-    "longname": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy#get_property",
+    "longname": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy#command_list_query",
     "access": null,
     "description": "",
-    "lineNumber": 69,
-    "params": [
-      {
-        "nullable": null,
-        "types": [
-          "string",
-          "string[]",
-          "DbDatum[]"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "propnames",
-        "description": "property names"
-      }
-    ],
+    "lineNumber": 91,
+    "params": [],
     "return": {
       "nullable": null,
       "types": [
-        "Promise<DbDatum>",
-        "Promise<DbDatum[]>"
+        "Promise<CommandInfo[],Error>"
       ],
       "spread": false,
       "description": ""
@@ -2431,28 +2477,17 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "put_property",
+    "name": "get_info",
     "memberof": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy",
-    "longname": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy#put_property",
+    "longname": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy#get_info",
     "access": null,
     "description": "",
-    "lineNumber": 77,
-    "params": [
-      {
-        "nullable": null,
-        "types": [
-          "DbDatum[]"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "properties",
-        "description": ""
-      }
-    ],
+    "lineNumber": 98,
+    "params": [],
     "return": {
       "nullable": null,
       "types": [
-        "Promise<undefined>"
+        "Promise<DeviceInfo,Error>"
       ],
       "spread": false,
       "description": ""
@@ -2464,12 +2499,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "delete_property",
+    "name": "get_property_list",
     "memberof": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy",
-    "longname": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy#delete_property",
+    "longname": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy#get_property_list",
     "access": null,
     "description": "",
-    "lineNumber": 85,
+    "lineNumber": 106,
     "params": [
       {
         "nullable": null,
@@ -2480,14 +2515,14 @@
         ],
         "spread": false,
         "optional": false,
-        "name": "propnames",
-        "description": "property names"
+        "name": "pattern",
+        "description": ""
       }
     ],
     "return": {
       "nullable": null,
       "types": [
-        "Promise<undefined>"
+        "Promise<string[],Error>"
       ],
       "spread": false,
       "description": ""
@@ -2499,17 +2534,31 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "get_attribute_list",
+    "name": "get_property",
     "memberof": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy",
-    "longname": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy#get_attribute_list",
+    "longname": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy#get_property",
     "access": null,
     "description": "",
-    "lineNumber": 92,
-    "params": [],
+    "lineNumber": 114,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string",
+          "string[]",
+          "DbDatum[]"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "propnames",
+        "description": ""
+      }
+    ],
     "return": {
       "nullable": null,
       "types": [
-        "Promise<string[]>"
+        "Promise<DbDatum,Error>",
+        "Promise<DbDatum[],Error>"
       ],
       "spread": false,
       "description": ""
@@ -2521,12 +2570,103 @@
     "kind": "method",
     "static": false,
     "variation": null,
+    "name": "put_property",
+    "memberof": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy",
+    "longname": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy#put_property",
+    "access": null,
+    "description": "",
+    "lineNumber": 125,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "DbDatum",
+          "DbDatum[]"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "properties",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<undefined,Error>"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 102,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "delete_property",
+    "memberof": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy",
+    "longname": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy#delete_property",
+    "access": null,
+    "description": "",
+    "lineNumber": 135,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string",
+          "string[]",
+          "DbDatum[]"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "propnames",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<undefined,Error>"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 103,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "get_attribute_list",
+    "memberof": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy",
+    "longname": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy#get_attribute_list",
+    "access": null,
+    "description": "",
+    "lineNumber": 145,
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<string[],Error>"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 104,
+    "kind": "method",
+    "static": false,
+    "variation": null,
     "name": "get_attribute_info",
     "memberof": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy",
     "longname": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy#get_attribute_info",
     "access": null,
     "description": "",
-    "lineNumber": 100,
+    "lineNumber": 153,
     "params": [
       {
         "nullable": null,
@@ -2544,112 +2684,8 @@
     "return": {
       "nullable": null,
       "types": [
-        "Promise<AttributeInfo>",
-        "Promise<AttributeInfo[]>"
-      ],
-      "spread": false,
-      "description": ""
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 102,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "read_attribute",
-    "memberof": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy",
-    "longname": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy#read_attribute",
-    "access": null,
-    "description": "",
-    "lineNumber": 108,
-    "params": [
-      {
-        "nullable": null,
-        "types": [
-          "string",
-          "string[]"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "attname",
-        "description": ""
-      }
-    ],
-    "return": {
-      "nullable": null,
-      "types": [
-        "Promise<DeviceAttribute>",
-        "Promise<DeviceAttribute[]>"
-      ],
-      "spread": false,
-      "description": ""
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 103,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "write_attribute",
-    "memberof": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy",
-    "longname": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy#write_attribute",
-    "access": null,
-    "description": "",
-    "lineNumber": 116,
-    "params": [
-      {
-        "nullable": null,
-        "types": [
-          "DeviceAttribute",
-          "DeviceAttribute[]"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "attrs",
-        "description": ""
-      }
-    ],
-    "return": {
-      "nullable": null,
-      "types": [
-        "Promise<undefined>"
-      ],
-      "spread": false,
-      "description": ""
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 104,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "write_read_attribute",
-    "memberof": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy",
-    "longname": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy#write_read_attribute",
-    "access": null,
-    "description": "",
-    "lineNumber": 124,
-    "params": [
-      {
-        "nullable": null,
-        "types": [
-          "DeviceAttribute",
-          "DeviceAttribute[]"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "attrs",
-        "description": ""
-      }
-    ],
-    "return": {
-      "nullable": null,
-      "types": [
-        "Promise<DeviceAttribute>",
-        "Promise<DeviceAttribute[]>"
+        "Promise<AttributeInfo,Error>",
+        "Promise<AttributeInfo[],Error>"
       ],
       "spread": false,
       "description": ""
@@ -2661,12 +2697,116 @@
     "kind": "method",
     "static": false,
     "variation": null,
+    "name": "read_attribute",
+    "memberof": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy",
+    "longname": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy#read_attribute",
+    "access": null,
+    "description": "",
+    "lineNumber": 166,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string",
+          "string[]"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "attnames",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<DeviceAttribute,Error>",
+        "Promise<DeviceAttribute[],Error>"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 106,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "write_attribute",
+    "memberof": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy",
+    "longname": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy#write_attribute",
+    "access": null,
+    "description": "",
+    "lineNumber": 176,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "DeviceAttribute",
+          "DeviceAttribute[]"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "attrs",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<undefined,Error>"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 107,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "write_read_attribute",
+    "memberof": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy",
+    "longname": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy#write_read_attribute",
+    "access": null,
+    "description": "",
+    "lineNumber": 186,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "DeviceAttribute",
+          "DeviceAttribute[]"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "attrs",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<DeviceAttribute,Error>",
+        "Promise<DeviceAttribute[],Error>"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 108,
+    "kind": "method",
+    "static": false,
+    "variation": null,
     "name": "command_inout",
     "memberof": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy",
     "longname": "src/tangojs/core/api/DeviceProxy.js~DeviceProxy#command_inout",
     "access": null,
     "description": "",
-    "lineNumber": 133,
+    "lineNumber": 198,
     "params": [
       {
         "nullable": null,
@@ -2693,7 +2833,7 @@
     "return": {
       "nullable": null,
       "types": [
-        "Promise<DeviceData>"
+        "Promise<DeviceData,Error>"
       ],
       "spread": false,
       "description": ""
@@ -2701,7 +2841,7 @@
     "generator": false
   },
   {
-    "__docId__": 106,
+    "__docId__": 109,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -2714,7 +2854,7 @@
     "content": "\n// ----------------------------------------------------------------------------\n// GENERATED BY idl2js v0.1.0\n// source: tango.idl\n// sha1: FAC639948890BBB440459C465C4946E5A05BA0ED\n// date: 2015-11-14T18:50:32.412\n// ----------------------------------------------------------------------------\n\nfunction EnumConstant(key, value) {\n  return Object.freeze({key, value})\n}\n\nfunction Enum(mapping) {\n\n  let constants = Object.keys(mapping).reduce(\n    (acc, key) => (acc[key] = EnumConstant(key, mapping[key]), acc),\n    {})\n\n  let reverseMapping = Object.keys(mapping).reduce(\n    (acc, key) => (acc[mapping[key]] = constants[key], acc),\n    {})\n\n  constants.fromValue = (value) => reverseMapping[value]\n\n  return Object.freeze(constants)\n}\n\n// ----------------------------------------------------------------------------\n\n/**\n * @typedef {AttrQuality[]} AttrQualityList\n */\n\n/**\n * @typedef {AttributeConfig[]} AttributeConfigList\n */\n\n/**\n * @typedef {AttributeConfig_2[]} AttributeConfigList_2\n */\n\n/**\n * @typedef {AttributeConfig_3[]} AttributeConfigList_3\n */\n\n/**\n * @typedef {AttributeConfig_5[]} AttributeConfigList_5\n */\n\n/**\n * @typedef {AttributeDim[]} AttributeDimList\n */\n\n/**\n * @typedef {AttributeValue[]} AttributeValueList\n */\n\n/**\n * @typedef {AttributeValue_3[]} AttributeValueList_3\n */\n\n/**\n * @typedef {AttributeValue_4[]} AttributeValueList_4\n */\n\n/**\n * @typedef {AttributeValue_5[]} AttributeValueList_5\n */\n\n/**\n * @typedef {number} CppClntIdent\n */\n\n/**\n * @typedef {DevAttrHistory[]} DevAttrHistoryList\n */\n\n/**\n * @typedef {DevAttrHistory_3[]} DevAttrHistoryList_3\n */\n\n/**\n * @typedef {boolean} DevBoolean\n */\n\n/**\n * @typedef {DevCmdHistory[]} DevCmdHistoryList\n */\n\n/**\n * @typedef {DevCmdInfo[]} DevCmdInfoList\n */\n\n/**\n * @typedef {DevCmdInfo_2[]} DevCmdInfoList_2\n */\n\n/**\n * @typedef {number} DevDouble\n */\n\n/**\n * @typedef {DevError[]} DevErrorList\n */\n\n/**\n * @typedef {DevError[][]} DevErrorListList\n */\n\n/**\n * @typedef {number} DevFloat\n */\n\n/**\n * @typedef {number} DevLong\n */\n\n/**\n * @typedef {number} DevLong64\n */\n\n/**\n * @typedef {number} DevShort\n */\n\n/**\n * @typedef {string} DevString\n */\n\n/**\n * @typedef {number} DevUChar\n */\n\n/**\n * @typedef {number} DevULong\n */\n\n/**\n * @typedef {number} DevULong64\n */\n\n/**\n * @typedef {number} DevUShort\n */\n\n/**\n * @typedef {boolean[]} DevVarBooleanArray\n */\n\n/**\n * @typedef {number[]} DevVarCharArray\n */\n\n/**\n * @typedef {number[]} DevVarDoubleArray\n */\n\n/**\n * @typedef {DevEncoded[]} DevVarEncodedArray\n */\n\n/**\n * @typedef {number[]} DevVarFloatArray\n */\n\n/**\n * @typedef {number[]} DevVarLong64Array\n */\n\n/**\n * @typedef {number[]} DevVarLongArray\n */\n\n/**\n * @typedef {DevPipeDataElt[]} DevVarPipeDataEltArray\n */\n\n/**\n * @typedef {number[]} DevVarShortArray\n */\n\n/**\n * @typedef {DevState[]} DevVarStateArray\n */\n\n/**\n * @typedef {string[]} DevVarStringArray\n */\n\n/**\n * @typedef {number[]} DevVarULong64Array\n */\n\n/**\n * @typedef {number[]} DevVarULongArray\n */\n\n/**\n * @typedef {number[]} DevVarUShortArray\n */\n\n/**\n * @typedef {EltInArray[]} EltInArrayList\n */\n\n/**\n * @typedef {number[]} JavaUUID\n */\n\n/**\n * @typedef {NamedDevError[]} NamedDevErrorList\n */\n\n/**\n * @typedef {PipeConfig[]} PipeConfigList\n */\n\n/**\n * @typedef {TimeVal[]} TimeValList\n */\n\n/**\n * @type {Object}\n * @public\n */\nexport const AttrDataFormat = Enum({\n  SCALAR: 0,\n  SPECTRUM: 1,\n  IMAGE: 2,\n  FMT_UNKNOWN: 3\n})\n\n/**\n * @type {Object}\n * @public\n */\nexport const AttrQuality = Enum({\n  ATTR_VALID: 0,\n  ATTR_INVALID: 1,\n  ATTR_ALARM: 2,\n  ATTR_CHANGING: 3,\n  ATTR_WARNING: 4\n})\n\n/**\n * @type {Object}\n * @public\n */\nexport const AttrWriteType = Enum({\n  READ: 0,\n  READ_WITH_WRITE: 1,\n  WRITE: 2,\n  READ_WRITE: 3,\n  WT_UNKNOWN: 4\n})\n\n/**\n * @type {Object}\n * @public\n */\nexport const AttributeDataType = Enum({\n  ATT_BOOL: 0,\n  ATT_SHORT: 1,\n  ATT_LONG: 2,\n  ATT_LONG64: 3,\n  ATT_FLOAT: 4,\n  ATT_DOUBLE: 5,\n  ATT_UCHAR: 6,\n  ATT_USHORT: 7,\n  ATT_ULONG: 8,\n  ATT_ULONG64: 9,\n  ATT_STRING: 10,\n  ATT_STATE: 11,\n  DEVICE_STATE: 12,\n  ATT_ENCODED: 13,\n  ATT_NO_DATA: 14\n})\n\n/**\n * @type {Object}\n * @public\n */\nexport const DevSource = Enum({\n  DEV: 0,\n  CACHE: 1,\n  CACHE_DEV: 2\n})\n\n/**\n * @type {Object}\n * @public\n */\nexport const DevState = Enum({\n  ON: 0,\n  OFF: 1,\n  CLOSE: 2,\n  OPEN: 3,\n  INSERT: 4,\n  EXTRACT: 5,\n  MOVING: 6,\n  STANDBY: 7,\n  FAULT: 8,\n  INIT: 9,\n  RUNNING: 10,\n  ALARM: 11,\n  DISABLE: 12,\n  UNKNOWN: 13\n})\n\n/**\n * @type {Object}\n * @public\n */\nexport const DispLevel = Enum({\n  OPERATOR: 0,\n  EXPERT: 1,\n  DL_UNKNOWN: 2\n})\n\n/**\n * @type {Object}\n * @public\n */\nexport const ErrSeverity = Enum({\n  WARN: 0,\n  ERR: 1,\n  PANIC: 2\n})\n\n/**\n * @type {Object}\n * @public\n */\nexport const LockerLanguage = Enum({\n  CPP: 0,\n  JAVA: 1\n})\n\n/**\n * @type {Object}\n * @public\n */\nexport const PipeWriteType = Enum({\n  PIPE_READ: 0,\n  PIPE_READ_WRITE: 1,\n  PIPE_WT_UNKNOWN: 2\n})\n\n/**\n * @typedef {boolean[]|number[]|string[]|DevState[]|DevState|DevEncoded[]|boolean} AttrValUnion\n */\n\n/**\n * @typedef {number|JavaClntIdent} ClntIdent\n */\n\n/**\n * @public\n */\nexport class ArchiveEventProp {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {string} */\n  get rel_change() {\n    return this._data.rel_change\n  }\n\n  /** @type {string} */\n  get abs_change() {\n    return this._data.abs_change\n  }\n\n  /** @type {string} */\n  get period() {\n    return this._data.period\n  }\n\n  /** @type {string[]} */\n  get extensions() {\n    return this._data.extensions\n  }\n}\n\n/**\n * @public\n */\nexport class AttDataReady {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {string} */\n  get name() {\n    return this._data.name\n  }\n\n  /** @type {number} */\n  get data_type() {\n    return this._data.data_type\n  }\n\n  /** @type {number} */\n  get ctr() {\n    return this._data.ctr\n  }\n}\n\n/**\n * @public\n */\nexport class AttributeAlarm {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {string} */\n  get min_alarm() {\n    return this._data.min_alarm\n  }\n\n  /** @type {string} */\n  get max_alarm() {\n    return this._data.max_alarm\n  }\n\n  /** @type {string} */\n  get min_warning() {\n    return this._data.min_warning\n  }\n\n  /** @type {string} */\n  get max_warning() {\n    return this._data.max_warning\n  }\n\n  /** @type {string} */\n  get delta_t() {\n    return this._data.delta_t\n  }\n\n  /** @type {string} */\n  get delta_val() {\n    return this._data.delta_val\n  }\n\n  /** @type {string[]} */\n  get extensions() {\n    return this._data.extensions\n  }\n}\n\n/**\n * @public\n */\nexport class AttributeConfig {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {string} */\n  get name() {\n    return this._data.name\n  }\n\n  /** @type {AttrWriteType} */\n  get writable() {\n    return this._data.writable\n  }\n\n  /** @type {AttrDataFormat} */\n  get data_format() {\n    return this._data.data_format\n  }\n\n  /** @type {number} */\n  get data_type() {\n    return this._data.data_type\n  }\n\n  /** @type {number} */\n  get max_dim_x() {\n    return this._data.max_dim_x\n  }\n\n  /** @type {number} */\n  get max_dim_y() {\n    return this._data.max_dim_y\n  }\n\n  /** @type {string} */\n  get description() {\n    return this._data.description\n  }\n\n  /** @type {string} */\n  get label() {\n    return this._data.label\n  }\n\n  /** @type {string} */\n  get unit() {\n    return this._data.unit\n  }\n\n  /** @type {string} */\n  get standard_unit() {\n    return this._data.standard_unit\n  }\n\n  /** @type {string} */\n  get display_unit() {\n    return this._data.display_unit\n  }\n\n  /** @type {string} */\n  get format() {\n    return this._data.format\n  }\n\n  /** @type {string} */\n  get min_value() {\n    return this._data.min_value\n  }\n\n  /** @type {string} */\n  get max_value() {\n    return this._data.max_value\n  }\n\n  /** @type {string} */\n  get min_alarm() {\n    return this._data.min_alarm\n  }\n\n  /** @type {string} */\n  get max_alarm() {\n    return this._data.max_alarm\n  }\n\n  /** @type {string} */\n  get writable_attr_name() {\n    return this._data.writable_attr_name\n  }\n\n  /** @type {string[]} */\n  get extensions() {\n    return this._data.extensions\n  }\n}\n\n/**\n * @public\n */\nexport class AttributeConfig_2 {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {string} */\n  get name() {\n    return this._data.name\n  }\n\n  /** @type {AttrWriteType} */\n  get writable() {\n    return this._data.writable\n  }\n\n  /** @type {AttrDataFormat} */\n  get data_format() {\n    return this._data.data_format\n  }\n\n  /** @type {number} */\n  get data_type() {\n    return this._data.data_type\n  }\n\n  /** @type {number} */\n  get max_dim_x() {\n    return this._data.max_dim_x\n  }\n\n  /** @type {number} */\n  get max_dim_y() {\n    return this._data.max_dim_y\n  }\n\n  /** @type {string} */\n  get description() {\n    return this._data.description\n  }\n\n  /** @type {string} */\n  get label() {\n    return this._data.label\n  }\n\n  /** @type {string} */\n  get unit() {\n    return this._data.unit\n  }\n\n  /** @type {string} */\n  get standard_unit() {\n    return this._data.standard_unit\n  }\n\n  /** @type {string} */\n  get display_unit() {\n    return this._data.display_unit\n  }\n\n  /** @type {string} */\n  get format() {\n    return this._data.format\n  }\n\n  /** @type {string} */\n  get min_value() {\n    return this._data.min_value\n  }\n\n  /** @type {string} */\n  get max_value() {\n    return this._data.max_value\n  }\n\n  /** @type {string} */\n  get min_alarm() {\n    return this._data.min_alarm\n  }\n\n  /** @type {string} */\n  get max_alarm() {\n    return this._data.max_alarm\n  }\n\n  /** @type {string} */\n  get writable_attr_name() {\n    return this._data.writable_attr_name\n  }\n\n  /** @type {DispLevel} */\n  get level() {\n    return this._data.level\n  }\n\n  /** @type {string[]} */\n  get extensions() {\n    return this._data.extensions\n  }\n}\n\n/**\n * @public\n */\nexport class AttributeConfig_3 {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {string} */\n  get name() {\n    return this._data.name\n  }\n\n  /** @type {AttrWriteType} */\n  get writable() {\n    return this._data.writable\n  }\n\n  /** @type {AttrDataFormat} */\n  get data_format() {\n    return this._data.data_format\n  }\n\n  /** @type {number} */\n  get data_type() {\n    return this._data.data_type\n  }\n\n  /** @type {number} */\n  get max_dim_x() {\n    return this._data.max_dim_x\n  }\n\n  /** @type {number} */\n  get max_dim_y() {\n    return this._data.max_dim_y\n  }\n\n  /** @type {string} */\n  get description() {\n    return this._data.description\n  }\n\n  /** @type {string} */\n  get label() {\n    return this._data.label\n  }\n\n  /** @type {string} */\n  get unit() {\n    return this._data.unit\n  }\n\n  /** @type {string} */\n  get standard_unit() {\n    return this._data.standard_unit\n  }\n\n  /** @type {string} */\n  get display_unit() {\n    return this._data.display_unit\n  }\n\n  /** @type {string} */\n  get format() {\n    return this._data.format\n  }\n\n  /** @type {string} */\n  get min_value() {\n    return this._data.min_value\n  }\n\n  /** @type {string} */\n  get max_value() {\n    return this._data.max_value\n  }\n\n  /** @type {string} */\n  get writable_attr_name() {\n    return this._data.writable_attr_name\n  }\n\n  /** @type {DispLevel} */\n  get level() {\n    return this._data.level\n  }\n\n  /** @type {AttributeAlarm} */\n  get att_alarm() {\n    return this._data.att_alarm\n  }\n\n  /** @type {EventProperties} */\n  get event_prop() {\n    return this._data.event_prop\n  }\n\n  /** @type {string[]} */\n  get extensions() {\n    return this._data.extensions\n  }\n\n  /** @type {string[]} */\n  get sys_extensions() {\n    return this._data.sys_extensions\n  }\n}\n\n/**\n * @public\n */\nexport class AttributeConfig_5 {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {string} */\n  get name() {\n    return this._data.name\n  }\n\n  /** @type {AttrWriteType} */\n  get writable() {\n    return this._data.writable\n  }\n\n  /** @type {AttrDataFormat} */\n  get data_format() {\n    return this._data.data_format\n  }\n\n  /** @type {number} */\n  get data_type() {\n    return this._data.data_type\n  }\n\n  /** @type {boolean} */\n  get memorized() {\n    return this._data.memorized\n  }\n\n  /** @type {boolean} */\n  get mem_init() {\n    return this._data.mem_init\n  }\n\n  /** @type {number} */\n  get max_dim_x() {\n    return this._data.max_dim_x\n  }\n\n  /** @type {number} */\n  get max_dim_y() {\n    return this._data.max_dim_y\n  }\n\n  /** @type {string} */\n  get description() {\n    return this._data.description\n  }\n\n  /** @type {string} */\n  get label() {\n    return this._data.label\n  }\n\n  /** @type {string} */\n  get unit() {\n    return this._data.unit\n  }\n\n  /** @type {string} */\n  get standard_unit() {\n    return this._data.standard_unit\n  }\n\n  /** @type {string} */\n  get display_unit() {\n    return this._data.display_unit\n  }\n\n  /** @type {string} */\n  get format() {\n    return this._data.format\n  }\n\n  /** @type {string} */\n  get min_value() {\n    return this._data.min_value\n  }\n\n  /** @type {string} */\n  get max_value() {\n    return this._data.max_value\n  }\n\n  /** @type {string} */\n  get writable_attr_name() {\n    return this._data.writable_attr_name\n  }\n\n  /** @type {DispLevel} */\n  get level() {\n    return this._data.level\n  }\n\n  /** @type {string} */\n  get root_attr_name() {\n    return this._data.root_attr_name\n  }\n\n  /** @type {string[]} */\n  get enum_labels() {\n    return this._data.enum_labels\n  }\n\n  /** @type {AttributeAlarm} */\n  get att_alarm() {\n    return this._data.att_alarm\n  }\n\n  /** @type {EventProperties} */\n  get event_prop() {\n    return this._data.event_prop\n  }\n\n  /** @type {string[]} */\n  get extensions() {\n    return this._data.extensions\n  }\n\n  /** @type {string[]} */\n  get sys_extensions() {\n    return this._data.sys_extensions\n  }\n}\n\n/**\n * @public\n */\nexport class AttributeDim {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {number} */\n  get dim_x() {\n    return this._data.dim_x\n  }\n\n  /** @type {number} */\n  get dim_y() {\n    return this._data.dim_y\n  }\n}\n\n/**\n * @public\n */\nexport class AttributeValue {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {Object} */\n  get value() {\n    return this._data.value\n  }\n\n  /** @type {AttrQuality} */\n  get quality() {\n    return this._data.quality\n  }\n\n  /** @type {TimeVal} */\n  get time() {\n    return this._data.time\n  }\n\n  /** @type {string} */\n  get name() {\n    return this._data.name\n  }\n\n  /** @type {number} */\n  get dim_x() {\n    return this._data.dim_x\n  }\n\n  /** @type {number} */\n  get dim_y() {\n    return this._data.dim_y\n  }\n}\n\n/**\n * @public\n */\nexport class AttributeValue_3 {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {Object} */\n  get value() {\n    return this._data.value\n  }\n\n  /** @type {AttrQuality} */\n  get quality() {\n    return this._data.quality\n  }\n\n  /** @type {TimeVal} */\n  get time() {\n    return this._data.time\n  }\n\n  /** @type {string} */\n  get name() {\n    return this._data.name\n  }\n\n  /** @type {AttributeDim} */\n  get r_dim() {\n    return this._data.r_dim\n  }\n\n  /** @type {AttributeDim} */\n  get w_dim() {\n    return this._data.w_dim\n  }\n\n  /** @type {DevError[]} */\n  get err_list() {\n    return this._data.err_list\n  }\n}\n\n/**\n * @public\n */\nexport class AttributeValue_4 {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {AttrValUnion} */\n  get value() {\n    return this._data.value\n  }\n\n  /** @type {AttrQuality} */\n  get quality() {\n    return this._data.quality\n  }\n\n  /** @type {AttrDataFormat} */\n  get data_format() {\n    return this._data.data_format\n  }\n\n  /** @type {TimeVal} */\n  get time() {\n    return this._data.time\n  }\n\n  /** @type {string} */\n  get name() {\n    return this._data.name\n  }\n\n  /** @type {AttributeDim} */\n  get r_dim() {\n    return this._data.r_dim\n  }\n\n  /** @type {AttributeDim} */\n  get w_dim() {\n    return this._data.w_dim\n  }\n\n  /** @type {DevError[]} */\n  get err_list() {\n    return this._data.err_list\n  }\n}\n\n/**\n * @public\n */\nexport class AttributeValue_5 {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {AttrValUnion} */\n  get value() {\n    return this._data.value\n  }\n\n  /** @type {AttrQuality} */\n  get quality() {\n    return this._data.quality\n  }\n\n  /** @type {AttrDataFormat} */\n  get data_format() {\n    return this._data.data_format\n  }\n\n  /** @type {number} */\n  get data_type() {\n    return this._data.data_type\n  }\n\n  /** @type {TimeVal} */\n  get time() {\n    return this._data.time\n  }\n\n  /** @type {string} */\n  get name() {\n    return this._data.name\n  }\n\n  /** @type {AttributeDim} */\n  get r_dim() {\n    return this._data.r_dim\n  }\n\n  /** @type {AttributeDim} */\n  get w_dim() {\n    return this._data.w_dim\n  }\n\n  /** @type {DevError[]} */\n  get err_list() {\n    return this._data.err_list\n  }\n}\n\n/**\n * @public\n */\nexport class ChangeEventProp {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {string} */\n  get rel_change() {\n    return this._data.rel_change\n  }\n\n  /** @type {string} */\n  get abs_change() {\n    return this._data.abs_change\n  }\n\n  /** @type {string[]} */\n  get extensions() {\n    return this._data.extensions\n  }\n}\n\n/**\n * @public\n */\nexport class DevAttrHistory {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {boolean} */\n  get attr_failed() {\n    return this._data.attr_failed\n  }\n\n  /** @type {AttributeValue} */\n  get value() {\n    return this._data.value\n  }\n\n  /** @type {DevError[]} */\n  get errors() {\n    return this._data.errors\n  }\n}\n\n/**\n * @public\n */\nexport class DevAttrHistory_3 {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {boolean} */\n  get attr_failed() {\n    return this._data.attr_failed\n  }\n\n  /** @type {AttributeValue_3} */\n  get value() {\n    return this._data.value\n  }\n}\n\n/**\n * @public\n */\nexport class DevAttrHistory_4 {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {string} */\n  get name() {\n    return this._data.name\n  }\n\n  /** @type {TimeVal[]} */\n  get dates() {\n    return this._data.dates\n  }\n\n  /** @type {Object} */\n  get value() {\n    return this._data.value\n  }\n\n  /** @type {AttrQuality[]} */\n  get quals() {\n    return this._data.quals\n  }\n\n  /** @type {EltInArray[]} */\n  get quals_array() {\n    return this._data.quals_array\n  }\n\n  /** @type {AttributeDim[]} */\n  get r_dims() {\n    return this._data.r_dims\n  }\n\n  /** @type {EltInArray[]} */\n  get r_dims_array() {\n    return this._data.r_dims_array\n  }\n\n  /** @type {AttributeDim[]} */\n  get w_dims() {\n    return this._data.w_dims\n  }\n\n  /** @type {EltInArray[]} */\n  get w_dims_array() {\n    return this._data.w_dims_array\n  }\n\n  /** @type {DevError[][]} */\n  get errors() {\n    return this._data.errors\n  }\n\n  /** @type {EltInArray[]} */\n  get errors_array() {\n    return this._data.errors_array\n  }\n}\n\n/**\n * @public\n */\nexport class DevAttrHistory_5 {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {string} */\n  get name() {\n    return this._data.name\n  }\n\n  /** @type {AttrDataFormat} */\n  get data_format() {\n    return this._data.data_format\n  }\n\n  /** @type {number} */\n  get data_type() {\n    return this._data.data_type\n  }\n\n  /** @type {TimeVal[]} */\n  get dates() {\n    return this._data.dates\n  }\n\n  /** @type {Object} */\n  get value() {\n    return this._data.value\n  }\n\n  /** @type {AttrQuality[]} */\n  get quals() {\n    return this._data.quals\n  }\n\n  /** @type {EltInArray[]} */\n  get quals_array() {\n    return this._data.quals_array\n  }\n\n  /** @type {AttributeDim[]} */\n  get r_dims() {\n    return this._data.r_dims\n  }\n\n  /** @type {EltInArray[]} */\n  get r_dims_array() {\n    return this._data.r_dims_array\n  }\n\n  /** @type {AttributeDim[]} */\n  get w_dims() {\n    return this._data.w_dims\n  }\n\n  /** @type {EltInArray[]} */\n  get w_dims_array() {\n    return this._data.w_dims_array\n  }\n\n  /** @type {DevError[][]} */\n  get errors() {\n    return this._data.errors\n  }\n\n  /** @type {EltInArray[]} */\n  get errors_array() {\n    return this._data.errors_array\n  }\n}\n\n/**\n * @public\n */\nexport class DevCmdHistory {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {TimeVal} */\n  get time() {\n    return this._data.time\n  }\n\n  /** @type {boolean} */\n  get cmd_failed() {\n    return this._data.cmd_failed\n  }\n\n  /** @type {Object} */\n  get value() {\n    return this._data.value\n  }\n\n  /** @type {DevError[]} */\n  get errors() {\n    return this._data.errors\n  }\n}\n\n/**\n * @public\n */\nexport class DevCmdHistory_4 {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {TimeVal[]} */\n  get dates() {\n    return this._data.dates\n  }\n\n  /** @type {Object} */\n  get value() {\n    return this._data.value\n  }\n\n  /** @type {AttributeDim[]} */\n  get dims() {\n    return this._data.dims\n  }\n\n  /** @type {EltInArray[]} */\n  get dims_array() {\n    return this._data.dims_array\n  }\n\n  /** @type {DevError[][]} */\n  get errors() {\n    return this._data.errors\n  }\n\n  /** @type {EltInArray[]} */\n  get errors_array() {\n    return this._data.errors_array\n  }\n\n  /** @type {number} */\n  get cmd_type() {\n    return this._data.cmd_type\n  }\n}\n\n/**\n * @public\n */\nexport class DevCmdInfo {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {string} */\n  get cmd_name() {\n    return this._data.cmd_name\n  }\n\n  /** @type {number} */\n  get cmd_tag() {\n    return this._data.cmd_tag\n  }\n\n  /** @type {number} */\n  get in_type() {\n    return this._data.in_type\n  }\n\n  /** @type {number} */\n  get out_type() {\n    return this._data.out_type\n  }\n\n  /** @type {string} */\n  get in_type_desc() {\n    return this._data.in_type_desc\n  }\n\n  /** @type {string} */\n  get out_type_desc() {\n    return this._data.out_type_desc\n  }\n}\n\n/**\n * @public\n */\nexport class DevCmdInfo_2 {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {string} */\n  get cmd_name() {\n    return this._data.cmd_name\n  }\n\n  /** @type {DispLevel} */\n  get level() {\n    return this._data.level\n  }\n\n  /** @type {number} */\n  get cmd_tag() {\n    return this._data.cmd_tag\n  }\n\n  /** @type {number} */\n  get in_type() {\n    return this._data.in_type\n  }\n\n  /** @type {number} */\n  get out_type() {\n    return this._data.out_type\n  }\n\n  /** @type {string} */\n  get in_type_desc() {\n    return this._data.in_type_desc\n  }\n\n  /** @type {string} */\n  get out_type_desc() {\n    return this._data.out_type_desc\n  }\n}\n\n/**\n * @public\n */\nexport class DevEncoded {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {string} */\n  get encoded_format() {\n    return this._data.encoded_format\n  }\n\n  /** @type {number[]} */\n  get encoded_data() {\n    return this._data.encoded_data\n  }\n}\n\n/**\n * @public\n */\nexport class DevError {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {string} */\n  get reason() {\n    return this._data.reason\n  }\n\n  /** @type {ErrSeverity} */\n  get severity() {\n    return this._data.severity\n  }\n\n  /** @type {string} */\n  get desc() {\n    return this._data.desc\n  }\n\n  /** @type {string} */\n  get origin() {\n    return this._data.origin\n  }\n}\n\n/**\n * @public\n */\nexport class DevFailed {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {DevError[]} */\n  get errors() {\n    return this._data.errors\n  }\n}\n\n/**\n * @public\n */\nexport class DevInfo {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {string} */\n  get dev_class() {\n    return this._data.dev_class\n  }\n\n  /** @type {string} */\n  get server_id() {\n    return this._data.server_id\n  }\n\n  /** @type {string} */\n  get server_host() {\n    return this._data.server_host\n  }\n\n  /** @type {number} */\n  get server_version() {\n    return this._data.server_version\n  }\n\n  /** @type {string} */\n  get doc_url() {\n    return this._data.doc_url\n  }\n}\n\n/**\n * @public\n */\nexport class DevInfo_3 {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {string} */\n  get dev_class() {\n    return this._data.dev_class\n  }\n\n  /** @type {string} */\n  get server_id() {\n    return this._data.server_id\n  }\n\n  /** @type {string} */\n  get server_host() {\n    return this._data.server_host\n  }\n\n  /** @type {number} */\n  get server_version() {\n    return this._data.server_version\n  }\n\n  /** @type {string} */\n  get doc_url() {\n    return this._data.doc_url\n  }\n\n  /** @type {string} */\n  get dev_type() {\n    return this._data.dev_type\n  }\n}\n\n/**\n * @public\n */\nexport class DevIntrChange {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {boolean} */\n  get dev_started() {\n    return this._data.dev_started\n  }\n\n  /** @type {DevCmdInfo_2[]} */\n  get cmds() {\n    return this._data.cmds\n  }\n\n  /** @type {AttributeConfig_5[]} */\n  get atts() {\n    return this._data.atts\n  }\n}\n\n/**\n * @public\n */\nexport class DevPipeBlob {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {string} */\n  get name() {\n    return this._data.name\n  }\n\n  /** @type {DevPipeDataElt[]} */\n  get blob_data() {\n    return this._data.blob_data\n  }\n}\n\n/**\n * @public\n */\nexport class DevPipeData {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {string} */\n  get name() {\n    return this._data.name\n  }\n\n  /** @type {TimeVal} */\n  get time() {\n    return this._data.time\n  }\n\n  /** @type {DevPipeBlob} */\n  get data_blob() {\n    return this._data.data_blob\n  }\n}\n\n/**\n * @public\n */\nexport class DevPipeDataElt {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {string} */\n  get name() {\n    return this._data.name\n  }\n\n  /** @type {AttrValUnion} */\n  get value() {\n    return this._data.value\n  }\n\n  /** @type {DevPipeDataElt[]} */\n  get inner_blob() {\n    return this._data.inner_blob\n  }\n\n  /** @type {string} */\n  get inner_blob_name() {\n    return this._data.inner_blob_name\n  }\n}\n\n/**\n * @public\n */\nexport class DevVarDoubleStringArray {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {number[]} */\n  get dvalue() {\n    return this._data.dvalue\n  }\n\n  /** @type {string[]} */\n  get svalue() {\n    return this._data.svalue\n  }\n}\n\n/**\n * @public\n */\nexport class DevVarLongStringArray {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {number[]} */\n  get lvalue() {\n    return this._data.lvalue\n  }\n\n  /** @type {string[]} */\n  get svalue() {\n    return this._data.svalue\n  }\n}\n\n/**\n * @public\n */\nexport class EltInArray {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {number} */\n  get start() {\n    return this._data.start\n  }\n\n  /** @type {number} */\n  get nb_elt() {\n    return this._data.nb_elt\n  }\n}\n\n/**\n * @public\n */\nexport class EventProperties {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {ChangeEventProp} */\n  get ch_event() {\n    return this._data.ch_event\n  }\n\n  /** @type {PeriodicEventProp} */\n  get per_event() {\n    return this._data.per_event\n  }\n\n  /** @type {ArchiveEventProp} */\n  get arch_event() {\n    return this._data.arch_event\n  }\n}\n\n/**\n * @public\n */\nexport class JavaClntIdent {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {string} */\n  get MainClass() {\n    return this._data.MainClass\n  }\n\n  /** @type {number[]} */\n  get uuid() {\n    return this._data.uuid\n  }\n}\n\n/**\n * @public\n */\nexport class MultiDevFailed {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {NamedDevError[]} */\n  get errors() {\n    return this._data.errors\n  }\n}\n\n/**\n * @public\n */\nexport class NamedDevError {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {string} */\n  get name() {\n    return this._data.name\n  }\n\n  /** @type {number} */\n  get index_in_call() {\n    return this._data.index_in_call\n  }\n\n  /** @type {DevError[]} */\n  get err_list() {\n    return this._data.err_list\n  }\n}\n\n/**\n * @public\n */\nexport class PeriodicEventProp {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {string} */\n  get period() {\n    return this._data.period\n  }\n\n  /** @type {string[]} */\n  get extensions() {\n    return this._data.extensions\n  }\n}\n\n/**\n * @public\n */\nexport class PipeConfig {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {string} */\n  get name() {\n    return this._data.name\n  }\n\n  /** @type {string} */\n  get description() {\n    return this._data.description\n  }\n\n  /** @type {string} */\n  get label() {\n    return this._data.label\n  }\n\n  /** @type {DispLevel} */\n  get level() {\n    return this._data.level\n  }\n\n  /** @type {PipeWriteType} */\n  get writable() {\n    return this._data.writable\n  }\n\n  /** @type {string[]} */\n  get extensions() {\n    return this._data.extensions\n  }\n}\n\n/**\n * @public\n */\nexport class TimeVal {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {number} */\n  get tv_sec() {\n    return this._data.tv_sec\n  }\n\n  /** @type {number} */\n  get tv_usec() {\n    return this._data.tv_usec\n  }\n\n  /** @type {number} */\n  get tv_nsec() {\n    return this._data.tv_nsec\n  }\n}\n\n/**\n * @public\n */\nexport class ZmqCallInfo {\n\n  /** @param {Object} data */\n  constructor(data = {}) {\n    /** @private */\n    this._data = Object.assign({}, data)\n  }\n\n  /** @type {number} */\n  get version() {\n    return this._data.version\n  }\n\n  /** @type {number} */\n  get ctr() {\n    return this._data.ctr\n  }\n\n  /** @type {string} */\n  get method_name() {\n    return this._data.method_name\n  }\n\n  /** @type {number[]} */\n  get oid() {\n    return this._data.oid\n  }\n\n  /** @type {boolean} */\n  get call_is_except() {\n    return this._data.call_is_except\n  }\n}\n\n/**\n * @interface\n * @public\n */\nexport class Device {\n\n  /**\n   * @return {string}\n   *\n   */\n  _get_adm_name() { }\n\n  /**\n   * @return {string}\n   *\n   */\n  _get_description() { }\n\n  /**\n   * @return {string}\n   *\n   */\n  _get_name() { }\n\n  /**\n   * @return {DevState}\n   *\n   */\n  _get_state() { }\n\n  /**\n   * @return {string}\n   *\n   */\n  _get_status() { }\n\n  /**\n   * @return {undefined}\n   * @param {string} adm_name adm_name\n   */\n  _set_adm_name(adm_name) { }\n\n  /**\n   * @return {undefined}\n   * @param {string} description description\n   */\n  _set_description(description) { }\n\n  /**\n   * @return {undefined}\n   * @param {string} name name\n   */\n  _set_name(name) { }\n\n  /**\n   * @return {undefined}\n   * @param {DevState} state state\n   */\n  _set_state(state) { }\n\n  /**\n   * @return {undefined}\n   * @param {string} status status\n   */\n  _set_status(status) { }\n\n  /**\n   * @return {string[]}\n   * @param {number} n n\n   */\n  black_box(n) { }\n\n  /**\n   * @return {Object}\n   * @param {string} command command\n   * @param {Object} argin argin\n   */\n  command_inout(command, argin) { }\n\n  /**\n   * @return {DevCmdInfo[]}\n   *\n   */\n  command_list_query() { }\n\n  /**\n   * @return {DevCmdInfo}\n   * @param {string} command command\n   */\n  command_query(command) { }\n\n  /**\n   * @return {AttributeConfig[]}\n   * @param {string[]} names names\n   */\n  get_attribute_config(names) { }\n\n  /**\n   * @return {DevInfo}\n   *\n   */\n  info() { }\n\n  /**\n   * @return {undefined}\n   *\n   */\n  ping() { }\n\n  /**\n   * @return {AttributeValue[]}\n   * @param {string[]} names names\n   */\n  read_attributes(names) { }\n\n  /**\n   * @return {undefined}\n   * @param {AttributeConfig[]} new_conf new_conf\n   */\n  set_attribute_config(new_conf) { }\n\n  /**\n   * @return {undefined}\n   * @param {AttributeValue[]} values values\n   */\n  write_attributes(values) { }\n}\n\n/**\n * @interface\n * @public\n */\nexport class Device_2 extends Device {\n\n  /**\n   * @return {Object}\n   * @param {string} command command\n   * @param {Object} argin argin\n   * @param {DevSource} source source\n   */\n  command_inout_2(command, argin, source) { }\n\n  /**\n   * @return {DevCmdHistory[]}\n   * @param {string} command command\n   * @param {number} n n\n   */\n  command_inout_history_2(command, n) { }\n\n  /**\n   * @return {DevCmdInfo_2[]}\n   *\n   */\n  command_list_query_2() { }\n\n  /**\n   * @return {DevCmdInfo_2}\n   * @param {string} command command\n   */\n  command_query_2(command) { }\n\n  /**\n   * @return {AttributeConfig_2[]}\n   * @param {string[]} names names\n   */\n  get_attribute_config_2(names) { }\n\n  /**\n   * @return {DevAttrHistory[]}\n   * @param {string} name name\n   * @param {number} n n\n   */\n  read_attribute_history_2(name, n) { }\n\n  /**\n   * @return {AttributeValue[]}\n   * @param {string[]} names names\n   * @param {DevSource} source source\n   */\n  read_attributes_2(names, source) { }\n}\n\n/**\n * @interface\n * @public\n */\nexport class Device_3 extends Device_2 {\n\n  /**\n   * @return {AttributeConfig_3[]}\n   * @param {string[]} names names\n   */\n  get_attribute_config_3(names) { }\n\n  /**\n   * @return {DevInfo_3}\n   *\n   */\n  info_3() { }\n\n  /**\n   * @return {DevAttrHistory_3[]}\n   * @param {string} name name\n   * @param {number} n n\n   */\n  read_attribute_history_3(name, n) { }\n\n  /**\n   * @return {AttributeValue_3[]}\n   * @param {string[]} names names\n   * @param {DevSource} source source\n   */\n  read_attributes_3(names, source) { }\n\n  /**\n   * @return {undefined}\n   * @param {AttributeConfig_3[]} new_conf new_conf\n   */\n  set_attribute_config_3(new_conf) { }\n\n  /**\n   * @return {undefined}\n   * @param {AttributeValue[]} values values\n   */\n  write_attributes_3(values) { }\n}\n\n/**\n * @interface\n * @public\n */\nexport class Device_4 extends Device_3 {\n\n  /**\n   * @return {Object}\n   * @param {string} command command\n   * @param {Object} argin argin\n   * @param {DevSource} source source\n   * @param {ClntIdent} cl_ident cl_ident\n   */\n  command_inout_4(command, argin, source, cl_ident) { }\n\n  /**\n   * @return {DevCmdHistory_4}\n   * @param {string} command command\n   * @param {number} n n\n   */\n  command_inout_history_4(command, n) { }\n\n  /**\n   * @return {DevAttrHistory_4}\n   * @param {string} name name\n   * @param {number} n n\n   */\n  read_attribute_history_4(name, n) { }\n\n  /**\n   * @return {AttributeValue_4[]}\n   * @param {string[]} names names\n   * @param {DevSource} source source\n   * @param {ClntIdent} cl_ident cl_ident\n   */\n  read_attributes_4(names, source, cl_ident) { }\n\n  /**\n   * @return {undefined}\n   * @param {AttributeConfig_3[]} new_conf new_conf\n   * @param {ClntIdent} cl_ident cl_ident\n   */\n  set_attribute_config_4(new_conf, cl_ident) { }\n\n  /**\n   * @return {undefined}\n   * @param {AttributeValue_4[]} values values\n   * @param {ClntIdent} cl_ident cl_ident\n   */\n  write_attributes_4(values, cl_ident) { }\n\n  /**\n   * @return {AttributeValue_4[]}\n   * @param {AttributeValue_4[]} values values\n   * @param {ClntIdent} cl_ident cl_ident\n   */\n  write_read_attributes_4(values, cl_ident) { }\n}\n\n/**\n * @interface\n * @public\n */\nexport class Device_5 extends Device_4 {\n\n  /**\n   * @return {AttributeConfig_5[]}\n   * @param {string[]} names names\n   */\n  get_attribute_config_5(names) { }\n\n  /**\n   * @return {PipeConfig[]}\n   * @param {string[]} names names\n   */\n  get_pipe_config_5(names) { }\n\n  /**\n   * @return {DevAttrHistory_5}\n   * @param {string} name name\n   * @param {number} n n\n   */\n  read_attribute_history_5(name, n) { }\n\n  /**\n   * @return {AttributeValue_5[]}\n   * @param {string[]} names names\n   * @param {DevSource} source source\n   * @param {ClntIdent} cl_ident cl_ident\n   */\n  read_attributes_5(names, source, cl_ident) { }\n\n  /**\n   * @return {DevPipeData}\n   * @param {string} name name\n   * @param {ClntIdent} cl_ident cl_ident\n   */\n  read_pipe_5(name, cl_ident) { }\n\n  /**\n   * @return {undefined}\n   * @param {AttributeConfig_5[]} new_conf new_conf\n   * @param {ClntIdent} cl_ident cl_ident\n   */\n  set_attribute_config_5(new_conf, cl_ident) { }\n\n  /**\n   * @return {undefined}\n   * @param {PipeConfig[]} new_conf new_conf\n   * @param {ClntIdent} cl_ident cl_ident\n   */\n  set_pipe_config_5(new_conf, cl_ident) { }\n\n  /**\n   * @return {undefined}\n   * @param {DevPipeData} value value\n   * @param {ClntIdent} cl_ident cl_ident\n   */\n  write_pipe_5(value, cl_ident) { }\n\n  /**\n   * @return {AttributeValue_5[]}\n   * @param {AttributeValue_4[]} values values\n   * @param {string[]} r_names r_names\n   * @param {ClntIdent} cl_ident cl_ident\n   */\n  write_read_attributes_5(values, r_names, cl_ident) { }\n\n  /**\n   * @return {DevPipeData}\n   * @param {DevPipeData} value value\n   * @param {ClntIdent} cl_ident cl_ident\n   */\n  write_read_pipe_5(value, cl_ident) { }\n}\n\n"
   },
   {
-    "__docId__": 107,
+    "__docId__": 110,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2750,7 +2890,7 @@
     "generator": false
   },
   {
-    "__docId__": 108,
+    "__docId__": 111,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2780,7 +2920,7 @@
     "generator": false
   },
   {
-    "__docId__": 109,
+    "__docId__": 112,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -2798,7 +2938,7 @@
     }
   },
   {
-    "__docId__": 110,
+    "__docId__": 113,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -2816,7 +2956,7 @@
     }
   },
   {
-    "__docId__": 111,
+    "__docId__": 114,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -2834,7 +2974,7 @@
     }
   },
   {
-    "__docId__": 112,
+    "__docId__": 115,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -2852,7 +2992,7 @@
     }
   },
   {
-    "__docId__": 113,
+    "__docId__": 116,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -2870,7 +3010,7 @@
     }
   },
   {
-    "__docId__": 114,
+    "__docId__": 117,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -2888,7 +3028,7 @@
     }
   },
   {
-    "__docId__": 115,
+    "__docId__": 118,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -2906,7 +3046,7 @@
     }
   },
   {
-    "__docId__": 116,
+    "__docId__": 119,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -2924,7 +3064,7 @@
     }
   },
   {
-    "__docId__": 117,
+    "__docId__": 120,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -2942,7 +3082,7 @@
     }
   },
   {
-    "__docId__": 118,
+    "__docId__": 121,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -2960,7 +3100,7 @@
     }
   },
   {
-    "__docId__": 119,
+    "__docId__": 122,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -2978,7 +3118,7 @@
     }
   },
   {
-    "__docId__": 120,
+    "__docId__": 123,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -2996,7 +3136,7 @@
     }
   },
   {
-    "__docId__": 121,
+    "__docId__": 124,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -3014,7 +3154,7 @@
     }
   },
   {
-    "__docId__": 122,
+    "__docId__": 125,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -3032,7 +3172,7 @@
     }
   },
   {
-    "__docId__": 123,
+    "__docId__": 126,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -3050,7 +3190,7 @@
     }
   },
   {
-    "__docId__": 124,
+    "__docId__": 127,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -3068,7 +3208,7 @@
     }
   },
   {
-    "__docId__": 125,
+    "__docId__": 128,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -3086,7 +3226,7 @@
     }
   },
   {
-    "__docId__": 126,
+    "__docId__": 129,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -3104,7 +3244,7 @@
     }
   },
   {
-    "__docId__": 127,
+    "__docId__": 130,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -3122,7 +3262,7 @@
     }
   },
   {
-    "__docId__": 128,
+    "__docId__": 131,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -3140,7 +3280,7 @@
     }
   },
   {
-    "__docId__": 129,
+    "__docId__": 132,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -3158,7 +3298,7 @@
     }
   },
   {
-    "__docId__": 130,
+    "__docId__": 133,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -3176,7 +3316,7 @@
     }
   },
   {
-    "__docId__": 131,
+    "__docId__": 134,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -3194,7 +3334,7 @@
     }
   },
   {
-    "__docId__": 132,
+    "__docId__": 135,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -3212,7 +3352,7 @@
     }
   },
   {
-    "__docId__": 133,
+    "__docId__": 136,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -3230,7 +3370,7 @@
     }
   },
   {
-    "__docId__": 134,
+    "__docId__": 137,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -3248,7 +3388,7 @@
     }
   },
   {
-    "__docId__": 135,
+    "__docId__": 138,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -3266,7 +3406,7 @@
     }
   },
   {
-    "__docId__": 136,
+    "__docId__": 139,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -3284,7 +3424,7 @@
     }
   },
   {
-    "__docId__": 137,
+    "__docId__": 140,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -3302,7 +3442,7 @@
     }
   },
   {
-    "__docId__": 138,
+    "__docId__": 141,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -3320,7 +3460,7 @@
     }
   },
   {
-    "__docId__": 139,
+    "__docId__": 142,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -3338,7 +3478,7 @@
     }
   },
   {
-    "__docId__": 140,
+    "__docId__": 143,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -3356,7 +3496,7 @@
     }
   },
   {
-    "__docId__": 141,
+    "__docId__": 144,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -3374,7 +3514,7 @@
     }
   },
   {
-    "__docId__": 142,
+    "__docId__": 145,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -3392,7 +3532,7 @@
     }
   },
   {
-    "__docId__": 143,
+    "__docId__": 146,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -3410,7 +3550,7 @@
     }
   },
   {
-    "__docId__": 144,
+    "__docId__": 147,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -3428,7 +3568,7 @@
     }
   },
   {
-    "__docId__": 145,
+    "__docId__": 148,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -3446,7 +3586,7 @@
     }
   },
   {
-    "__docId__": 146,
+    "__docId__": 149,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -3464,7 +3604,7 @@
     }
   },
   {
-    "__docId__": 147,
+    "__docId__": 150,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -3482,7 +3622,7 @@
     }
   },
   {
-    "__docId__": 148,
+    "__docId__": 151,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -3500,7 +3640,7 @@
     }
   },
   {
-    "__docId__": 149,
+    "__docId__": 152,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -3518,7 +3658,7 @@
     }
   },
   {
-    "__docId__": 150,
+    "__docId__": 153,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -3536,7 +3676,7 @@
     }
   },
   {
-    "__docId__": 151,
+    "__docId__": 154,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -3554,7 +3694,7 @@
     }
   },
   {
-    "__docId__": 152,
+    "__docId__": 155,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -3572,7 +3712,7 @@
     }
   },
   {
-    "__docId__": 153,
+    "__docId__": 156,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -3590,7 +3730,7 @@
     }
   },
   {
-    "__docId__": 154,
+    "__docId__": 157,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -3608,7 +3748,7 @@
     }
   },
   {
-    "__docId__": 155,
+    "__docId__": 158,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -3626,7 +3766,7 @@
     }
   },
   {
-    "__docId__": 156,
+    "__docId__": 159,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -3644,7 +3784,7 @@
     }
   },
   {
-    "__docId__": 157,
+    "__docId__": 160,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -3667,7 +3807,7 @@
     }
   },
   {
-    "__docId__": 158,
+    "__docId__": 161,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -3690,7 +3830,7 @@
     }
   },
   {
-    "__docId__": 159,
+    "__docId__": 162,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -3713,7 +3853,7 @@
     }
   },
   {
-    "__docId__": 160,
+    "__docId__": 163,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -3736,7 +3876,7 @@
     }
   },
   {
-    "__docId__": 161,
+    "__docId__": 164,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -3759,7 +3899,7 @@
     }
   },
   {
-    "__docId__": 162,
+    "__docId__": 165,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -3782,7 +3922,7 @@
     }
   },
   {
-    "__docId__": 163,
+    "__docId__": 166,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -3805,7 +3945,7 @@
     }
   },
   {
-    "__docId__": 164,
+    "__docId__": 167,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -3828,7 +3968,7 @@
     }
   },
   {
-    "__docId__": 165,
+    "__docId__": 168,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -3851,7 +3991,7 @@
     }
   },
   {
-    "__docId__": 166,
+    "__docId__": 169,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -3874,7 +4014,7 @@
     }
   },
   {
-    "__docId__": 167,
+    "__docId__": 170,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -3898,7 +4038,7 @@
     }
   },
   {
-    "__docId__": 168,
+    "__docId__": 171,
     "kind": "typedef",
     "static": true,
     "variation": null,
@@ -3917,7 +4057,7 @@
     }
   },
   {
-    "__docId__": 169,
+    "__docId__": 172,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -3933,7 +4073,7 @@
     "interface": false
   },
   {
-    "__docId__": 170,
+    "__docId__": 173,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -3958,7 +4098,7 @@
     "generator": false
   },
   {
-    "__docId__": 171,
+    "__docId__": 174,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -3975,7 +4115,7 @@
     }
   },
   {
-    "__docId__": 172,
+    "__docId__": 175,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -3996,7 +4136,7 @@
     "generator": false
   },
   {
-    "__docId__": 173,
+    "__docId__": 176,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -4017,7 +4157,7 @@
     "generator": false
   },
   {
-    "__docId__": 174,
+    "__docId__": 177,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -4038,7 +4178,7 @@
     "generator": false
   },
   {
-    "__docId__": 175,
+    "__docId__": 178,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -4059,7 +4199,7 @@
     "generator": false
   },
   {
-    "__docId__": 176,
+    "__docId__": 179,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -4075,7 +4215,7 @@
     "interface": false
   },
   {
-    "__docId__": 177,
+    "__docId__": 180,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -4100,7 +4240,7 @@
     "generator": false
   },
   {
-    "__docId__": 178,
+    "__docId__": 181,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -4117,7 +4257,7 @@
     }
   },
   {
-    "__docId__": 179,
+    "__docId__": 182,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -4138,7 +4278,7 @@
     "generator": false
   },
   {
-    "__docId__": 180,
+    "__docId__": 183,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -4159,7 +4299,7 @@
     "generator": false
   },
   {
-    "__docId__": 181,
+    "__docId__": 184,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -4180,7 +4320,7 @@
     "generator": false
   },
   {
-    "__docId__": 182,
+    "__docId__": 185,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -4196,7 +4336,7 @@
     "interface": false
   },
   {
-    "__docId__": 183,
+    "__docId__": 186,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -4221,7 +4361,7 @@
     "generator": false
   },
   {
-    "__docId__": 184,
+    "__docId__": 187,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -4238,7 +4378,7 @@
     }
   },
   {
-    "__docId__": 185,
+    "__docId__": 188,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -4259,7 +4399,7 @@
     "generator": false
   },
   {
-    "__docId__": 186,
+    "__docId__": 189,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -4280,7 +4420,7 @@
     "generator": false
   },
   {
-    "__docId__": 187,
+    "__docId__": 190,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -4301,7 +4441,7 @@
     "generator": false
   },
   {
-    "__docId__": 188,
+    "__docId__": 191,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -4322,7 +4462,7 @@
     "generator": false
   },
   {
-    "__docId__": 189,
+    "__docId__": 192,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -4343,7 +4483,7 @@
     "generator": false
   },
   {
-    "__docId__": 190,
+    "__docId__": 193,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -4364,7 +4504,7 @@
     "generator": false
   },
   {
-    "__docId__": 191,
+    "__docId__": 194,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -4385,7 +4525,7 @@
     "generator": false
   },
   {
-    "__docId__": 192,
+    "__docId__": 195,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -4401,7 +4541,7 @@
     "interface": false
   },
   {
-    "__docId__": 193,
+    "__docId__": 196,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -4426,7 +4566,7 @@
     "generator": false
   },
   {
-    "__docId__": 194,
+    "__docId__": 197,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -4443,7 +4583,7 @@
     }
   },
   {
-    "__docId__": 195,
+    "__docId__": 198,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -4464,7 +4604,7 @@
     "generator": false
   },
   {
-    "__docId__": 196,
+    "__docId__": 199,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -4485,7 +4625,7 @@
     "generator": false
   },
   {
-    "__docId__": 197,
+    "__docId__": 200,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -4506,7 +4646,7 @@
     "generator": false
   },
   {
-    "__docId__": 198,
+    "__docId__": 201,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -4527,7 +4667,7 @@
     "generator": false
   },
   {
-    "__docId__": 199,
+    "__docId__": 202,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -4548,7 +4688,7 @@
     "generator": false
   },
   {
-    "__docId__": 200,
+    "__docId__": 203,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -4569,7 +4709,7 @@
     "generator": false
   },
   {
-    "__docId__": 201,
+    "__docId__": 204,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -4590,7 +4730,7 @@
     "generator": false
   },
   {
-    "__docId__": 202,
+    "__docId__": 205,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -4611,7 +4751,7 @@
     "generator": false
   },
   {
-    "__docId__": 203,
+    "__docId__": 206,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -4632,7 +4772,7 @@
     "generator": false
   },
   {
-    "__docId__": 204,
+    "__docId__": 207,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -4653,7 +4793,7 @@
     "generator": false
   },
   {
-    "__docId__": 205,
+    "__docId__": 208,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -4674,7 +4814,7 @@
     "generator": false
   },
   {
-    "__docId__": 206,
+    "__docId__": 209,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -4695,7 +4835,7 @@
     "generator": false
   },
   {
-    "__docId__": 207,
+    "__docId__": 210,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -4716,7 +4856,7 @@
     "generator": false
   },
   {
-    "__docId__": 208,
+    "__docId__": 211,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -4737,7 +4877,7 @@
     "generator": false
   },
   {
-    "__docId__": 209,
+    "__docId__": 212,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -4758,7 +4898,7 @@
     "generator": false
   },
   {
-    "__docId__": 210,
+    "__docId__": 213,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -4779,7 +4919,7 @@
     "generator": false
   },
   {
-    "__docId__": 211,
+    "__docId__": 214,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -4800,7 +4940,7 @@
     "generator": false
   },
   {
-    "__docId__": 212,
+    "__docId__": 215,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -4821,7 +4961,7 @@
     "generator": false
   },
   {
-    "__docId__": 213,
+    "__docId__": 216,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -4837,7 +4977,7 @@
     "interface": false
   },
   {
-    "__docId__": 214,
+    "__docId__": 217,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -4862,7 +5002,7 @@
     "generator": false
   },
   {
-    "__docId__": 215,
+    "__docId__": 218,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -4879,7 +5019,7 @@
     }
   },
   {
-    "__docId__": 216,
+    "__docId__": 219,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -4900,7 +5040,7 @@
     "generator": false
   },
   {
-    "__docId__": 217,
+    "__docId__": 220,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -4921,7 +5061,7 @@
     "generator": false
   },
   {
-    "__docId__": 218,
+    "__docId__": 221,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -4942,7 +5082,7 @@
     "generator": false
   },
   {
-    "__docId__": 219,
+    "__docId__": 222,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -4963,7 +5103,7 @@
     "generator": false
   },
   {
-    "__docId__": 220,
+    "__docId__": 223,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -4984,7 +5124,7 @@
     "generator": false
   },
   {
-    "__docId__": 221,
+    "__docId__": 224,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5005,7 +5145,7 @@
     "generator": false
   },
   {
-    "__docId__": 222,
+    "__docId__": 225,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5026,7 +5166,7 @@
     "generator": false
   },
   {
-    "__docId__": 223,
+    "__docId__": 226,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5047,7 +5187,7 @@
     "generator": false
   },
   {
-    "__docId__": 224,
+    "__docId__": 227,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5068,7 +5208,7 @@
     "generator": false
   },
   {
-    "__docId__": 225,
+    "__docId__": 228,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5089,7 +5229,7 @@
     "generator": false
   },
   {
-    "__docId__": 226,
+    "__docId__": 229,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5110,7 +5250,7 @@
     "generator": false
   },
   {
-    "__docId__": 227,
+    "__docId__": 230,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5131,7 +5271,7 @@
     "generator": false
   },
   {
-    "__docId__": 228,
+    "__docId__": 231,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5152,7 +5292,7 @@
     "generator": false
   },
   {
-    "__docId__": 229,
+    "__docId__": 232,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5173,7 +5313,7 @@
     "generator": false
   },
   {
-    "__docId__": 230,
+    "__docId__": 233,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5194,7 +5334,7 @@
     "generator": false
   },
   {
-    "__docId__": 231,
+    "__docId__": 234,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5215,7 +5355,7 @@
     "generator": false
   },
   {
-    "__docId__": 232,
+    "__docId__": 235,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5236,7 +5376,7 @@
     "generator": false
   },
   {
-    "__docId__": 233,
+    "__docId__": 236,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5257,7 +5397,7 @@
     "generator": false
   },
   {
-    "__docId__": 234,
+    "__docId__": 237,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5278,7 +5418,7 @@
     "generator": false
   },
   {
-    "__docId__": 235,
+    "__docId__": 238,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -5294,7 +5434,7 @@
     "interface": false
   },
   {
-    "__docId__": 236,
+    "__docId__": 239,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -5319,7 +5459,7 @@
     "generator": false
   },
   {
-    "__docId__": 237,
+    "__docId__": 240,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -5336,7 +5476,7 @@
     }
   },
   {
-    "__docId__": 238,
+    "__docId__": 241,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5357,7 +5497,7 @@
     "generator": false
   },
   {
-    "__docId__": 239,
+    "__docId__": 242,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5378,7 +5518,7 @@
     "generator": false
   },
   {
-    "__docId__": 240,
+    "__docId__": 243,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5399,7 +5539,7 @@
     "generator": false
   },
   {
-    "__docId__": 241,
+    "__docId__": 244,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5420,7 +5560,7 @@
     "generator": false
   },
   {
-    "__docId__": 242,
+    "__docId__": 245,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5441,7 +5581,7 @@
     "generator": false
   },
   {
-    "__docId__": 243,
+    "__docId__": 246,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5462,7 +5602,7 @@
     "generator": false
   },
   {
-    "__docId__": 244,
+    "__docId__": 247,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5483,7 +5623,7 @@
     "generator": false
   },
   {
-    "__docId__": 245,
+    "__docId__": 248,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5504,7 +5644,7 @@
     "generator": false
   },
   {
-    "__docId__": 246,
+    "__docId__": 249,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5525,7 +5665,7 @@
     "generator": false
   },
   {
-    "__docId__": 247,
+    "__docId__": 250,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5546,7 +5686,7 @@
     "generator": false
   },
   {
-    "__docId__": 248,
+    "__docId__": 251,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5567,7 +5707,7 @@
     "generator": false
   },
   {
-    "__docId__": 249,
+    "__docId__": 252,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5588,7 +5728,7 @@
     "generator": false
   },
   {
-    "__docId__": 250,
+    "__docId__": 253,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5609,7 +5749,7 @@
     "generator": false
   },
   {
-    "__docId__": 251,
+    "__docId__": 254,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5630,7 +5770,7 @@
     "generator": false
   },
   {
-    "__docId__": 252,
+    "__docId__": 255,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5651,7 +5791,7 @@
     "generator": false
   },
   {
-    "__docId__": 253,
+    "__docId__": 256,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5672,7 +5812,7 @@
     "generator": false
   },
   {
-    "__docId__": 254,
+    "__docId__": 257,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5693,7 +5833,7 @@
     "generator": false
   },
   {
-    "__docId__": 255,
+    "__docId__": 258,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5714,7 +5854,7 @@
     "generator": false
   },
   {
-    "__docId__": 256,
+    "__docId__": 259,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5735,7 +5875,7 @@
     "generator": false
   },
   {
-    "__docId__": 257,
+    "__docId__": 260,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5756,7 +5896,7 @@
     "generator": false
   },
   {
-    "__docId__": 258,
+    "__docId__": 261,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -5772,7 +5912,7 @@
     "interface": false
   },
   {
-    "__docId__": 259,
+    "__docId__": 262,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -5797,7 +5937,7 @@
     "generator": false
   },
   {
-    "__docId__": 260,
+    "__docId__": 263,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -5814,7 +5954,7 @@
     }
   },
   {
-    "__docId__": 261,
+    "__docId__": 264,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5835,7 +5975,7 @@
     "generator": false
   },
   {
-    "__docId__": 262,
+    "__docId__": 265,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5856,7 +5996,7 @@
     "generator": false
   },
   {
-    "__docId__": 263,
+    "__docId__": 266,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5877,7 +6017,7 @@
     "generator": false
   },
   {
-    "__docId__": 264,
+    "__docId__": 267,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5898,7 +6038,7 @@
     "generator": false
   },
   {
-    "__docId__": 265,
+    "__docId__": 268,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5919,7 +6059,7 @@
     "generator": false
   },
   {
-    "__docId__": 266,
+    "__docId__": 269,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5940,7 +6080,7 @@
     "generator": false
   },
   {
-    "__docId__": 267,
+    "__docId__": 270,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5961,7 +6101,7 @@
     "generator": false
   },
   {
-    "__docId__": 268,
+    "__docId__": 271,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -5982,7 +6122,7 @@
     "generator": false
   },
   {
-    "__docId__": 269,
+    "__docId__": 272,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -6003,7 +6143,7 @@
     "generator": false
   },
   {
-    "__docId__": 270,
+    "__docId__": 273,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -6024,7 +6164,7 @@
     "generator": false
   },
   {
-    "__docId__": 271,
+    "__docId__": 274,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -6045,7 +6185,7 @@
     "generator": false
   },
   {
-    "__docId__": 272,
+    "__docId__": 275,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -6066,7 +6206,7 @@
     "generator": false
   },
   {
-    "__docId__": 273,
+    "__docId__": 276,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -6087,7 +6227,7 @@
     "generator": false
   },
   {
-    "__docId__": 274,
+    "__docId__": 277,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -6108,7 +6248,7 @@
     "generator": false
   },
   {
-    "__docId__": 275,
+    "__docId__": 278,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -6129,7 +6269,7 @@
     "generator": false
   },
   {
-    "__docId__": 276,
+    "__docId__": 279,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -6150,7 +6290,7 @@
     "generator": false
   },
   {
-    "__docId__": 277,
+    "__docId__": 280,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -6171,7 +6311,7 @@
     "generator": false
   },
   {
-    "__docId__": 278,
+    "__docId__": 281,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -6192,7 +6332,7 @@
     "generator": false
   },
   {
-    "__docId__": 279,
+    "__docId__": 282,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -6213,7 +6353,7 @@
     "generator": false
   },
   {
-    "__docId__": 280,
+    "__docId__": 283,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -6234,7 +6374,7 @@
     "generator": false
   },
   {
-    "__docId__": 281,
+    "__docId__": 284,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -6255,7 +6395,7 @@
     "generator": false
   },
   {
-    "__docId__": 282,
+    "__docId__": 285,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -6276,7 +6416,7 @@
     "generator": false
   },
   {
-    "__docId__": 283,
+    "__docId__": 286,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -6297,7 +6437,7 @@
     "generator": false
   },
   {
-    "__docId__": 284,
+    "__docId__": 287,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -6318,7 +6458,7 @@
     "generator": false
   },
   {
-    "__docId__": 285,
+    "__docId__": 288,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -6334,7 +6474,7 @@
     "interface": false
   },
   {
-    "__docId__": 286,
+    "__docId__": 289,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -6359,7 +6499,7 @@
     "generator": false
   },
   {
-    "__docId__": 287,
+    "__docId__": 290,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -6376,7 +6516,7 @@
     }
   },
   {
-    "__docId__": 288,
+    "__docId__": 291,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -6397,7 +6537,7 @@
     "generator": false
   },
   {
-    "__docId__": 289,
+    "__docId__": 292,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -6418,7 +6558,7 @@
     "generator": false
   },
   {
-    "__docId__": 290,
+    "__docId__": 293,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -6434,7 +6574,7 @@
     "interface": false
   },
   {
-    "__docId__": 291,
+    "__docId__": 294,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -6459,7 +6599,7 @@
     "generator": false
   },
   {
-    "__docId__": 292,
+    "__docId__": 295,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -6476,7 +6616,7 @@
     }
   },
   {
-    "__docId__": 293,
+    "__docId__": 296,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -6497,7 +6637,7 @@
     "generator": false
   },
   {
-    "__docId__": 294,
+    "__docId__": 297,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -6518,7 +6658,7 @@
     "generator": false
   },
   {
-    "__docId__": 295,
+    "__docId__": 298,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -6539,7 +6679,7 @@
     "generator": false
   },
   {
-    "__docId__": 296,
+    "__docId__": 299,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -6560,7 +6700,7 @@
     "generator": false
   },
   {
-    "__docId__": 297,
+    "__docId__": 300,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -6581,7 +6721,7 @@
     "generator": false
   },
   {
-    "__docId__": 298,
+    "__docId__": 301,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -6602,7 +6742,7 @@
     "generator": false
   },
   {
-    "__docId__": 299,
+    "__docId__": 302,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -6618,7 +6758,7 @@
     "interface": false
   },
   {
-    "__docId__": 300,
+    "__docId__": 303,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -6643,7 +6783,7 @@
     "generator": false
   },
   {
-    "__docId__": 301,
+    "__docId__": 304,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -6660,7 +6800,7 @@
     }
   },
   {
-    "__docId__": 302,
+    "__docId__": 305,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -6681,7 +6821,7 @@
     "generator": false
   },
   {
-    "__docId__": 303,
+    "__docId__": 306,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -6702,7 +6842,7 @@
     "generator": false
   },
   {
-    "__docId__": 304,
+    "__docId__": 307,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -6723,7 +6863,7 @@
     "generator": false
   },
   {
-    "__docId__": 305,
+    "__docId__": 308,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -6744,7 +6884,7 @@
     "generator": false
   },
   {
-    "__docId__": 306,
+    "__docId__": 309,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -6765,7 +6905,7 @@
     "generator": false
   },
   {
-    "__docId__": 307,
+    "__docId__": 310,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -6786,7 +6926,7 @@
     "generator": false
   },
   {
-    "__docId__": 308,
+    "__docId__": 311,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -6807,7 +6947,7 @@
     "generator": false
   },
   {
-    "__docId__": 309,
+    "__docId__": 312,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -6823,7 +6963,7 @@
     "interface": false
   },
   {
-    "__docId__": 310,
+    "__docId__": 313,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -6848,7 +6988,7 @@
     "generator": false
   },
   {
-    "__docId__": 311,
+    "__docId__": 314,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -6865,7 +7005,7 @@
     }
   },
   {
-    "__docId__": 312,
+    "__docId__": 315,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -6886,7 +7026,7 @@
     "generator": false
   },
   {
-    "__docId__": 313,
+    "__docId__": 316,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -6907,7 +7047,7 @@
     "generator": false
   },
   {
-    "__docId__": 314,
+    "__docId__": 317,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -6928,7 +7068,7 @@
     "generator": false
   },
   {
-    "__docId__": 315,
+    "__docId__": 318,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -6949,7 +7089,7 @@
     "generator": false
   },
   {
-    "__docId__": 316,
+    "__docId__": 319,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -6970,7 +7110,7 @@
     "generator": false
   },
   {
-    "__docId__": 317,
+    "__docId__": 320,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -6991,7 +7131,7 @@
     "generator": false
   },
   {
-    "__docId__": 318,
+    "__docId__": 321,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -7012,7 +7152,7 @@
     "generator": false
   },
   {
-    "__docId__": 319,
+    "__docId__": 322,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -7033,7 +7173,7 @@
     "generator": false
   },
   {
-    "__docId__": 320,
+    "__docId__": 323,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -7049,7 +7189,7 @@
     "interface": false
   },
   {
-    "__docId__": 321,
+    "__docId__": 324,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -7074,7 +7214,7 @@
     "generator": false
   },
   {
-    "__docId__": 322,
+    "__docId__": 325,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -7091,7 +7231,7 @@
     }
   },
   {
-    "__docId__": 323,
+    "__docId__": 326,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -7112,7 +7252,7 @@
     "generator": false
   },
   {
-    "__docId__": 324,
+    "__docId__": 327,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -7133,7 +7273,7 @@
     "generator": false
   },
   {
-    "__docId__": 325,
+    "__docId__": 328,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -7154,7 +7294,7 @@
     "generator": false
   },
   {
-    "__docId__": 326,
+    "__docId__": 329,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -7175,7 +7315,7 @@
     "generator": false
   },
   {
-    "__docId__": 327,
+    "__docId__": 330,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -7196,7 +7336,7 @@
     "generator": false
   },
   {
-    "__docId__": 328,
+    "__docId__": 331,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -7217,7 +7357,7 @@
     "generator": false
   },
   {
-    "__docId__": 329,
+    "__docId__": 332,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -7238,7 +7378,7 @@
     "generator": false
   },
   {
-    "__docId__": 330,
+    "__docId__": 333,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -7259,7 +7399,7 @@
     "generator": false
   },
   {
-    "__docId__": 331,
+    "__docId__": 334,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -7280,7 +7420,7 @@
     "generator": false
   },
   {
-    "__docId__": 332,
+    "__docId__": 335,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -7296,7 +7436,7 @@
     "interface": false
   },
   {
-    "__docId__": 333,
+    "__docId__": 336,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -7321,7 +7461,7 @@
     "generator": false
   },
   {
-    "__docId__": 334,
+    "__docId__": 337,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -7338,7 +7478,7 @@
     }
   },
   {
-    "__docId__": 335,
+    "__docId__": 338,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -7359,7 +7499,7 @@
     "generator": false
   },
   {
-    "__docId__": 336,
+    "__docId__": 339,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -7380,7 +7520,7 @@
     "generator": false
   },
   {
-    "__docId__": 337,
+    "__docId__": 340,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -7401,7 +7541,7 @@
     "generator": false
   },
   {
-    "__docId__": 338,
+    "__docId__": 341,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -7417,7 +7557,7 @@
     "interface": false
   },
   {
-    "__docId__": 339,
+    "__docId__": 342,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -7442,7 +7582,7 @@
     "generator": false
   },
   {
-    "__docId__": 340,
+    "__docId__": 343,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -7459,7 +7599,7 @@
     }
   },
   {
-    "__docId__": 341,
+    "__docId__": 344,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -7480,7 +7620,7 @@
     "generator": false
   },
   {
-    "__docId__": 342,
+    "__docId__": 345,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -7501,7 +7641,7 @@
     "generator": false
   },
   {
-    "__docId__": 343,
+    "__docId__": 346,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -7522,7 +7662,7 @@
     "generator": false
   },
   {
-    "__docId__": 344,
+    "__docId__": 347,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -7538,7 +7678,7 @@
     "interface": false
   },
   {
-    "__docId__": 345,
+    "__docId__": 348,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -7563,7 +7703,7 @@
     "generator": false
   },
   {
-    "__docId__": 346,
+    "__docId__": 349,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -7580,7 +7720,7 @@
     }
   },
   {
-    "__docId__": 347,
+    "__docId__": 350,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -7601,7 +7741,7 @@
     "generator": false
   },
   {
-    "__docId__": 348,
+    "__docId__": 351,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -7622,7 +7762,7 @@
     "generator": false
   },
   {
-    "__docId__": 349,
+    "__docId__": 352,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -7638,7 +7778,7 @@
     "interface": false
   },
   {
-    "__docId__": 350,
+    "__docId__": 353,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -7663,7 +7803,7 @@
     "generator": false
   },
   {
-    "__docId__": 351,
+    "__docId__": 354,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -7680,7 +7820,7 @@
     }
   },
   {
-    "__docId__": 352,
+    "__docId__": 355,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -7701,7 +7841,7 @@
     "generator": false
   },
   {
-    "__docId__": 353,
+    "__docId__": 356,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -7722,7 +7862,7 @@
     "generator": false
   },
   {
-    "__docId__": 354,
+    "__docId__": 357,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -7743,7 +7883,7 @@
     "generator": false
   },
   {
-    "__docId__": 355,
+    "__docId__": 358,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -7764,7 +7904,7 @@
     "generator": false
   },
   {
-    "__docId__": 356,
+    "__docId__": 359,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -7785,7 +7925,7 @@
     "generator": false
   },
   {
-    "__docId__": 357,
+    "__docId__": 360,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -7806,7 +7946,7 @@
     "generator": false
   },
   {
-    "__docId__": 358,
+    "__docId__": 361,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -7827,7 +7967,7 @@
     "generator": false
   },
   {
-    "__docId__": 359,
+    "__docId__": 362,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -7848,7 +7988,7 @@
     "generator": false
   },
   {
-    "__docId__": 360,
+    "__docId__": 363,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -7869,7 +8009,7 @@
     "generator": false
   },
   {
-    "__docId__": 361,
+    "__docId__": 364,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -7890,7 +8030,7 @@
     "generator": false
   },
   {
-    "__docId__": 362,
+    "__docId__": 365,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -7911,7 +8051,7 @@
     "generator": false
   },
   {
-    "__docId__": 363,
+    "__docId__": 366,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -7927,7 +8067,7 @@
     "interface": false
   },
   {
-    "__docId__": 364,
+    "__docId__": 367,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -7952,7 +8092,7 @@
     "generator": false
   },
   {
-    "__docId__": 365,
+    "__docId__": 368,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -7969,7 +8109,7 @@
     }
   },
   {
-    "__docId__": 366,
+    "__docId__": 369,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -7990,7 +8130,7 @@
     "generator": false
   },
   {
-    "__docId__": 367,
+    "__docId__": 370,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8011,7 +8151,7 @@
     "generator": false
   },
   {
-    "__docId__": 368,
+    "__docId__": 371,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8032,7 +8172,7 @@
     "generator": false
   },
   {
-    "__docId__": 369,
+    "__docId__": 372,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8053,7 +8193,7 @@
     "generator": false
   },
   {
-    "__docId__": 370,
+    "__docId__": 373,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8074,7 +8214,7 @@
     "generator": false
   },
   {
-    "__docId__": 371,
+    "__docId__": 374,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8095,7 +8235,7 @@
     "generator": false
   },
   {
-    "__docId__": 372,
+    "__docId__": 375,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8116,7 +8256,7 @@
     "generator": false
   },
   {
-    "__docId__": 373,
+    "__docId__": 376,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8137,7 +8277,7 @@
     "generator": false
   },
   {
-    "__docId__": 374,
+    "__docId__": 377,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8158,7 +8298,7 @@
     "generator": false
   },
   {
-    "__docId__": 375,
+    "__docId__": 378,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8179,7 +8319,7 @@
     "generator": false
   },
   {
-    "__docId__": 376,
+    "__docId__": 379,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8200,7 +8340,7 @@
     "generator": false
   },
   {
-    "__docId__": 377,
+    "__docId__": 380,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8221,7 +8361,7 @@
     "generator": false
   },
   {
-    "__docId__": 378,
+    "__docId__": 381,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8242,7 +8382,7 @@
     "generator": false
   },
   {
-    "__docId__": 379,
+    "__docId__": 382,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -8258,7 +8398,7 @@
     "interface": false
   },
   {
-    "__docId__": 380,
+    "__docId__": 383,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -8283,7 +8423,7 @@
     "generator": false
   },
   {
-    "__docId__": 381,
+    "__docId__": 384,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -8300,7 +8440,7 @@
     }
   },
   {
-    "__docId__": 382,
+    "__docId__": 385,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8321,7 +8461,7 @@
     "generator": false
   },
   {
-    "__docId__": 383,
+    "__docId__": 386,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8342,7 +8482,7 @@
     "generator": false
   },
   {
-    "__docId__": 384,
+    "__docId__": 387,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8363,7 +8503,7 @@
     "generator": false
   },
   {
-    "__docId__": 385,
+    "__docId__": 388,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8384,7 +8524,7 @@
     "generator": false
   },
   {
-    "__docId__": 386,
+    "__docId__": 389,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -8400,7 +8540,7 @@
     "interface": false
   },
   {
-    "__docId__": 387,
+    "__docId__": 390,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -8425,7 +8565,7 @@
     "generator": false
   },
   {
-    "__docId__": 388,
+    "__docId__": 391,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -8442,7 +8582,7 @@
     }
   },
   {
-    "__docId__": 389,
+    "__docId__": 392,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8463,7 +8603,7 @@
     "generator": false
   },
   {
-    "__docId__": 390,
+    "__docId__": 393,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8484,7 +8624,7 @@
     "generator": false
   },
   {
-    "__docId__": 391,
+    "__docId__": 394,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8505,7 +8645,7 @@
     "generator": false
   },
   {
-    "__docId__": 392,
+    "__docId__": 395,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8526,7 +8666,7 @@
     "generator": false
   },
   {
-    "__docId__": 393,
+    "__docId__": 396,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8547,7 +8687,7 @@
     "generator": false
   },
   {
-    "__docId__": 394,
+    "__docId__": 397,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8568,7 +8708,7 @@
     "generator": false
   },
   {
-    "__docId__": 395,
+    "__docId__": 398,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8589,7 +8729,7 @@
     "generator": false
   },
   {
-    "__docId__": 396,
+    "__docId__": 399,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -8605,7 +8745,7 @@
     "interface": false
   },
   {
-    "__docId__": 397,
+    "__docId__": 400,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -8630,7 +8770,7 @@
     "generator": false
   },
   {
-    "__docId__": 398,
+    "__docId__": 401,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -8647,7 +8787,7 @@
     }
   },
   {
-    "__docId__": 399,
+    "__docId__": 402,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8668,7 +8808,7 @@
     "generator": false
   },
   {
-    "__docId__": 400,
+    "__docId__": 403,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8689,7 +8829,7 @@
     "generator": false
   },
   {
-    "__docId__": 401,
+    "__docId__": 404,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8710,7 +8850,7 @@
     "generator": false
   },
   {
-    "__docId__": 402,
+    "__docId__": 405,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8731,7 +8871,7 @@
     "generator": false
   },
   {
-    "__docId__": 403,
+    "__docId__": 406,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8752,7 +8892,7 @@
     "generator": false
   },
   {
-    "__docId__": 404,
+    "__docId__": 407,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8773,7 +8913,7 @@
     "generator": false
   },
   {
-    "__docId__": 405,
+    "__docId__": 408,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -8789,7 +8929,7 @@
     "interface": false
   },
   {
-    "__docId__": 406,
+    "__docId__": 409,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -8814,7 +8954,7 @@
     "generator": false
   },
   {
-    "__docId__": 407,
+    "__docId__": 410,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -8831,7 +8971,7 @@
     }
   },
   {
-    "__docId__": 408,
+    "__docId__": 411,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8852,7 +8992,7 @@
     "generator": false
   },
   {
-    "__docId__": 409,
+    "__docId__": 412,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8873,7 +9013,7 @@
     "generator": false
   },
   {
-    "__docId__": 410,
+    "__docId__": 413,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8894,7 +9034,7 @@
     "generator": false
   },
   {
-    "__docId__": 411,
+    "__docId__": 414,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8915,7 +9055,7 @@
     "generator": false
   },
   {
-    "__docId__": 412,
+    "__docId__": 415,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8936,7 +9076,7 @@
     "generator": false
   },
   {
-    "__docId__": 413,
+    "__docId__": 416,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8957,7 +9097,7 @@
     "generator": false
   },
   {
-    "__docId__": 414,
+    "__docId__": 417,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8978,7 +9118,7 @@
     "generator": false
   },
   {
-    "__docId__": 415,
+    "__docId__": 418,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -8994,7 +9134,7 @@
     "interface": false
   },
   {
-    "__docId__": 416,
+    "__docId__": 419,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -9019,7 +9159,7 @@
     "generator": false
   },
   {
-    "__docId__": 417,
+    "__docId__": 420,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -9036,7 +9176,7 @@
     }
   },
   {
-    "__docId__": 418,
+    "__docId__": 421,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -9057,7 +9197,7 @@
     "generator": false
   },
   {
-    "__docId__": 419,
+    "__docId__": 422,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -9078,7 +9218,7 @@
     "generator": false
   },
   {
-    "__docId__": 420,
+    "__docId__": 423,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -9094,7 +9234,7 @@
     "interface": false
   },
   {
-    "__docId__": 421,
+    "__docId__": 424,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -9119,7 +9259,7 @@
     "generator": false
   },
   {
-    "__docId__": 422,
+    "__docId__": 425,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -9136,7 +9276,7 @@
     }
   },
   {
-    "__docId__": 423,
+    "__docId__": 426,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -9157,7 +9297,7 @@
     "generator": false
   },
   {
-    "__docId__": 424,
+    "__docId__": 427,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -9178,7 +9318,7 @@
     "generator": false
   },
   {
-    "__docId__": 425,
+    "__docId__": 428,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -9199,7 +9339,7 @@
     "generator": false
   },
   {
-    "__docId__": 426,
+    "__docId__": 429,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -9220,7 +9360,7 @@
     "generator": false
   },
   {
-    "__docId__": 427,
+    "__docId__": 430,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -9236,7 +9376,7 @@
     "interface": false
   },
   {
-    "__docId__": 428,
+    "__docId__": 431,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -9261,7 +9401,7 @@
     "generator": false
   },
   {
-    "__docId__": 429,
+    "__docId__": 432,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -9278,7 +9418,7 @@
     }
   },
   {
-    "__docId__": 430,
+    "__docId__": 433,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -9299,7 +9439,7 @@
     "generator": false
   },
   {
-    "__docId__": 431,
+    "__docId__": 434,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -9315,7 +9455,7 @@
     "interface": false
   },
   {
-    "__docId__": 432,
+    "__docId__": 435,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -9340,7 +9480,7 @@
     "generator": false
   },
   {
-    "__docId__": 433,
+    "__docId__": 436,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -9357,7 +9497,7 @@
     }
   },
   {
-    "__docId__": 434,
+    "__docId__": 437,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -9378,7 +9518,7 @@
     "generator": false
   },
   {
-    "__docId__": 435,
+    "__docId__": 438,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -9399,7 +9539,7 @@
     "generator": false
   },
   {
-    "__docId__": 436,
+    "__docId__": 439,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -9420,7 +9560,7 @@
     "generator": false
   },
   {
-    "__docId__": 437,
+    "__docId__": 440,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -9441,7 +9581,7 @@
     "generator": false
   },
   {
-    "__docId__": 438,
+    "__docId__": 441,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -9462,7 +9602,7 @@
     "generator": false
   },
   {
-    "__docId__": 439,
+    "__docId__": 442,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -9478,7 +9618,7 @@
     "interface": false
   },
   {
-    "__docId__": 440,
+    "__docId__": 443,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -9503,7 +9643,7 @@
     "generator": false
   },
   {
-    "__docId__": 441,
+    "__docId__": 444,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -9520,7 +9660,7 @@
     }
   },
   {
-    "__docId__": 442,
+    "__docId__": 445,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -9541,7 +9681,7 @@
     "generator": false
   },
   {
-    "__docId__": 443,
+    "__docId__": 446,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -9562,7 +9702,7 @@
     "generator": false
   },
   {
-    "__docId__": 444,
+    "__docId__": 447,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -9583,7 +9723,7 @@
     "generator": false
   },
   {
-    "__docId__": 445,
+    "__docId__": 448,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -9604,7 +9744,7 @@
     "generator": false
   },
   {
-    "__docId__": 446,
+    "__docId__": 449,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -9625,7 +9765,7 @@
     "generator": false
   },
   {
-    "__docId__": 447,
+    "__docId__": 450,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -9646,7 +9786,7 @@
     "generator": false
   },
   {
-    "__docId__": 448,
+    "__docId__": 451,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -9662,7 +9802,7 @@
     "interface": false
   },
   {
-    "__docId__": 449,
+    "__docId__": 452,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -9687,7 +9827,7 @@
     "generator": false
   },
   {
-    "__docId__": 450,
+    "__docId__": 453,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -9704,7 +9844,7 @@
     }
   },
   {
-    "__docId__": 451,
+    "__docId__": 454,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -9725,7 +9865,7 @@
     "generator": false
   },
   {
-    "__docId__": 452,
+    "__docId__": 455,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -9746,7 +9886,7 @@
     "generator": false
   },
   {
-    "__docId__": 453,
+    "__docId__": 456,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -9767,7 +9907,7 @@
     "generator": false
   },
   {
-    "__docId__": 454,
+    "__docId__": 457,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -9783,7 +9923,7 @@
     "interface": false
   },
   {
-    "__docId__": 455,
+    "__docId__": 458,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -9808,7 +9948,7 @@
     "generator": false
   },
   {
-    "__docId__": 456,
+    "__docId__": 459,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -9825,7 +9965,7 @@
     }
   },
   {
-    "__docId__": 457,
+    "__docId__": 460,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -9846,7 +9986,7 @@
     "generator": false
   },
   {
-    "__docId__": 458,
+    "__docId__": 461,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -9867,7 +10007,7 @@
     "generator": false
   },
   {
-    "__docId__": 459,
+    "__docId__": 462,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -9883,7 +10023,7 @@
     "interface": false
   },
   {
-    "__docId__": 460,
+    "__docId__": 463,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -9908,7 +10048,7 @@
     "generator": false
   },
   {
-    "__docId__": 461,
+    "__docId__": 464,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -9925,7 +10065,7 @@
     }
   },
   {
-    "__docId__": 462,
+    "__docId__": 465,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -9946,7 +10086,7 @@
     "generator": false
   },
   {
-    "__docId__": 463,
+    "__docId__": 466,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -9967,7 +10107,7 @@
     "generator": false
   },
   {
-    "__docId__": 464,
+    "__docId__": 467,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -9988,7 +10128,7 @@
     "generator": false
   },
   {
-    "__docId__": 465,
+    "__docId__": 468,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -10004,7 +10144,7 @@
     "interface": false
   },
   {
-    "__docId__": 466,
+    "__docId__": 469,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -10029,7 +10169,7 @@
     "generator": false
   },
   {
-    "__docId__": 467,
+    "__docId__": 470,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -10046,7 +10186,7 @@
     }
   },
   {
-    "__docId__": 468,
+    "__docId__": 471,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -10067,7 +10207,7 @@
     "generator": false
   },
   {
-    "__docId__": 469,
+    "__docId__": 472,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -10088,7 +10228,7 @@
     "generator": false
   },
   {
-    "__docId__": 470,
+    "__docId__": 473,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -10109,7 +10249,7 @@
     "generator": false
   },
   {
-    "__docId__": 471,
+    "__docId__": 474,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -10130,7 +10270,7 @@
     "generator": false
   },
   {
-    "__docId__": 472,
+    "__docId__": 475,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -10146,7 +10286,7 @@
     "interface": false
   },
   {
-    "__docId__": 473,
+    "__docId__": 476,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -10171,7 +10311,7 @@
     "generator": false
   },
   {
-    "__docId__": 474,
+    "__docId__": 477,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -10188,7 +10328,7 @@
     }
   },
   {
-    "__docId__": 475,
+    "__docId__": 478,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -10209,7 +10349,7 @@
     "generator": false
   },
   {
-    "__docId__": 476,
+    "__docId__": 479,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -10230,7 +10370,7 @@
     "generator": false
   },
   {
-    "__docId__": 477,
+    "__docId__": 480,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -10246,7 +10386,7 @@
     "interface": false
   },
   {
-    "__docId__": 478,
+    "__docId__": 481,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -10271,7 +10411,7 @@
     "generator": false
   },
   {
-    "__docId__": 479,
+    "__docId__": 482,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -10288,7 +10428,7 @@
     }
   },
   {
-    "__docId__": 480,
+    "__docId__": 483,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -10309,7 +10449,7 @@
     "generator": false
   },
   {
-    "__docId__": 481,
+    "__docId__": 484,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -10330,7 +10470,7 @@
     "generator": false
   },
   {
-    "__docId__": 482,
+    "__docId__": 485,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -10346,7 +10486,7 @@
     "interface": false
   },
   {
-    "__docId__": 483,
+    "__docId__": 486,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -10371,7 +10511,7 @@
     "generator": false
   },
   {
-    "__docId__": 484,
+    "__docId__": 487,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -10388,7 +10528,7 @@
     }
   },
   {
-    "__docId__": 485,
+    "__docId__": 488,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -10409,7 +10549,7 @@
     "generator": false
   },
   {
-    "__docId__": 486,
+    "__docId__": 489,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -10430,7 +10570,7 @@
     "generator": false
   },
   {
-    "__docId__": 487,
+    "__docId__": 490,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -10446,7 +10586,7 @@
     "interface": false
   },
   {
-    "__docId__": 488,
+    "__docId__": 491,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -10471,7 +10611,7 @@
     "generator": false
   },
   {
-    "__docId__": 489,
+    "__docId__": 492,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -10488,7 +10628,7 @@
     }
   },
   {
-    "__docId__": 490,
+    "__docId__": 493,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -10509,7 +10649,7 @@
     "generator": false
   },
   {
-    "__docId__": 491,
+    "__docId__": 494,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -10530,7 +10670,7 @@
     "generator": false
   },
   {
-    "__docId__": 492,
+    "__docId__": 495,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -10551,7 +10691,7 @@
     "generator": false
   },
   {
-    "__docId__": 493,
+    "__docId__": 496,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -10567,7 +10707,7 @@
     "interface": false
   },
   {
-    "__docId__": 494,
+    "__docId__": 497,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -10592,7 +10732,7 @@
     "generator": false
   },
   {
-    "__docId__": 495,
+    "__docId__": 498,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -10609,7 +10749,7 @@
     }
   },
   {
-    "__docId__": 496,
+    "__docId__": 499,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -10630,7 +10770,7 @@
     "generator": false
   },
   {
-    "__docId__": 497,
+    "__docId__": 500,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -10651,7 +10791,7 @@
     "generator": false
   },
   {
-    "__docId__": 498,
+    "__docId__": 501,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -10667,7 +10807,7 @@
     "interface": false
   },
   {
-    "__docId__": 499,
+    "__docId__": 502,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -10692,7 +10832,7 @@
     "generator": false
   },
   {
-    "__docId__": 500,
+    "__docId__": 503,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -10709,7 +10849,7 @@
     }
   },
   {
-    "__docId__": 501,
+    "__docId__": 504,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -10730,7 +10870,7 @@
     "generator": false
   },
   {
-    "__docId__": 502,
+    "__docId__": 505,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -10746,7 +10886,7 @@
     "interface": false
   },
   {
-    "__docId__": 503,
+    "__docId__": 506,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -10771,7 +10911,7 @@
     "generator": false
   },
   {
-    "__docId__": 504,
+    "__docId__": 507,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -10788,7 +10928,7 @@
     }
   },
   {
-    "__docId__": 505,
+    "__docId__": 508,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -10809,7 +10949,7 @@
     "generator": false
   },
   {
-    "__docId__": 506,
+    "__docId__": 509,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -10830,7 +10970,7 @@
     "generator": false
   },
   {
-    "__docId__": 507,
+    "__docId__": 510,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -10851,7 +10991,7 @@
     "generator": false
   },
   {
-    "__docId__": 508,
+    "__docId__": 511,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -10867,7 +11007,7 @@
     "interface": false
   },
   {
-    "__docId__": 509,
+    "__docId__": 512,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -10892,7 +11032,7 @@
     "generator": false
   },
   {
-    "__docId__": 510,
+    "__docId__": 513,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -10909,7 +11049,7 @@
     }
   },
   {
-    "__docId__": 511,
+    "__docId__": 514,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -10930,7 +11070,7 @@
     "generator": false
   },
   {
-    "__docId__": 512,
+    "__docId__": 515,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -10951,7 +11091,7 @@
     "generator": false
   },
   {
-    "__docId__": 513,
+    "__docId__": 516,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -10967,7 +11107,7 @@
     "interface": false
   },
   {
-    "__docId__": 514,
+    "__docId__": 517,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -10992,7 +11132,7 @@
     "generator": false
   },
   {
-    "__docId__": 515,
+    "__docId__": 518,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -11009,7 +11149,7 @@
     }
   },
   {
-    "__docId__": 516,
+    "__docId__": 519,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -11030,7 +11170,7 @@
     "generator": false
   },
   {
-    "__docId__": 517,
+    "__docId__": 520,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -11051,7 +11191,7 @@
     "generator": false
   },
   {
-    "__docId__": 518,
+    "__docId__": 521,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -11072,7 +11212,7 @@
     "generator": false
   },
   {
-    "__docId__": 519,
+    "__docId__": 522,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -11093,7 +11233,7 @@
     "generator": false
   },
   {
-    "__docId__": 520,
+    "__docId__": 523,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -11114,7 +11254,7 @@
     "generator": false
   },
   {
-    "__docId__": 521,
+    "__docId__": 524,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -11135,7 +11275,7 @@
     "generator": false
   },
   {
-    "__docId__": 522,
+    "__docId__": 525,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -11151,7 +11291,7 @@
     "interface": false
   },
   {
-    "__docId__": 523,
+    "__docId__": 526,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -11176,7 +11316,7 @@
     "generator": false
   },
   {
-    "__docId__": 524,
+    "__docId__": 527,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -11193,7 +11333,7 @@
     }
   },
   {
-    "__docId__": 525,
+    "__docId__": 528,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -11214,7 +11354,7 @@
     "generator": false
   },
   {
-    "__docId__": 526,
+    "__docId__": 529,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -11235,7 +11375,7 @@
     "generator": false
   },
   {
-    "__docId__": 527,
+    "__docId__": 530,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -11256,7 +11396,7 @@
     "generator": false
   },
   {
-    "__docId__": 528,
+    "__docId__": 531,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -11272,7 +11412,7 @@
     "interface": false
   },
   {
-    "__docId__": 529,
+    "__docId__": 532,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -11297,7 +11437,7 @@
     "generator": false
   },
   {
-    "__docId__": 530,
+    "__docId__": 533,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -11314,7 +11454,7 @@
     }
   },
   {
-    "__docId__": 531,
+    "__docId__": 534,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -11335,7 +11475,7 @@
     "generator": false
   },
   {
-    "__docId__": 532,
+    "__docId__": 535,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -11356,7 +11496,7 @@
     "generator": false
   },
   {
-    "__docId__": 533,
+    "__docId__": 536,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -11377,7 +11517,7 @@
     "generator": false
   },
   {
-    "__docId__": 534,
+    "__docId__": 537,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -11398,7 +11538,7 @@
     "generator": false
   },
   {
-    "__docId__": 535,
+    "__docId__": 538,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -11419,7 +11559,7 @@
     "generator": false
   },
   {
-    "__docId__": 536,
+    "__docId__": 539,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -11435,7 +11575,7 @@
     "interface": true
   },
   {
-    "__docId__": 537,
+    "__docId__": 540,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -11457,7 +11597,7 @@
     "generator": false
   },
   {
-    "__docId__": 538,
+    "__docId__": 541,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -11479,7 +11619,7 @@
     "generator": false
   },
   {
-    "__docId__": 539,
+    "__docId__": 542,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -11501,7 +11641,7 @@
     "generator": false
   },
   {
-    "__docId__": 540,
+    "__docId__": 543,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -11523,7 +11663,7 @@
     "generator": false
   },
   {
-    "__docId__": 541,
+    "__docId__": 544,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -11545,7 +11685,7 @@
     "generator": false
   },
   {
-    "__docId__": 542,
+    "__docId__": 545,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -11578,7 +11718,7 @@
     "generator": false
   },
   {
-    "__docId__": 543,
+    "__docId__": 546,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -11611,7 +11751,7 @@
     "generator": false
   },
   {
-    "__docId__": 544,
+    "__docId__": 547,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -11644,7 +11784,7 @@
     "generator": false
   },
   {
-    "__docId__": 545,
+    "__docId__": 548,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -11677,7 +11817,7 @@
     "generator": false
   },
   {
-    "__docId__": 546,
+    "__docId__": 549,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -11710,7 +11850,7 @@
     "generator": false
   },
   {
-    "__docId__": 547,
+    "__docId__": 550,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -11743,7 +11883,7 @@
     "generator": false
   },
   {
-    "__docId__": 548,
+    "__docId__": 551,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -11786,7 +11926,7 @@
     "generator": false
   },
   {
-    "__docId__": 549,
+    "__docId__": 552,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -11808,7 +11948,7 @@
     "generator": false
   },
   {
-    "__docId__": 550,
+    "__docId__": 553,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -11841,7 +11981,7 @@
     "generator": false
   },
   {
-    "__docId__": 551,
+    "__docId__": 554,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -11874,7 +12014,7 @@
     "generator": false
   },
   {
-    "__docId__": 552,
+    "__docId__": 555,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -11896,7 +12036,7 @@
     "generator": false
   },
   {
-    "__docId__": 553,
+    "__docId__": 556,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -11918,7 +12058,7 @@
     "generator": false
   },
   {
-    "__docId__": 554,
+    "__docId__": 557,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -11951,7 +12091,7 @@
     "generator": false
   },
   {
-    "__docId__": 555,
+    "__docId__": 558,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -11984,7 +12124,7 @@
     "generator": false
   },
   {
-    "__docId__": 556,
+    "__docId__": 559,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -12017,7 +12157,7 @@
     "generator": false
   },
   {
-    "__docId__": 557,
+    "__docId__": 560,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -12036,7 +12176,7 @@
     ]
   },
   {
-    "__docId__": 558,
+    "__docId__": 561,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -12089,7 +12229,7 @@
     "generator": false
   },
   {
-    "__docId__": 559,
+    "__docId__": 562,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -12132,7 +12272,7 @@
     "generator": false
   },
   {
-    "__docId__": 560,
+    "__docId__": 563,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -12154,7 +12294,7 @@
     "generator": false
   },
   {
-    "__docId__": 561,
+    "__docId__": 564,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -12187,7 +12327,7 @@
     "generator": false
   },
   {
-    "__docId__": 562,
+    "__docId__": 565,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -12220,7 +12360,7 @@
     "generator": false
   },
   {
-    "__docId__": 563,
+    "__docId__": 566,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -12263,7 +12403,7 @@
     "generator": false
   },
   {
-    "__docId__": 564,
+    "__docId__": 567,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -12306,7 +12446,7 @@
     "generator": false
   },
   {
-    "__docId__": 565,
+    "__docId__": 568,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -12325,7 +12465,7 @@
     ]
   },
   {
-    "__docId__": 566,
+    "__docId__": 569,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -12358,7 +12498,7 @@
     "generator": false
   },
   {
-    "__docId__": 567,
+    "__docId__": 570,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -12380,7 +12520,7 @@
     "generator": false
   },
   {
-    "__docId__": 568,
+    "__docId__": 571,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -12423,7 +12563,7 @@
     "generator": false
   },
   {
-    "__docId__": 569,
+    "__docId__": 572,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -12466,7 +12606,7 @@
     "generator": false
   },
   {
-    "__docId__": 570,
+    "__docId__": 573,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -12499,7 +12639,7 @@
     "generator": false
   },
   {
-    "__docId__": 571,
+    "__docId__": 574,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -12532,7 +12672,7 @@
     "generator": false
   },
   {
-    "__docId__": 572,
+    "__docId__": 575,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -12551,7 +12691,7 @@
     ]
   },
   {
-    "__docId__": 573,
+    "__docId__": 576,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -12614,7 +12754,7 @@
     "generator": false
   },
   {
-    "__docId__": 574,
+    "__docId__": 577,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -12657,7 +12797,7 @@
     "generator": false
   },
   {
-    "__docId__": 575,
+    "__docId__": 578,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -12700,7 +12840,7 @@
     "generator": false
   },
   {
-    "__docId__": 576,
+    "__docId__": 579,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -12753,7 +12893,7 @@
     "generator": false
   },
   {
-    "__docId__": 577,
+    "__docId__": 580,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -12796,7 +12936,7 @@
     "generator": false
   },
   {
-    "__docId__": 578,
+    "__docId__": 581,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -12839,7 +12979,7 @@
     "generator": false
   },
   {
-    "__docId__": 579,
+    "__docId__": 582,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -12882,7 +13022,7 @@
     "generator": false
   },
   {
-    "__docId__": 580,
+    "__docId__": 583,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -12901,7 +13041,7 @@
     ]
   },
   {
-    "__docId__": 581,
+    "__docId__": 584,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -12934,7 +13074,7 @@
     "generator": false
   },
   {
-    "__docId__": 582,
+    "__docId__": 585,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -12967,7 +13107,7 @@
     "generator": false
   },
   {
-    "__docId__": 583,
+    "__docId__": 586,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -13010,7 +13150,7 @@
     "generator": false
   },
   {
-    "__docId__": 584,
+    "__docId__": 587,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -13063,7 +13203,7 @@
     "generator": false
   },
   {
-    "__docId__": 585,
+    "__docId__": 588,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -13106,7 +13246,7 @@
     "generator": false
   },
   {
-    "__docId__": 586,
+    "__docId__": 589,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -13149,7 +13289,7 @@
     "generator": false
   },
   {
-    "__docId__": 587,
+    "__docId__": 590,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -13192,7 +13332,7 @@
     "generator": false
   },
   {
-    "__docId__": 588,
+    "__docId__": 591,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -13235,7 +13375,7 @@
     "generator": false
   },
   {
-    "__docId__": 589,
+    "__docId__": 592,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -13288,7 +13428,7 @@
     "generator": false
   },
   {
-    "__docId__": 590,
+    "__docId__": 593,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -13331,7 +13471,7 @@
     "generator": false
   },
   {
-    "__docId__": 591,
+    "__docId__": 594,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -13344,7 +13484,7 @@
     "content": "\nexport {\n  Connector,\n  setConnector\n} from './tangojs/core/Connector'\n\nimport { AttributeInfo }   from './tangojs/core/api/AttributeInfo'\nimport { AttributeProxy }  from './tangojs/core/api/AttributeProxy'\nimport { CommandInfo }     from './tangojs/core/api/CommandInfo'\nimport { CommandProxy }    from './tangojs/core/api/CommandProxy'\nimport { Database }        from './tangojs/core/api/Database'\nimport { DbDatum }         from './tangojs/core/api/DbDatum'\nimport { DeviceAttribute } from './tangojs/core/api/DeviceAttribute'\nimport { DeviceData }      from './tangojs/core/api/DeviceData'\nimport { DeviceInfo }      from './tangojs/core/api/DeviceInfo'\nimport { DeviceProxy }     from './tangojs/core/api/DeviceProxy'\n\n\n/** @private */\nexport const api = {\n  AttributeInfo,\n  AttributeProxy,\n  CommandInfo,\n  CommandProxy,\n  Database,\n  DbDatum,\n  DeviceAttribute,\n  DeviceData,\n  DeviceInfo,\n  DeviceProxy\n}\n\nimport * as tangoIDL from './tangojs/core/tango/generated'\n\n/** @private */\nexport const tango = tangoIDL\n"
   },
   {
-    "__docId__": 592,
+    "__docId__": 595,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -13364,7 +13504,7 @@
     }
   },
   {
-    "__docId__": 593,
+    "__docId__": 596,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -13384,7 +13524,7 @@
     }
   },
   {
-    "__docId__": 595,
+    "__docId__": 598,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13397,7 +13537,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 596,
+    "__docId__": 599,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13410,7 +13550,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 597,
+    "__docId__": 600,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13423,7 +13563,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 598,
+    "__docId__": 601,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13436,7 +13576,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 599,
+    "__docId__": 602,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13449,7 +13589,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 600,
+    "__docId__": 603,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13462,7 +13602,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 601,
+    "__docId__": 604,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13475,7 +13615,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 602,
+    "__docId__": 605,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13488,7 +13628,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 603,
+    "__docId__": 606,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13501,7 +13641,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 604,
+    "__docId__": 607,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13514,7 +13654,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 605,
+    "__docId__": 608,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13527,7 +13667,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 606,
+    "__docId__": 609,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13540,7 +13680,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 607,
+    "__docId__": 610,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13553,7 +13693,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 608,
+    "__docId__": 611,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13566,7 +13706,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 609,
+    "__docId__": 612,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13579,7 +13719,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 610,
+    "__docId__": 613,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13592,7 +13732,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 611,
+    "__docId__": 614,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13605,7 +13745,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 612,
+    "__docId__": 615,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13618,7 +13758,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 613,
+    "__docId__": 616,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13631,7 +13771,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 614,
+    "__docId__": 617,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13644,7 +13784,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 615,
+    "__docId__": 618,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13657,7 +13797,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 616,
+    "__docId__": 619,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13670,7 +13810,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 617,
+    "__docId__": 620,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13683,7 +13823,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 618,
+    "__docId__": 621,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13696,7 +13836,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 619,
+    "__docId__": 622,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13709,7 +13849,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 620,
+    "__docId__": 623,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13722,7 +13862,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 621,
+    "__docId__": 624,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13735,7 +13875,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 622,
+    "__docId__": 625,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13748,7 +13888,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 623,
+    "__docId__": 626,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13761,7 +13901,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 624,
+    "__docId__": 627,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13774,7 +13914,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 625,
+    "__docId__": 628,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13787,7 +13927,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 626,
+    "__docId__": 629,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13800,7 +13940,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 627,
+    "__docId__": 630,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13813,7 +13953,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 628,
+    "__docId__": 631,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13826,7 +13966,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 629,
+    "__docId__": 632,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13839,7 +13979,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 630,
+    "__docId__": 633,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13852,7 +13992,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 631,
+    "__docId__": 634,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13865,7 +14005,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 632,
+    "__docId__": 635,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13878,7 +14018,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 633,
+    "__docId__": 636,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13891,7 +14031,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 634,
+    "__docId__": 637,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13904,7 +14044,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 635,
+    "__docId__": 638,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13917,7 +14057,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 636,
+    "__docId__": 639,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13930,7 +14070,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 637,
+    "__docId__": 640,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13943,7 +14083,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 638,
+    "__docId__": 641,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13956,7 +14096,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 639,
+    "__docId__": 642,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13969,7 +14109,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 640,
+    "__docId__": 643,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13982,7 +14122,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 641,
+    "__docId__": 644,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -13995,7 +14135,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 643,
+    "__docId__": 646,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -14008,7 +14148,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 644,
+    "__docId__": 647,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -14021,7 +14161,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 645,
+    "__docId__": 648,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -14034,7 +14174,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 646,
+    "__docId__": 649,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -14047,7 +14187,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 647,
+    "__docId__": 650,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -14060,7 +14200,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 648,
+    "__docId__": 651,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -14073,7 +14213,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 649,
+    "__docId__": 652,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -14086,7 +14226,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 650,
+    "__docId__": 653,
     "kind": "external",
     "static": true,
     "variation": null,

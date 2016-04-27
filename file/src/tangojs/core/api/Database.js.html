@@ -160,39 +160,39 @@ import { connector } from &apos;../Connector&apos;
 
 export class Database {
 
-  constructor() {
+  constructor () {
     // empty
   }
 
   /**
-   * @return {Promise&lt;string[]&gt;}
    * @param {string} pattern
+   * @return {Promise&lt;string[],Error&gt;}
    */
-  get_device_list(pattern) {
+  get_device_list (pattern) {
     return connector.get_device_list(pattern)
   }
 
   /**
-   * @return {Promise&lt;string[]&gt;}
    * @param {string} pattern
+   * @return {Promise&lt;string[],Error&gt;}
    */
-  get_device_domain(pattern) {
+  get_device_domain (pattern) {
     return connector.get_device_domain(pattern)
   }
 
   /**
-   * @return {Promise&lt;string[]&gt;}
    * @param {string} pattern
+   * @return {Promise&lt;string[],Error&gt;}
    */
-  get_device_family(pattern) {
+  get_device_family (pattern) {
     return connector.get_device_family(pattern)
   }
 
   /**
-   * @return {Promise&lt;string[]&gt;}
    * @param {string} pattern
+   * @return {Promise&lt;string[],Error&gt;}
    */
-  get_device_member(pattern) {
+  get_device_member (pattern) {
     return connector.get_device_member(pattern)
   }
 
